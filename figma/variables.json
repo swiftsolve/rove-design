@@ -75,11 +75,11 @@
       }
     },
     {
-      "name": "bg/app-2",
+      "name": "bg/chrome",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--bg-app-2)",
-      "description": "Title bar and rail",
+      "code": "var(--bg-chrome)",
+      "description": "Title bar, rail, dialog wells",
       "values": {
         "Dark": {
           "r": 0.04706,
@@ -138,10 +138,10 @@
       }
     },
     {
-      "name": "bg/panel-hi",
+      "name": "bg/raised",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--bg-panel-hi)",
+      "code": "var(--bg-raised)",
       "description": "Tooltips, menus",
       "values": {
         "Dark": {
@@ -285,10 +285,10 @@
       }
     },
     {
-      "name": "fill/hover-subtle",
+      "name": "fill/nav-hover",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--fill-hover-subtle)",
+      "code": "var(--fill-nav-hover)",
       "description": "Nav hover",
       "values": {
         "Dark": {

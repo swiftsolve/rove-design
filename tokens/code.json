@@ -33,7 +33,6 @@
 
     "--font": "'{font-family/sans}', system-ui, -apple-system, 'Segoe UI', sans-serif",
     "--font-numeric": "'{font-family/numeric}', ui-sans-serif, system-ui, sans-serif",
-    "--font-mono": "var(--font-numeric)",
     "--text-display-sm": "28px",
 
     "--weight-regular": "400",

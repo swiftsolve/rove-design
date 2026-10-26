@@ -7,7 +7,7 @@ Design tokens for Rove, from the **Rove Design System** in Figma. Figma is the s
 Install from a version tag. npm builds `dist/` on install.
 
 ```bash
-npm install github:swiftsolve/rove-design#v1.0.1
+npm install github:swiftsolve/rove-design#v2.0.0
 ```
 
 ```ts

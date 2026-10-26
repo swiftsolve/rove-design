@@ -6,9 +6,9 @@ The reasoning behind the token values, carried over from Rove's `index.css` when
 :root {
   /* Surfaces — a genuine elevation ladder rather than one flat panel colour */
   --bg-app: #0a0b0e;
-  --bg-app-2: #0c0d11;
+  --bg-chrome: #0c0d11;
   --bg-panel: #141519;
-  --bg-panel-hi: #191a1f;
+  --bg-raised: #191a1f;
   --bg-inset: #0e0f13;
   --bg-hover: #202127;
 
@@ -62,7 +62,7 @@ The reasoning behind the token values, carried over from Rove's `index.css` when
   --bg-shell: var(--bg-app);
   /* Translucent fills that lift off whatever sits behind them: the nav hover, the
      page-header icon chip, and unlit meter segments in a testing list. */
-  --fill-hover-subtle: rgba(255, 255, 255, 0.04);
+  --fill-nav-hover: rgba(255, 255, 255, 0.04);
   --fill-chip: rgba(255, 255, 255, 0.05);
   --fill-track: rgba(255, 255, 255, 0.06);
 
@@ -139,8 +139,6 @@ The reasoning behind the token values, carried over from Rove's `index.css` when
 
   --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-numeric: 'Questrial', ui-sans-serif, system-ui, sans-serif;
-  /* Kept as an alias so any lingering references resolve to Questrial too. */
-  --font-mono: var(--font-numeric);
 
   --text-micro: 10px;
   --text-caption: 11px;
@@ -159,9 +157,9 @@ The reasoning behind the token values, carried over from Rove's `index.css` when
 }
 :root.theme-light {
   --bg-app: #f6f7fa;
-  --bg-app-2: #fafbfd;
+  --bg-chrome: #fafbfd;
   --bg-panel: #ffffff;
-  --bg-panel-hi: #f6f7fa;
+  --bg-raised: #f6f7fa;
   --bg-inset: #f4f6fa;
   --bg-hover: #e9ecf2;
 
@@ -209,12 +207,12 @@ The reasoning behind the token values, carried over from Rove's `index.css` when
   --series-down: #3a69d5;
   --series-up: #7154e8;
 
-  /* The title bar and nav rail sit near-white (--bg-app-2) while the content
+  /* The title bar and nav rail sit near-white (--bg-chrome) while the content
      area stays a touch greyer, so the white cards keep floating on it rather
      than washing out. Overlays flip from white-on-dark to black-on-light so they
      darken rather than disappear on pale surfaces. */
   --bg-shell: #f0f2f6;
-  --fill-hover-subtle: rgba(15, 18, 30, 0.05);
+  --fill-nav-hover: rgba(15, 18, 30, 0.05);
   --fill-chip: rgba(15, 18, 30, 0.05);
   --fill-track: rgba(15, 18, 30, 0.07);
   --fill-row-hover: rgba(15, 18, 30, 0.03);
