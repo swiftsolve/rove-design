@@ -1,0 +1,31 @@
+{
+  "name": "@swiftsolve/rove-design",
+  "version": "1.0.0",
+  "description": "Rove's design tokens, exported from the Rove Design System in Figma.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swiftsolve/rove-design.git"
+  },
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./tokens.json": "./dist/tokens.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "figma/variables.json",
+    "tokens/code.json"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepack": "npm run build"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,22 @@
+<style>
+  body { margin: 0; font: 12px Inter, system-ui, sans-serif; display: flex; flex-direction: column; height: 100vh; }
+  textarea { flex: 1; margin: 12px 12px 0; font: 11px ui-monospace, monospace; resize: none; }
+  div { display: flex; gap: 8px; padding: 12px; }
+  button { padding: 6px 12px; }
+</style>
+<textarea id="out" readonly>Exporting…</textarea>
+<div>
+  <button id="download">Download variables.json</button>
+  <button id="copy">Copy</button>
+</div>
+<script>
+  const out = document.getElementById('out')
+  onmessage = (event) => { out.value = event.data.pluginMessage }
+  document.getElementById('copy').onclick = () => { out.select(); document.execCommand('copy') }
+  document.getElementById('download').onclick = () => {
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(new Blob([out.value + '\n'], { type: 'application/json' }))
+    link.download = 'variables.json'
+    link.click()
+  }
+</script>
