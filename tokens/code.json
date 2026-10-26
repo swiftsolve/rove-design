@@ -8,9 +8,7 @@
     "font-family/sans",
     "font-family/numeric"
   ],
-  "formats": {
-    "--opacity-disabled": "fraction"
-  },
+  "formats": {},
   "tokens": {
     "--shadow-panel": "0 1px 2px {shadow/panel-1}, 0 4px 12px {shadow/panel-2}",
     "--shadow-raised": "0 12px 32px {shadow/raised}",
@@ -19,12 +17,13 @@
     "--focus-ring": "var(--focus-ring-width) solid var(--accent)",
     "--focus-inset": "calc(-1 * var(--focus-ring-width))",
 
-    "--section-header-y": "var(--section-pad)",
-    "--section-header-x": "var(--section-pad)",
-    "--section-header-min": "42px",
-    "--section-header-h": "44px",
-    "--section-body": "var(--section-pad)",
-    "--row-py": "8px",
+    "--section-padding": "var(--space-14)",
+    "--section-header-padding-y": "var(--section-padding)",
+    "--section-header-padding-x": "var(--section-padding)",
+    "--section-header-min-height": "42px",
+    "--section-header-height": "44px",
+    "--section-body-padding": "var(--section-padding)",
+    "--row-padding-y": "8px",
 
     "--ease-out": "cubic-bezier(0.16, 1, 0.3, 1)",
     "--ease-in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
@@ -33,7 +32,6 @@
 
     "--font": "'{font-family/sans}', system-ui, -apple-system, 'Segoe UI', sans-serif",
     "--font-numeric": "'{font-family/numeric}', ui-sans-serif, system-ui, sans-serif",
-    "--text-display-sm": "28px",
 
     "--weight-regular": "400",
     "--weight-medium": "500",

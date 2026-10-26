@@ -246,7 +246,7 @@
       "name": "border/hairline-top",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--hairline-top)",
+      "code": "var(--border-hairline-top)",
       "description": "",
       "values": {
         "Dark": {
@@ -453,10 +453,10 @@
       }
     },
     {
-      "name": "accent/text",
+      "name": "text/accent",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--accent-text)",
+      "code": "var(--text-accent)",
       "description": "Text on accent/muted",
       "values": {
         "Dark": {
@@ -516,7 +516,7 @@
       "name": "status/positive",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--positive)",
+      "code": "var(--status-positive)",
       "description": "",
       "values": {
         "Dark": {
@@ -537,7 +537,7 @@
       "name": "status/good",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--good)",
+      "code": "var(--status-good)",
       "description": "Between positive and warning",
       "values": {
         "Dark": {
@@ -558,7 +558,7 @@
       "name": "status/warning",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--warning)",
+      "code": "var(--status-warning)",
       "description": "",
       "values": {
         "Dark": {
@@ -579,7 +579,7 @@
       "name": "status/poor",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--poor)",
+      "code": "var(--status-poor)",
       "description": "Between warning and negative",
       "values": {
         "Dark": {
@@ -600,7 +600,7 @@
       "name": "status/negative",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--negative)",
+      "code": "var(--status-negative)",
       "description": "",
       "values": {
         "Dark": {
@@ -621,7 +621,7 @@
       "name": "status/negative-fill",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--negative-fill)",
+      "code": "var(--status-negative-fill)",
       "description": "Stop button",
       "values": {
         "Dark": {
@@ -639,10 +639,10 @@
       }
     },
     {
-      "name": "status/positive-text",
+      "name": "text/positive",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--positive-text)",
+      "code": "var(--text-positive)",
       "description": "",
       "values": {
         "Dark": {
@@ -654,10 +654,10 @@
       }
     },
     {
-      "name": "status/good-text",
+      "name": "text/good",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--good-text)",
+      "code": "var(--text-good)",
       "description": "",
       "values": {
         "Dark": {
@@ -669,10 +669,10 @@
       }
     },
     {
-      "name": "status/warning-text",
+      "name": "text/warning",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--warning-text)",
+      "code": "var(--text-warning)",
       "description": "",
       "values": {
         "Dark": {
@@ -684,10 +684,10 @@
       }
     },
     {
-      "name": "status/poor-text",
+      "name": "text/poor",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--poor-text)",
+      "code": "var(--text-poor)",
       "description": "",
       "values": {
         "Dark": {
@@ -699,10 +699,10 @@
       }
     },
     {
-      "name": "status/negative-text",
+      "name": "text/negative",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--negative-text)",
+      "code": "var(--text-negative)",
       "description": "",
       "values": {
         "Dark": {
@@ -756,90 +756,90 @@
       }
     },
     {
-      "name": "spacing/2xs",
+      "name": "spacing/2",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--gap-2xs)",
+      "code": "var(--space-2)",
       "description": "",
       "values": {
         "Value": 2
       }
     },
     {
-      "name": "spacing/xs",
+      "name": "spacing/4",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--gap-xs)",
+      "code": "var(--space-4)",
       "description": "",
       "values": {
         "Value": 4
       }
     },
     {
-      "name": "spacing/tight",
+      "name": "spacing/6",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--gap-tight)",
+      "code": "var(--space-6)",
       "description": "",
       "values": {
         "Value": 6
       }
     },
     {
-      "name": "spacing/sm",
+      "name": "spacing/8",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--gap-sm)",
+      "code": "var(--space-8)",
       "description": "",
       "values": {
         "Value": 8
       }
     },
     {
-      "name": "spacing/stack",
+      "name": "spacing/10",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--gap-stack)",
+      "code": "var(--space-10)",
       "description": "",
       "values": {
         "Value": 10
       }
     },
     {
-      "name": "spacing/md",
+      "name": "spacing/12",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--gap-md)",
+      "code": "var(--space-12)",
       "description": "",
       "values": {
         "Value": 12
       }
     },
     {
-      "name": "spacing/section",
+      "name": "spacing/14",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--section-pad)",
+      "code": "var(--space-14)",
       "description": "",
       "values": {
         "Value": 14
       }
     },
     {
-      "name": "spacing/lg",
+      "name": "spacing/16",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--gap-lg)",
+      "code": "var(--space-16)",
       "description": "",
       "values": {
         "Value": 16
       }
     },
     {
-      "name": "spacing/xl",
+      "name": "spacing/20",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--gap-xl)",
+      "code": "var(--space-20)",
       "description": "",
       "values": {
         "Value": 20
@@ -866,20 +866,20 @@
       }
     },
     {
-      "name": "radius/nav",
+      "name": "radius/md",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--radius-nav)",
+      "code": "var(--radius-md)",
       "description": "",
       "values": {
         "Value": 10
       }
     },
     {
-      "name": "radius/card",
+      "name": "radius/lg",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--radius)",
+      "code": "var(--radius-lg)",
       "description": "",
       "values": {
         "Value": 13
@@ -896,70 +896,70 @@
       }
     },
     {
-      "name": "font-size/micro",
+      "name": "font-size/2xs",
       "collection": "Typography",
       "type": "FLOAT",
-      "code": "var(--text-micro)",
+      "code": "var(--font-size-2xs)",
       "description": "",
       "values": {
         "Value": 10
       }
     },
     {
-      "name": "font-size/caption",
+      "name": "font-size/xs",
       "collection": "Typography",
       "type": "FLOAT",
-      "code": "var(--text-caption)",
+      "code": "var(--font-size-xs)",
       "description": "",
       "values": {
         "Value": 11
       }
     },
     {
-      "name": "font-size/small",
+      "name": "font-size/sm",
       "collection": "Typography",
       "type": "FLOAT",
-      "code": "var(--text-small)",
+      "code": "var(--font-size-sm)",
       "description": "",
       "values": {
         "Value": 12
       }
     },
     {
-      "name": "font-size/body",
+      "name": "font-size/md",
       "collection": "Typography",
       "type": "FLOAT",
-      "code": "var(--text-body)",
+      "code": "var(--font-size-md)",
       "description": "",
       "values": {
         "Value": 13
       }
     },
     {
-      "name": "font-size/section",
+      "name": "font-size/lg",
       "collection": "Typography",
       "type": "FLOAT",
-      "code": "var(--text-section)",
+      "code": "var(--font-size-lg)",
       "description": "",
       "values": {
         "Value": 14
       }
     },
     {
-      "name": "font-size/title",
+      "name": "font-size/2xl",
       "collection": "Typography",
       "type": "FLOAT",
-      "code": "var(--text-title)",
+      "code": "var(--font-size-2xl)",
       "description": "",
       "values": {
         "Value": 17
       }
     },
     {
-      "name": "font-size/display",
+      "name": "font-size/3xl",
       "collection": "Typography",
       "type": "FLOAT",
-      "code": "var(--text-display)",
+      "code": "var(--font-size-3xl)",
       "description": "",
       "values": {
         "Value": 28
@@ -1109,10 +1109,10 @@
       }
     },
     {
-      "name": "status/close-hover",
+      "name": "window/close-hover",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--close-hover)",
+      "code": "var(--window-close-hover)",
       "description": "Close button hover",
       "values": {
         "Dark": {
@@ -1133,7 +1133,7 @@
       "name": "status/negative-fill-hover",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--negative-fill-hover)",
+      "code": "var(--status-negative-fill-hover)",
       "description": "Stop button hover",
       "values": {
         "Dark": {
@@ -1166,10 +1166,10 @@
       }
     },
     {
-      "name": "spacing/inset",
+      "name": "spacing/11",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--gap-inset)",
+      "code": "var(--space-11)",
       "description": "Rail and content side inset",
       "values": {
         "Value": 11
@@ -1186,30 +1186,30 @@
       }
     },
     {
-      "name": "opacity/tint",
+      "name": "opacity/tint-md",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": "var(--opacity-tint)",
+      "code": "var(--opacity-tint-md)",
       "description": "Icon tile tint",
       "values": {
         "Value": 14
       }
     },
     {
-      "name": "opacity/tint-soft",
+      "name": "opacity/tint-sm",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": "var(--opacity-tint-soft)",
+      "code": "var(--opacity-tint-sm)",
       "description": "Connection icon tint",
       "values": {
         "Value": 10
       }
     },
     {
-      "name": "opacity/tint-hover",
+      "name": "opacity/tint-lg",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": "var(--opacity-tint-hover)",
+      "code": "var(--opacity-tint-lg)",
       "description": "Hovered icon tile tint",
       "values": {
         "Value": 22
@@ -1300,10 +1300,10 @@
       }
     },
     {
-      "name": "opacity/tint-faint",
+      "name": "opacity/tint-xs",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": "var(--opacity-tint-faint)",
+      "code": "var(--opacity-tint-xs)",
       "description": "Offline icon tint",
       "values": {
         "Value": 8
@@ -1397,7 +1397,7 @@
       "name": "fill/selection",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--selection)",
+      "code": "var(--fill-selection)",
       "description": "Text selection",
       "values": {
         "Dark": {
@@ -1418,7 +1418,7 @@
       "name": "bg/scrim",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--scrim)",
+      "code": "var(--bg-scrim)",
       "description": "Behind dialogs",
       "values": {
         "Dark": {
@@ -1436,10 +1436,10 @@
       }
     },
     {
-      "name": "font-size/dialog",
+      "name": "font-size/xl",
       "collection": "Typography",
       "type": "FLOAT",
-      "code": "var(--text-dialog)",
+      "code": "var(--font-size-xl)",
       "description": "Dialog titles",
       "values": {
         "Value": 15
