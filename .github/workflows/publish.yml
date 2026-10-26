@@ -1,8 +1,9 @@
 name: Publish
 
+# Manual until the org's GitHub Packages budget allows private packages; Rove
+# installs from the git tag meanwhile. Run it from a version tag.
 on:
-  push:
-    tags: ['v*']
+  workflow_dispatch:
 
 jobs:
   publish:
