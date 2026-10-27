@@ -10,9 +10,11 @@ Install from a version tag. npm builds `dist/` on install.
 npm install github:swiftsolve/rove-design#v3.0.0
 ```
 
-```ts
-import '@swiftsolve/rove-design/tokens.css'
+```css
+@import '@swiftsolve/rove-design/dist/tokens.css';
 ```
+
+`@swiftsolve/rove-design/tokens.css` works too, but editors that don't read `exports` (VS Code's CSS links) can only open the `dist/` path.
 
 Dark values sit on `:root`, Light values on `:root.theme-light`. `tokens.json` lists every token with its Figma name and both values.
 
