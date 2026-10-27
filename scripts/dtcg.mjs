@@ -6,11 +6,17 @@
  * `bg.app`), and Figma aliases stay references (`{gray.850}`). A theme is every
  * file except one of color.dark / color.light.
  *
- * Code-only tokens that are CSS expressions (calc()) have no DTCG type and stay
- * in tokens.css only.
+ * Figma variables without a code syntax (the Palette, the shadow colours) are
+ * marked `"$extensions": { "net.swiftsolve.rove-design": { "css": false } }`:
+ * other tokens refer to them, but they aren't CSS variables of their own.
+ *
+ * Code-only tokens that are CSS expressions (calc()) have no DTCG type; they're
+ * returned for tokens.css instead.
  */
 import { mkdir, rm, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+
+export const EXTENSION = 'net.swiftsolve.rove-design'
 
 const COLLECTIONS = { Palette: 'palette', Color: 'color', Spacing: 'spacing', Typography: 'typography', Opacity: 'opacity' }
 const MODES = { Dark: 'dark', Light: 'light' }
@@ -45,7 +51,10 @@ function place(tree, segments, token) {
 
 function figmaToken(v, mode, figmaOverride) {
   const value = v.values[mode] ?? Object.values(v.values)[0]
-  const description = v.description ? { $description: v.description } : {}
+  const description = {
+    ...(v.description ? { $description: v.description } : {}),
+    ...(v.code ? {} : { $extensions: { [EXTENSION]: { css: false } } }),
+  }
   const override = figmaOverride(v, mode)
   if (v.type === 'STRING') {
     if (!v.name.startsWith('font-family/')) throw new Error(`DTCG: no type for the string variable ${v.name}`)
@@ -141,9 +150,12 @@ export async function writeDtcg({ dir, variables, textStyles, code, figmaOverrid
     throw new Error(`DTCG: no token for ${cssName}`)
   }
   files.code = {}
+  const cssOnly = []
   for (const [name, css] of Object.entries(code.tokens)) {
     const token = codeToken(name, css, refTo)
     if (token) place(files.code, [name.slice(2)], token)
+    else if (css.includes('{')) throw new Error(`${name}: a CSS-only token can't pull Figma values in`)
+    else cssOnly.push([name, css])
   }
 
   const shared = Object.keys(files).filter((f) => !f.startsWith('color.'))
@@ -156,5 +168,5 @@ export async function writeDtcg({ dir, variables, textStyles, code, figmaOverrid
     await writeFile(resolve(dir, `${name}.tokens.json`), `${JSON.stringify(tree, null, 2)}\n`)
     written.push(`${name}.tokens.json`)
   }
-  return written
+  return { written, cssOnly }
 }

@@ -249,8 +249,8 @@
       "fontWeight": 400,
       "fontSize": 13,
       "lineHeight": {
-        "unit": "PIXELS",
-        "value": 17.55
+        "unit": "PERCENT",
+        "value": 135
       },
       "letterSpacing": {
         "unit": "PERCENT",
