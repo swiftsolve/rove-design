@@ -32,6 +32,7 @@ The repo is private, so CI needs a token that can read it (see Rove's workflows)
 | `figma/variables.json` | Raw Figma export. Every variable with a Web code syntax becomes that CSS variable. |
 | `tokens/code.json` | Tokens Figma can't hold: shadows, font stacks, layout constants, motion. `{figma/name}` pulls a Figma value in per theme. |
 | `scripts/build.mjs` | Writes `dist/tokens.css` and `dist/tokens.json`. No dependencies. |
+| `scripts/present.mjs` | `npm run present`: exports the Figma file's pages to `presentation/index.html`, a slideshow styled with the tokens. Needs `FIGMA_TOKEN` (a Figma personal access token, `file_content:read`) in `.env.local`. |
 | `docs/rationale.md` | Why the values are what they are (contrast targets, theme choices). |
 
 Figma-only collections (Icon tone, Capability level) and variables without a code syntax aren't exported.

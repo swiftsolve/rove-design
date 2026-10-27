@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "build": "node scripts/build.mjs",
+    "present": "npm run build && node scripts/present.mjs",
     "prepare": "npm run build"
   },
   "publishConfig": {
