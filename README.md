@@ -41,7 +41,24 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
 1. Change the variables or text styles in Figma.
 2. Export them to `src/figma/variables.json` and `src/figma/text-styles.json`, either with the plugin in `figma-plugin/` (Figma desktop: Plugins → Development → Import plugin from manifest; pick each file from the menu and download it) or by asking Claude to export them through the Figma connection.
 3. Run `npm run build` (Node 22) and check `tokens.css`. It writes the DTCG files, then generates `tokens.css` from them with Style Dictionary. The build stops if a variable's code syntax doesn't match its name, or a DTCG reference doesn't resolve.
-4. Bump the version, commit, push a matching tag (`v1.1.0`), and point Rove at the new tag.
+4. Commit the change.
+
+## Release
+
+1. Set the version on the Figma cover (`COVER` page) to the one you're about to release. It's the one place the version can't be set from here: Figma's API can't edit canvas text on this plan, so do it by hand or ask Claude to through the Figma connection.
+2. Bump, commit and tag in one step, then push both:
+
+   ```bash
+   npm version minor
+   ```
+
+   ```bash
+   git push --follow-tags
+   ```
+
+   Use `patch` for fixes and `major` for breaking changes.
+3. The tag runs the **Presentation** workflow, which exports the Figma file and republishes <https://swiftsolve.github.io/rove-design/>. The page's header shows the version from `package.json`. To republish between releases (after Figma edits), run the workflow by hand from the Actions tab.
+4. Point Rove at the new tag (`github:swiftsolve/rove-design#v5.1.0`).
 
 ## What's where
 
@@ -57,6 +74,7 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
 | `scripts/presentation/export.mjs` | `npm run present`: exports the Figma file's pages to `presentation/index.html`, a slideshow styled with the tokens. Needs `FIGMA_TOKEN` (a Figma personal access token, `file_content:read`) in `.env.local`. |
 | `scripts/presentation/open.mjs` | `npm run present:open`: opens the exported presentation in your browser. |
 | `scripts/presentation/publish.mjs` | `npm run present:publish`: pushes the exported presentation to the `gh-pages` branch, which GitHub Pages serves at <https://swiftsolve.github.io/rove-design/>. Each publish replaces the last. |
+| `.github/workflows/presentation.yml` | Runs the export and publish on every `v*` tag, or by hand. Needs the `FIGMA_TOKEN` repository secret. |
 | `docs/rationale.md` | Why the values are what they are (contrast targets, theme choices). |
 
 Every colour lives once in the Palette collection (`gray/850`, `blue/450`; higher numbers are darker), and the Color tokens point at it. The Palette isn't in `tokens.css`: a token that points at a shade gets the shade's value there. Figma-only collections (Icon tone, Capability level) and variables without a code syntax aren't in `tokens.css` either.

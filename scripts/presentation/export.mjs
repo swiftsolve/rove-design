@@ -150,7 +150,7 @@ const ROVE_MARK = `<svg width="28" height="28" viewBox="0 0 48 48" fill="none" a
 
 const sectionLabel = (group) => `${icon(SECTION_ICONS[group.name.trim().toUpperCase()] ?? 'Folder')}<span>${escapeHtml(sectionName(group))}</span>`
 
-function renderHtml(file, groups, tokens) {
+function renderHtml(file, groups, tokens, version) {
   const slides = groups.flatMap((group) => group.pages.flatMap((page) => page.frames.map((frame) => ({ group, page, frame }))))
   const indexOf = (frame) => slides.findIndex((slide) => slide.frame === frame)
   const link = (frame, html, className) => `<a class="${className}" href="#${indexOf(frame) + 1}" data-index="${indexOf(frame)}">${html}</a>`
@@ -258,7 +258,7 @@ ${tokens}
     <header>
       <p class="logo">${ROVE_MARK}<span>Rove</span></p>
       <h1>${escapeHtml(file.name.replace(/^Rove\s+/, ''))}</h1>
-      <p class="meta" title="Exported ${date(Date.now())}">Edited ${date(file.lastModified)}</p>
+      <p class="meta" title="Exported ${date(Date.now())}">v${escapeHtml(version)} · Edited ${date(file.lastModified)}</p>
     </header>${nav}
   </nav>
   <header class="bar">
@@ -475,7 +475,9 @@ if (bitmaps.length > 0) {
   }))
 }
 
-// This package's own tokens, so the presentation chrome matches the app.
+// This package's own tokens, so the presentation chrome matches the app, and
+// its version, so the page always names the release it shows.
 const tokens = await readFile(join(ROOT, 'tokens.css'), 'utf8')
-await writeFile(join(out, 'index.html'), renderHtml(file, groups, tokens))
+const { version } = JSON.parse(await readFile(join(ROOT, 'package.json'), 'utf8'))
+await writeFile(join(out, 'index.html'), renderHtml(file, groups, tokens, version))
 console.log(`Wrote ${join(out, 'index.html')}`)
