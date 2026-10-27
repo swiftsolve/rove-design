@@ -42,6 +42,26 @@
       }
     },
     {
+      "name": "Dialog title",
+      "description": "Dialog headings. Code: .text-dialog-title",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontWeight": 600,
+      "fontSize": 15,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 145
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/xl"
+      }
+    },
+    {
       "name": "Body",
       "description": "Body and secondary lines. Code: .text-body",
       "fontFamily": "Inter",
@@ -143,7 +163,7 @@
     },
     {
       "name": "Metric/Display",
-      "description": "Live speeds. Add a 0.43px outside stroke. Code: .metric-value",
+      "description": "Live speeds. Add a 0.43px outside stroke. Code: .metric-value, at weight 600: Questrial has one weight, so the browser emboldens it.",
       "fontFamily": "Questrial",
       "fontStyle": "Regular",
       "fontWeight": 400,
