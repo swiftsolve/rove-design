@@ -2,6 +2,8 @@
 
 Design tokens for Rove, from the **Rove Design System** in Figma. Figma is the source of truth; this package turns its variables and text styles into DTCG token files, and those into CSS with [Style Dictionary](https://styledictionary.com/).
 
+**See the design system:** <https://swiftsolve.github.io/rove-design/>, every page of the Figma file as a slideshow.
+
 ## Use
 
 Install from a version tag. npm builds `tokens.css` and `tokens/` on install, which needs Node 22 (see `.nvmrc`).
