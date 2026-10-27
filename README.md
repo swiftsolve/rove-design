@@ -7,7 +7,7 @@ Design tokens for Rove, from the **Rove Design System** in Figma. Figma is the s
 Install from a version tag. npm builds `tokens.css` and `tokens/` on install, which needs Node 22 (see `.nvmrc`).
 
 ```bash
-npm install github:swiftsolve/rove-design#v5.0.0
+npm install github:swiftsolve/rove-design#v5.0.1
 ```
 
 ```css

@@ -141,16 +141,20 @@ function format({ dictionary, options }) {
 }
 
 async function block({ dir, mode, options }) {
+  // Style Dictionary reads `source` as globs, which need forward slashes (on Windows too).
+  const base = dir.replaceAll('\\', '/')
   const sd = new StyleDictionary({
     usesDtcg: true,
     log: { verbosity: 'silent', warnings: 'error' },
-    source: FILES.map(([f]) => `${dir}/${f === 'color' ? `color.${mode}` : f}.tokens.json`),
+    source: FILES.map(([f]) => `${base}/${f === 'color' ? `color.${mode}` : f}.tokens.json`),
     hooks: {
       transforms: { 'rove/name': { type: 'name', transform: (token) => token.path.join('-') } },
       formats: { 'rove/css': format },
     },
     platforms: { css: { transforms: ['rove/name'], files: [{ destination: 'tokens.css', format: 'rove/css', options }] } },
   })
+  const tokens = (await sd.getPlatformTokens('css')).allTokens
+  if (tokens.length === 0) throw new Error(`tokens.css: Style Dictionary found no tokens in ${base} (${mode})`)
   const [{ output }] = await sd.formatPlatform('css')
   return output
 }
