@@ -18,7 +18,7 @@ Dark values sit on `:root`, Light values on `:root.theme-light`. `tokens.json` l
 
 Each Figma text style becomes four tokens: `--type-<style>-size`, `-weight`, `-line-height` (a unitless ratio) and `-letter-spacing` (in `em`). `Metric/Display` gives `--type-metric-display-size` and so on. A size bound to a variable comes through as that variable (`var(--font-size-3xl)`).
 
-The repo is private, so CI needs a token that can read it (see Rove's workflows). The Publish workflow can also put the package on GitHub Packages once the org's Packages budget allows private packages.
+The repo is public, so installing from a tag needs no token. The Publish workflow can also put the package on GitHub Packages.
 
 ## Update the tokens
 
@@ -37,6 +37,7 @@ The repo is private, so CI needs a token that can read it (see Rove's workflows)
 | `scripts/build.mjs` | Writes `dist/tokens.css` and `dist/tokens.json`. No dependencies. |
 | `scripts/present.mjs` | `npm run present`: exports the Figma file's pages to `presentation/index.html`, a slideshow styled with the tokens. Needs `FIGMA_TOKEN` (a Figma personal access token, `file_content:read`) in `.env.local`. |
 | `scripts/open-presentation.mjs` | `npm run present:open`: opens the exported presentation in your browser. |
+| `scripts/publish-presentation.mjs` | `npm run present:publish`: pushes the exported presentation to the `gh-pages` branch, which GitHub Pages serves at <https://swiftsolve.github.io/rove-design/>. Each publish replaces the last. |
 | `docs/rationale.md` | Why the values are what they are (contrast targets, theme choices). |
 
 Figma-only collections (Icon tone, Capability level) and variables without a code syntax aren't exported.

@@ -23,6 +23,7 @@
     "build": "node scripts/build.mjs",
     "present": "npm run build && node scripts/present.mjs",
     "present:open": "node scripts/open-presentation.mjs",
+    "present:publish": "node scripts/publish-presentation.mjs",
     "prepare": "npm run build"
   },
   "publishConfig": {
