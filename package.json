@@ -1,6 +1,6 @@
 {
   "name": "@swiftsolve/rove-design",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Rove's design tokens, exported from the Rove Design System in Figma, as CSS and DTCG.",
   "type": "module",
   "license": "UNLICENSED",
@@ -21,10 +21,10 @@
     "code-tokens.json"
   ],
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "present": "npm run build && node scripts/present.mjs",
-    "present:open": "node scripts/open-presentation.mjs",
-    "present:publish": "node scripts/publish-presentation.mjs",
+    "build": "node scripts/tokens/build.mjs",
+    "present": "npm run build && node scripts/presentation/export.mjs",
+    "present:open": "node scripts/presentation/open.mjs",
+    "present:publish": "node scripts/presentation/publish.mjs",
     "prepare": "npm run build"
   },
   "publishConfig": {

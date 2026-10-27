@@ -14,7 +14,7 @@ import { tmpdir } from 'node:os'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 const PRESENTATION = resolve(ROOT, 'presentation')
 const PAGES_URL = 'https://swiftsolve.github.io/rove-design/'
 

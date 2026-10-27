@@ -7,7 +7,7 @@ Design tokens for Rove, from the **Rove Design System** in Figma. Figma is the s
 Install from a version tag. npm builds `tokens.css` and `tokens/` on install, which needs Node 22 (see `.nvmrc`).
 
 ```bash
-npm install github:swiftsolve/rove-design#v5.0.1
+npm install github:swiftsolve/rove-design#v5.0.2
 ```
 
 ```css
@@ -49,12 +49,12 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
 | `figma/text-styles.json` | Raw export of the local text styles: font, size, weight, line height, letter spacing and the variables bound to them. Each style becomes a `--type-*` group. |
 | `figma/plugin/` | The Figma plugin that writes the two exports. |
 | `code-tokens.json` | What Figma variables can't hold: font stacks for the font-family variables, shadows, layout constants, motion. `{figma/name}` pulls a Figma value in per theme. |
-| `scripts/build.mjs` | `npm run build`: runs the two steps below and writes `tokens.css` at the package root, where the import path points. |
-| `scripts/dtcg.mjs` | Figma export → the DTCG files in `tokens/`, checking that every reference resolves in both themes. |
-| `scripts/css.mjs` | DTCG files → `tokens.css`, with Style Dictionary and a `rove/css` format: Dark on `:root`, what differs in Light on `:root.theme-light`, each text style as four `--type-*` variables (letter spacing included). |
-| `scripts/present.mjs` | `npm run present`: exports the Figma file's pages to `presentation/index.html`, a slideshow styled with the tokens. Needs `FIGMA_TOKEN` (a Figma personal access token, `file_content:read`) in `.env.local`. |
-| `scripts/open-presentation.mjs` | `npm run present:open`: opens the exported presentation in your browser. |
-| `scripts/publish-presentation.mjs` | `npm run present:publish`: pushes the exported presentation to the `gh-pages` branch, which GitHub Pages serves at <https://swiftsolve.github.io/rove-design/>. Each publish replaces the last. |
+| `scripts/tokens/build.mjs` | `npm run build`: runs the two steps below and writes `tokens.css` at the package root, where the import path points. |
+| `scripts/tokens/dtcg.mjs` | Figma export → the DTCG files in `tokens/`, checking that every reference resolves in both themes. |
+| `scripts/tokens/css.mjs` | DTCG files → `tokens.css`, with Style Dictionary and a `rove/css` format: Dark on `:root`, what differs in Light on `:root.theme-light`, each text style as four `--type-*` variables (letter spacing included). |
+| `scripts/presentation/export.mjs` | `npm run present`: exports the Figma file's pages to `presentation/index.html`, a slideshow styled with the tokens. Needs `FIGMA_TOKEN` (a Figma personal access token, `file_content:read`) in `.env.local`. |
+| `scripts/presentation/open.mjs` | `npm run present:open`: opens the exported presentation in your browser. |
+| `scripts/presentation/publish.mjs` | `npm run present:publish`: pushes the exported presentation to the `gh-pages` branch, which GitHub Pages serves at <https://swiftsolve.github.io/rove-design/>. Each publish replaces the last. |
 | `docs/rationale.md` | Why the values are what they are (contrast targets, theme choices). |
 
 Every colour lives once in the Palette collection (`gray/850`, `blue/450`; higher numbers are darker), and the Color tokens point at it. The Palette isn't in `tokens.css`: a token that points at a shade gets the shade's value there. Figma-only collections (Icon tone, Capability level) and variables without a code syntax aren't in `tokens.css` either.

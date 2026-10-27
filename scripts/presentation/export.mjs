@@ -34,7 +34,7 @@ import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { dirname, join, resolve } from 'node:path'
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 const API = 'https://api.figma.com/v1'
 
 /** FIGMA_TOKEN from the shell, else from the git-ignored .env.local. */

@@ -1,8 +1,8 @@
 /**
  * Build the tokens in two steps:
  *
- *   1. Figma export -> DTCG files in tokens/ (scripts/dtcg.mjs)
- *   2. DTCG files -> tokens.css, with Style Dictionary (scripts/css.mjs)
+ *   1. Figma export -> DTCG files in tokens/ (scripts/tokens/dtcg.mjs)
+ *   2. DTCG files -> tokens.css, with Style Dictionary (scripts/tokens/css.mjs)
  *
  * so the CSS is generated from the same files other tools read.
  *
@@ -19,7 +19,7 @@ import { fileURLToPath } from 'node:url'
 import { buildCss } from './css.mjs'
 import { writeDtcg } from './dtcg.mjs'
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 const read = async (path) => JSON.parse(await readFile(resolve(ROOT, path), 'utf8'))
 
 const figma = await read('figma/variables.json')
@@ -69,7 +69,7 @@ const { written, cssOnly } = await writeDtcg({
 })
 console.log(`tokens/: ${written.join(', ')}`)
 
-const header = `/* ${pkg.name} ${pkg.version}. Generated from Figma by scripts/build.mjs; do not edit. */`
+const header = `/* ${pkg.name} ${pkg.version}. Generated from Figma by scripts/tokens/build.mjs; do not edit. */`
 const { css, count, overrides } = await buildCss({ dir, header, cssOnly })
 // At the package root, where `@swiftsolve/rove-design/tokens.css` points, so
 // every tool (bundlers and editors alike) finds the same file.
