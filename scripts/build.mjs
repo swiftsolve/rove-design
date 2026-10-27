@@ -2,11 +2,13 @@
  * Build dist/tokens.css and dist/tokens.json from the Figma export plus the
  * code-only tokens.
  *
- *   figma/variables.json  raw export of the Figma variables (see figma-plugin/)
- *   tokens/code.json      tokens Figma can't hold, which may pull Figma values in
+ *   figma/variables.json    raw export of the Figma variables (see figma-plugin/)
+ *   figma/text-styles.json  raw export of the Figma text styles
+ *   tokens/code.json        tokens Figma can't hold, which may pull Figma values in
  *
  * Every Figma variable with a Web code syntax becomes the CSS variable it names.
  * Dark values go on :root; Light values that differ go on :root.theme-light.
+ * Every text style becomes a --type-<name>-* group on :root.
  */
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
@@ -16,6 +18,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const read = async (path) => JSON.parse(await readFile(resolve(ROOT, path), 'utf8'))
 
 const figma = await read('figma/variables.json')
+const textStyles = await read('figma/text-styles.json')
 const code = await read('tokens/code.json')
 const pkg = await read('package.json')
 
@@ -107,6 +110,42 @@ for (const [name, template] of Object.entries(code.tokens)) {
   if (l !== d) {
     light.push(`  ${name}: ${l};`)
     json[name].light = l
+  }
+}
+
+/** A text style field as CSS: a var() when it's bound to an exported variable, else the value. */
+function boundOr(style, field, value) {
+  const bound = style.boundVariables[field]
+  const v = bound && byName.get(bound)
+  return v && exported.includes(v) ? `var(${cssName(v)})` : value
+}
+
+const ratio = (percent) => +(percent / 100).toFixed(4)
+
+function lineHeight({ unit, value }) {
+  if (unit === 'AUTO') return 'normal'
+  return unit === 'PERCENT' ? String(ratio(value)) : `${value}px`
+}
+
+function letterSpacing({ unit, value }) {
+  if (value === 0) return '0'
+  return unit === 'PERCENT' ? `${ratio(value)}em` : `${value}px`
+}
+
+dark.push('\n  /* Type styles */')
+for (const style of textStyles.styles) {
+  if (style.fontWeight == null) throw new Error(`Text style ${style.name} has a weight build.mjs can't read: ${style.fontStyle}`)
+  const slug = style.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+  const group = {
+    size: boundOr(style, 'fontSize', `${style.fontSize}px`),
+    weight: boundOr(style, 'fontWeight', String(style.fontWeight)),
+    'line-height': boundOr(style, 'lineHeight', lineHeight(style.lineHeight)),
+    'letter-spacing': boundOr(style, 'letterSpacing', letterSpacing(style.letterSpacing)),
+  }
+  for (const [prop, value] of Object.entries(group)) {
+    const name = `--type-${slug}-${prop}`
+    dark.push(`  ${name}: ${value};`)
+    json[name] = { figma: style.name, value }
   }
 }
 

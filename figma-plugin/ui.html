@@ -6,17 +6,22 @@
 </style>
 <textarea id="out" readonly>Exporting…</textarea>
 <div>
-  <button id="download">Download variables.json</button>
+  <select id="file"><option>variables.json</option><option>text-styles.json</option></select>
+  <button id="download">Download</button>
   <button id="copy">Copy</button>
 </div>
 <script>
   const out = document.getElementById('out')
-  onmessage = (event) => { out.value = event.data.pluginMessage }
+  const file = document.getElementById('file')
+  let files = null
+  const show = () => { if (files) out.value = files[file.value] }
+  onmessage = (event) => { files = event.data.pluginMessage; show() }
+  file.onchange = show
   document.getElementById('copy').onclick = () => { out.select(); document.execCommand('copy') }
   document.getElementById('download').onclick = () => {
     const link = document.createElement('a')
     link.href = URL.createObjectURL(new Blob([out.value + '\n'], { type: 'application/json' }))
-    link.download = 'variables.json'
+    link.download = file.value
     link.click()
   }
 </script>

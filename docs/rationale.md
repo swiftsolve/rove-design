@@ -2,6 +2,8 @@
 
 The reasoning behind the token values, carried over from Rove's `index.css` when the tokens moved here. The values themselves now come from Figma; this is the rationale.
 
+Typography is exported from Figma's text styles, not variables. Figma can't bind a percentage line height to a variable, so line heights and letter spacings live only in the styles; copying them into variables as well would give the type scale two sources that could drift apart.
+
 ```css
 :root {
   /* Surfaces — a genuine elevation ladder rather than one flat panel colour */

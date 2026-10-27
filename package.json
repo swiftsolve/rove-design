@@ -1,6 +1,6 @@
 {
   "name": "@swiftsolve/rove-design",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Rove's design tokens, exported from the Rove Design System in Figma.",
   "type": "module",
   "license": "UNLICENSED",
@@ -16,6 +16,7 @@
   "files": [
     "dist",
     "figma/variables.json",
+    "figma/text-styles.json",
     "tokens/code.json"
   ],
   "scripts": {

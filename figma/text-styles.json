@@ -1,0 +1,325 @@
+{
+  "source": "Figma file NoICIoyhWNOya9tOnNfEhH (Rove Design System)",
+  "styles": [
+    {
+      "name": "Title",
+      "description": "Wordmark, network name, page titles. Code: .text-title",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontWeight": 600,
+      "fontSize": 17,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 125
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -2
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/2xl"
+      }
+    },
+    {
+      "name": "Section title",
+      "description": "Card headings. Code: .section-title",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontWeight": 600,
+      "fontSize": 14,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 120
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/lg"
+      }
+    },
+    {
+      "name": "Body",
+      "description": "Body and secondary lines. Code: .text-body",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "fontSize": 13,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 145
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/md"
+      }
+    },
+    {
+      "name": "Field label",
+      "description": "Labels above or beside values. Code: .field-label",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontWeight": 500,
+      "fontSize": 10,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 120
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 6
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/2xs"
+      }
+    },
+    {
+      "name": "Meta",
+      "description": "Badges, small captions. Code: .text-meta",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "fontSize": 11,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 135
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/xs"
+      }
+    },
+    {
+      "name": "Meta strong",
+      "description": "Title bar status. Code: .status-bar-link",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontWeight": 500,
+      "fontSize": 11,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 145
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/xs"
+      }
+    },
+    {
+      "name": "Hint",
+      "description": "Card footer hints. Code: .text-hint",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "fontSize": 11,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 150
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/xs"
+      }
+    },
+    {
+      "name": "Metric/Display",
+      "description": "Live speeds. Add a 0.43px outside stroke. Code: .metric-value",
+      "fontFamily": "Questrial",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "fontSize": 28,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 100
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/numeric",
+        "fontSize": "font-size/3xl"
+      }
+    },
+    {
+      "name": "Metric/Compact",
+      "description": "Stat totals. Add a 0.26px outside stroke. Code: .metric-compact",
+      "fontFamily": "Questrial",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "fontSize": 17,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 100
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/numeric",
+        "fontSize": "font-size/2xl"
+      }
+    },
+    {
+      "name": "Metric/Unit",
+      "description": "Units after values. Code: .metric-unit",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 145
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/sm"
+      }
+    },
+    {
+      "name": "Chart label",
+      "description": "Chart axes and scale. Code: .tp-chart-axis",
+      "fontFamily": "Questrial",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "fontSize": 10,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 100
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/numeric",
+        "fontSize": "font-size/2xs"
+      }
+    },
+    {
+      "name": "Value",
+      "description": "Data row values. Code: .text-value",
+      "fontFamily": "Questrial",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "fontSize": 13,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 17.55
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/numeric",
+        "fontSize": "font-size/md"
+      }
+    },
+    {
+      "name": "Button/Large",
+      "description": "Filled buttons. Code: .speed-run-btn",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontWeight": 600,
+      "fontSize": 12,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 145
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 1
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/sm"
+      }
+    },
+    {
+      "name": "Button/Default",
+      "description": "Text buttons. Code: .btn-primary",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontWeight": 600,
+      "fontSize": 11,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 145
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 1
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/xs"
+      }
+    },
+    {
+      "name": "Button/Secondary",
+      "description": "Secondary buttons. Code: .btn-secondary",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontWeight": 500,
+      "fontSize": 11,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 145
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/xs"
+      }
+    },
+    {
+      "name": "Small",
+      "description": "Hints and helper text. Code: .text-small",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 145
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/sm"
+      }
+    }
+  ]
+}

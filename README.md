@@ -1,6 +1,6 @@
 # @swiftsolve/rove-design
 
-Design tokens for Rove, from the **Rove Design System** in Figma. Figma is the source of truth; this package turns its variables into CSS.
+Design tokens for Rove, from the **Rove Design System** in Figma. Figma is the source of truth; this package turns its variables and text styles into CSS.
 
 ## Use
 
@@ -16,12 +16,14 @@ import '@swiftsolve/rove-design/tokens.css'
 
 Dark values sit on `:root`, Light values on `:root.theme-light`. `tokens.json` lists every token with its Figma name and both values.
 
+Each Figma text style becomes four tokens: `--type-<style>-size`, `-weight`, `-line-height` (a unitless ratio) and `-letter-spacing` (in `em`). `Metric/Display` gives `--type-metric-display-size` and so on. A size bound to a variable comes through as that variable (`var(--font-size-3xl)`).
+
 The repo is private, so CI needs a token that can read it (see Rove's workflows). The Publish workflow can also put the package on GitHub Packages once the org's Packages budget allows private packages.
 
 ## Update the tokens
 
-1. Change the variables in Figma.
-2. Export them to `figma/variables.json`, either with the plugin in `figma-plugin/` (Figma desktop: Plugins → Development → Import plugin from manifest) or by asking Claude to export them through the Figma connection.
+1. Change the variables or text styles in Figma.
+2. Export them to `figma/variables.json` and `figma/text-styles.json`, either with the plugin in `figma-plugin/` (Figma desktop: Plugins → Development → Import plugin from manifest; pick each file from the menu and download it) or by asking Claude to export them through the Figma connection.
 3. Run `npm run build` and check the diff in `dist/tokens.css`.
 4. Bump the version, commit, push a matching tag (`v1.1.0`), and point Rove at the new tag.
 
@@ -30,6 +32,7 @@ The repo is private, so CI needs a token that can read it (see Rove's workflows)
 | Path | What |
 | --- | --- |
 | `figma/variables.json` | Raw Figma export. Every variable with a Web code syntax becomes that CSS variable. |
+| `figma/text-styles.json` | Raw export of the local text styles: font, size, weight, line height, letter spacing and the variables bound to them. Each style becomes a `--type-*` group. |
 | `tokens/code.json` | Tokens Figma can't hold: shadows, font stacks, layout constants, motion. `{figma/name}` pulls a Figma value in per theme. |
 | `scripts/build.mjs` | Writes `dist/tokens.css` and `dist/tokens.json`. No dependencies. |
 | `scripts/present.mjs` | `npm run present`: exports the Figma file's pages to `presentation/index.html`, a slideshow styled with the tokens. Needs `FIGMA_TOKEN` (a Figma personal access token, `file_content:read`) in `.env.local`. |
