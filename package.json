@@ -1,6 +1,6 @@
 {
   "name": "@swiftsolve/rove-design",
-  "version": "5.0.3",
+  "version": "5.1.0",
   "description": "Rove's design tokens, exported from the Rove Design System in Figma, as CSS and DTCG.",
   "type": "module",
   "license": "UNLICENSED",
