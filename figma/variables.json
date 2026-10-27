@@ -649,7 +649,10 @@
           "alias": "status/positive"
         },
         "Light": {
-          "alias": "status/positive"
+          "r": 0.00392,
+          "g": 0.49412,
+          "b": 0.25098,
+          "a": 1
         }
       }
     },
@@ -679,7 +682,10 @@
           "alias": "status/warning"
         },
         "Light": {
-          "alias": "status/warning"
+          "r": 0.57255,
+          "g": 0.39216,
+          "b": 0.00392,
+          "a": 1
         }
       }
     },
@@ -709,7 +715,10 @@
           "alias": "status/negative"
         },
         "Light": {
-          "alias": "status/negative"
+          "r": 0.77255,
+          "g": 0.23137,
+          "b": 0.18431,
+          "a": 1
         }
       }
     },

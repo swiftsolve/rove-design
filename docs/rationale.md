@@ -45,9 +45,9 @@ Typography is exported from Figma's text styles, not variables. Figma can't bind
   /* Red sits at hue 5°, a touch toward orange: at 0° or below, a light red
      reads salmon or pink. Still well clear of --status-poor's orange. */
   --status-negative: #f6675a;
-  /* Status colour for words ("Online", "Slow"). Both themes use the same shade
-     as the icons and bars beside them, so a green place is one green; these stay
-     separate tokens so a theme could split them if text ever needed it. */
+  /* Status colour for words ("Online", "Slow"). The dark theme uses the same
+     shade as the icons and bars beside them; the light theme darkens them to
+     pass as text (see .theme-light). */
   --text-positive: var(--status-positive);
   --text-warning: var(--status-warning);
   --text-negative: var(--status-negative);
@@ -189,23 +189,25 @@ Typography is exported from Figma's text styles, not variables. Figma can't bind
   --status-negative-fill: #b24238;
   --status-negative-fill-hover: #913930;
 
-  /* One shade per status hue, shared by its words, icons, bars and dots so a
-     place that's green is one green throughout. Each is the lightest shade of
-     its hue that still clears 3:1 (the bar for icons and other graphics) on
-     every surface it sits on: the white cards, the grey inset and shell, and
-     the 14% tints of icon tiles and timeline markers. Each is held at the most
-     saturated it can be at that lightness (OKLCH chroma at the sRGB edge).
-     This is a deliberate trade: status words in these colours ("Excellent",
-     "Online", "5 Up") land near 3:1, short of the 4.5:1 text minimum, in
-     exchange for colours that read bright rather than dark or brown. Green is
+  /* One shade per status hue for icons, bars and dots. Each is the lightest
+     shade of its hue that still clears 3:1 (the bar for icons and other
+     graphics) on every surface it sits on: the white cards, the grey inset and
+     shell, and the 14% tints of icon tiles and timeline markers. Each is held
+     at the most saturated it can be at that lightness (OKLCH chroma at the
+     sRGB edge), so the colours read bright rather than dark or brown. Green is
      nudged from the dark theme's mint toward pure green, where the gamut has
      more room. Red is the exception to the saturation rule: at the sRGB edge
      it turns neon beside the other hues, so it stays a step below it, at the
-     dark theme's hue (still 3.3:1 or more on every surface). The -text tokens
-     fall back to these (see :root). */
+     dark theme's hue (still 3.3:1 or more on every surface). */
   --status-positive: #01934a;
   --status-warning: #ac7601;
   --status-negative: #cf4134;
+  /* Status words ("Online", "Slow", "5 Up") need 4.5:1, which the shades above
+     miss (3.5–4.4:1). These are the same hues, darkened just enough to clear
+     it on every surface they sit on. */
+  --text-positive: #017e40;
+  --text-warning: #926401;
+  --text-negative: #c53b2f;
   /* The capability scale's in-between steps, on the same rule. Their hues are
      pulled apart from their neighbours (good is yellow-green, poor is orange)
      so the four levels stay distinct. */
