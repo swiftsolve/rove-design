@@ -12,6 +12,9 @@
     "--focus-outline": "var(--focus-ring-width) solid var(--focus-ring)",
     "--focus-inset": "calc(-1 * var(--focus-ring-width))",
 
+    "--titlebar-height": "56px",
+    "--rail-item-size": "38px",
+
     "--section-padding": "var(--spacing-14)",
     "--section-header-padding-y": "var(--section-padding)",
     "--section-header-padding-x": "var(--section-padding)",
