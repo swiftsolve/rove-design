@@ -45,7 +45,7 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
 
 ## Release
 
-1. Set the version on the Figma cover (`COVER` page) to the one you're about to release. It's the one place the version can't be set from here: Figma's API can't edit canvas text on this plan, so do it by hand or ask Claude to through the Figma connection.
+1. On the Figma cover (`COVER` page), set **Version** to the one you're about to release and **Updated** to today's date (`27 Oct 2026`). They're the one place a release can't be stamped from here: Figma's API can't edit canvas text on this plan, so do it by hand or ask Claude to through the Figma connection.
 2. Bump, commit and tag in one step, then push both:
 
    ```bash
