@@ -55,12 +55,17 @@ function rawValue(v, mode) {
   return v.type === 'COLOR' ? formatColor(value) : value
 }
 
-/** A variable as CSS: aliases become var() references to the variable they point at. */
+/**
+ * A variable as CSS: an alias of another exported variable becomes a var()
+ * reference to it; an alias of a Palette shade (not exported) becomes its value.
+ */
 function cssValue(v, mode) {
   const value = modeValue(v, mode)
   if (value && value.alias) {
     const target = byName.get(value.alias)
-    const name = target && cssName(target)
+    if (!target) throw new Error(`${v.name} aliases ${value.alias}, which isn't in the export`)
+    if (target.collection === 'Palette') return rawValue(target, mode)
+    const name = cssName(target)
     if (!name) throw new Error(`${v.name} aliases ${value.alias}, which has no code syntax`)
     return `var(${name})`
   }

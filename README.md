@@ -40,4 +40,4 @@ The repo is public, so installing from a tag needs no token. The Publish workflo
 | `scripts/publish-presentation.mjs` | `npm run present:publish`: pushes the exported presentation to the `gh-pages` branch, which GitHub Pages serves at <https://swiftsolve.github.io/rove-design/>. Each publish replaces the last. |
 | `docs/rationale.md` | Why the values are what they are (contrast targets, theme choices). |
 
-Figma-only collections (Icon tone, Capability level) and variables without a code syntax aren't exported.
+Every colour lives once in the Palette collection (`gray/850`, `blue/450`; higher numbers are darker), and the Color tokens point at it. The Palette isn't exported itself: a token that points at a shade gets the shade's value. Other Figma-only collections (Icon tone, Capability level) and variables without a code syntax aren't exported either.
