@@ -8,7 +8,7 @@
  *   npm run present -- --format png --scale 2            # bitmaps instead of SVG
  *
  * `npm run present` builds the tokens first: the page is styled with
- * dist/tokens.css, so its chrome matches the app.
+ * tokens.css, so its chrome matches the app.
  *
  * SVG is the default: sharp at any zoom and small for flat UI. Text is
  * outlined, so slides look right without Rove's fonts installed. PNG or JPG
@@ -476,6 +476,6 @@ if (bitmaps.length > 0) {
 }
 
 // This package's own tokens, so the presentation chrome matches the app.
-const tokens = await readFile(join(ROOT, 'dist/tokens.css'), 'utf8')
+const tokens = await readFile(join(ROOT, 'tokens.css'), 'utf8')
 await writeFile(join(out, 'index.html'), renderHtml(file, groups, tokens))
 console.log(`Wrote ${join(out, 'index.html')}`)

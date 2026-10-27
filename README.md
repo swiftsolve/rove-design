@@ -4,17 +4,15 @@ Design tokens for Rove, from the **Rove Design System** in Figma. Figma is the s
 
 ## Use
 
-Install from a version tag. npm builds `dist/` on install.
+Install from a version tag. npm builds `tokens.css` and `tokens.json` on install.
 
 ```bash
 npm install github:swiftsolve/rove-design#v3.0.0
 ```
 
 ```css
-@import '@swiftsolve/rove-design/dist/tokens.css';
+@import '@swiftsolve/rove-design/tokens.css';
 ```
-
-`@swiftsolve/rove-design/tokens.css` works too, but editors that don't read `exports` (VS Code's CSS links) can only open the `dist/` path.
 
 Dark values sit on `:root`, Light values on `:root.theme-light`. `tokens.json` lists every token with its Figma name and both values.
 
@@ -26,7 +24,7 @@ The repo is public, so installing from a tag needs no token. The Publish workflo
 
 1. Change the variables or text styles in Figma.
 2. Export them to `figma/variables.json` and `figma/text-styles.json`, either with the plugin in `figma-plugin/` (Figma desktop: Plugins → Development → Import plugin from manifest; pick each file from the menu and download it) or by asking Claude to export them through the Figma connection.
-3. Run `npm run build` and check the diff in `dist/tokens.css`.
+3. Run `npm run build` and check the diff in `tokens.css`.
 4. Bump the version, commit, push a matching tag (`v1.1.0`), and point Rove at the new tag.
 
 ## What's where
@@ -36,7 +34,7 @@ The repo is public, so installing from a tag needs no token. The Publish workflo
 | `figma/variables.json` | Raw Figma export. Every variable with a Web code syntax becomes that CSS variable. |
 | `figma/text-styles.json` | Raw export of the local text styles: font, size, weight, line height, letter spacing and the variables bound to them. Each style becomes a `--type-*` group. |
 | `tokens/code.json` | Tokens Figma can't hold: shadows, font stacks, layout constants, motion. `{figma/name}` pulls a Figma value in per theme. |
-| `scripts/build.mjs` | Writes `dist/tokens.css` and `dist/tokens.json`. No dependencies. |
+| `scripts/build.mjs` | Writes `tokens.css` and `tokens.json` at the package root, where the import paths point. No dependencies. |
 | `scripts/present.mjs` | `npm run present`: exports the Figma file's pages to `presentation/index.html`, a slideshow styled with the tokens. Needs `FIGMA_TOKEN` (a Figma personal access token, `file_content:read`) in `.env.local`. |
 | `scripts/open-presentation.mjs` | `npm run present:open`: opens the exported presentation in your browser. |
 | `scripts/publish-presentation.mjs` | `npm run present:publish`: pushes the exported presentation to the `gh-pages` branch, which GitHub Pages serves at <https://swiftsolve.github.io/rove-design/>. Each publish replaces the last. |

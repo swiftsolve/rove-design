@@ -1,5 +1,5 @@
 /**
- * Build dist/tokens.css and dist/tokens.json from the Figma export plus the
+ * Build tokens.css and tokens.json from the Figma export plus the
  * code-only tokens.
  *
  *   figma/variables.json    raw export of the Figma variables (see figma-plugin/)
@@ -10,7 +10,7 @@
  * Dark values go on :root; Light values that differ go on :root.theme-light.
  * Every text style becomes a --type-<name>-* group on :root.
  */
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -157,7 +157,8 @@ for (const style of textStyles.styles) {
 const header = `/* ${pkg.name} ${pkg.version}. Generated from Figma by scripts/build.mjs; do not edit. */`
 const css = `${header}\n:root {${dark.join('\n')}\n}\n\n:root.theme-light {\n${light.join('\n')}\n}\n`
 
-await mkdir(resolve(ROOT, 'dist'), { recursive: true })
-await writeFile(resolve(ROOT, 'dist/tokens.css'), css)
-await writeFile(resolve(ROOT, 'dist/tokens.json'), `${JSON.stringify(json, null, 2)}\n`)
-console.log(`dist/tokens.css: ${Object.keys(json).length} tokens, ${light.length} light overrides`)
+// At the package root, where `@swiftsolve/rove-design/tokens.css` points, so
+// every tool (bundlers and editors alike) finds the same file.
+await writeFile(resolve(ROOT, 'tokens.css'), css)
+await writeFile(resolve(ROOT, 'tokens.json'), `${JSON.stringify(json, null, 2)}\n`)
+console.log(`tokens.css: ${Object.keys(json).length} tokens, ${light.length} light overrides`)
