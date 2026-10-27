@@ -6,9 +6,9 @@
  *
  * so the CSS is generated from the same files other tools read.
  *
- *   figma/variables.json    raw export of the Figma variables (see figma/plugin/)
- *   figma/text-styles.json  raw export of the Figma text styles
- *   code-tokens.json        what Figma variables can't hold, which may pull Figma values in
+ *   src/figma/variables.json    raw export of the Figma variables (see figma-plugin/)
+ *   src/figma/text-styles.json  raw export of the Figma text styles
+ *   src/code-tokens.json        what Figma variables can't hold, which may pull Figma values in
  *
  * A Figma variable's code syntax must be its name with `/` as `-` (`bg/app`
  * is `--bg-app`); variables without one are inputs only, not CSS variables.
@@ -22,9 +22,9 @@ import { writeDtcg } from './dtcg.mjs'
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 const read = async (path) => JSON.parse(await readFile(resolve(ROOT, path), 'utf8'))
 
-const figma = await read('figma/variables.json')
-const textStyles = await read('figma/text-styles.json')
-const code = await read('code-tokens.json')
+const figma = await read('src/figma/variables.json')
+const textStyles = await read('src/figma/text-styles.json')
+const code = await read('src/code-tokens.json')
 const pkg = await read('package.json')
 
 for (const v of figma.variables) {

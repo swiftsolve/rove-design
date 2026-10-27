@@ -1,5 +1,5 @@
-// Export every local variable and text style in the shapes figma/variables.json
-// and figma/text-styles.json expect.
+// Export every local variable and text style in the shapes src/figma/variables.json
+// and src/figma/text-styles.json expect.
 // Run from Figma desktop: Plugins > Development > Import plugin from manifest.
 const round = (n, places) => +n.toFixed(places)
 const source = () => `Figma file ${figma.fileKey ?? ''} (${figma.root.name})`.trim()

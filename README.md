@@ -7,7 +7,7 @@ Design tokens for Rove, from the **Rove Design System** in Figma. Figma is the s
 Install from a version tag. npm builds `tokens.css` and `tokens/` on install, which needs Node 22 (see `.nvmrc`).
 
 ```bash
-npm install github:swiftsolve/rove-design#v5.0.2
+npm install github:swiftsolve/rove-design#v5.0.3
 ```
 
 ```css
@@ -37,7 +37,7 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
 ## Update the tokens
 
 1. Change the variables or text styles in Figma.
-2. Export them to `figma/variables.json` and `figma/text-styles.json`, either with the plugin in `figma/plugin/` (Figma desktop: Plugins → Development → Import plugin from manifest; pick each file from the menu and download it) or by asking Claude to export them through the Figma connection.
+2. Export them to `src/figma/variables.json` and `src/figma/text-styles.json`, either with the plugin in `figma-plugin/` (Figma desktop: Plugins → Development → Import plugin from manifest; pick each file from the menu and download it) or by asking Claude to export them through the Figma connection.
 3. Run `npm run build` (Node 22) and check `tokens.css`. It writes the DTCG files, then generates `tokens.css` from them with Style Dictionary. The build stops if a variable's code syntax doesn't match its name, or a DTCG reference doesn't resolve.
 4. Bump the version, commit, push a matching tag (`v1.1.0`), and point Rove at the new tag.
 
@@ -45,10 +45,10 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
 
 | Path | What |
 | --- | --- |
-| `figma/variables.json` | Raw Figma export. Every variable with a Web code syntax becomes that CSS variable. |
-| `figma/text-styles.json` | Raw export of the local text styles: font, size, weight, line height, letter spacing and the variables bound to them. Each style becomes a `--type-*` group. |
-| `figma/plugin/` | The Figma plugin that writes the two exports. |
-| `code-tokens.json` | What Figma variables can't hold: font stacks for the font-family variables, shadows, layout constants, motion. `{figma/name}` pulls a Figma value in per theme. |
+| `src/figma/variables.json` | Raw Figma export. Every variable with a Web code syntax becomes that CSS variable. |
+| `src/figma/text-styles.json` | Raw export of the local text styles: font, size, weight, line height, letter spacing and the variables bound to them. Each style becomes a `--type-*` group. |
+| `figma-plugin/` | The Figma plugin that writes the two exports. |
+| `src/code-tokens.json` | What Figma variables can't hold: font stacks for the font-family variables, shadows, layout constants, motion. `{figma/name}` pulls a Figma value in per theme. |
 | `scripts/tokens/build.mjs` | `npm run build`: runs the two steps below and writes `tokens.css` at the package root, where the import path points. |
 | `scripts/tokens/dtcg.mjs` | Figma export → the DTCG files in `tokens/`, checking that every reference resolves in both themes. |
 | `scripts/tokens/css.mjs` | DTCG files → `tokens.css`, with Style Dictionary and a `rove/css` format: Dark on `:root`, what differs in Light on `:root.theme-light`, each text style as four `--type-*` variables (letter spacing included). |
