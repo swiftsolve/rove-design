@@ -202,11 +202,11 @@ ${tokens}
   /* One gap above and below the slide, so the page is framed evenly. */
   body { --page-gap: 64px; --page-pad: 32px; }
   /* Sidebar down the left; the top bar sits outside the scrolling area so it stays put when a zoomed slide scrolls. */
-  body { margin: 0; display: grid; grid-template-columns: 240px 1fr; grid-template-rows: auto 1fr; height: 100vh; background: var(--bg-app); color: var(--text-primary); font: 13px/1.45 var(--font); -webkit-font-smoothing: antialiased; }
+  body { margin: 0; display: grid; grid-template-columns: 240px 1fr; grid-template-rows: auto 1fr; height: 100vh; background: var(--bg-app); color: var(--text-primary); font: 13px/1.45 var(--font-family-sans); -webkit-font-smoothing: antialiased; }
   nav, main { overflow: auto; scrollbar-width: thin; scrollbar-color: var(--fill-scrollbar) transparent; }
-  nav { grid-row: 1 / 3; padding: 20px 10px 32px; background: var(--bg-panel); border-right: 1px solid var(--border); }
+  nav { grid-row: 1 / 3; padding: 20px 10px 32px; background: var(--bg-panel); border-right: 1px solid var(--border-default); }
   /* Negative margins so the divider runs edge to edge of the sidebar. */
-  nav > header { margin: 0 -10px; padding: 0 20px 18px; border-bottom: 1px solid var(--border); }
+  nav > header { margin: 0 -10px; padding: 0 20px 18px; border-bottom: 1px solid var(--border-default); }
   nav h1 { margin: 0 0 2px; font-size: 14px; font-weight: 600; }
   nav .logo { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font-size: 22px; font-weight: 600; letter-spacing: -.01em; }
   nav .meta { margin: 0; color: var(--text-tertiary); font-size: 12px; }
@@ -214,7 +214,7 @@ ${tokens}
   nav section a, nav section p { display: flex; align-items: center; gap: 8px; margin: 1px 0; padding: 5px 8px; border-radius: 6px; color: var(--text-secondary); text-decoration: none; }
   nav .group { color: var(--text-primary); font-weight: 600; }
   nav .group svg { flex-shrink: 0; color: var(--text-tertiary); }
-  nav .group[aria-current] svg { color: var(--accent); }
+  nav .group[aria-current] svg { color: var(--accent-default); }
   /* The guide line runs down from the centre of the section icon. */
   nav .tree { margin: 2px 0 6px 15.5px; padding-left: 8px; border-left: 1px solid var(--border-strong); }
   nav .tree .tree { margin: 0 0 2px 8px; }
@@ -227,7 +227,7 @@ ${tokens}
   /* Auto margins centre the slide both ways when there's room, and fall back to the top-left edge (still scrollable) when it's bigger than the canvas. */
   figure { flex-shrink: 0; margin: auto; }
   /* A top bar across the content area, like the sidebar's panel. */
-  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 58px; padding: 0 var(--page-pad); background: var(--bg-panel); border-bottom: 1px solid var(--border); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 58px; padding: 0 var(--page-pad); background: var(--bg-panel); border-bottom: 1px solid var(--border-default); }
   /* Zoom: − [90% ▾] + floating in the bottom-right corner, with a menu of fit options, as in Figma. */
   .zoom { position: fixed; right: 24px; bottom: 24px; z-index: 2; display: flex; align-items: center; gap: 2px; padding: 3px; background: var(--bg-raised); border: 1px solid var(--border-strong); border-radius: 10px; box-shadow: 0 8px 24px rgb(0 0 0 / .45); }
   .zoom > button { display: flex; align-items: center; justify-content: center; gap: 4px; height: 28px; min-width: 28px; padding: 0 6px; border: 0; border-radius: 7px; background: none; color: var(--text-secondary); font: inherit; font-size: 12px; cursor: pointer; }
@@ -238,7 +238,7 @@ ${tokens}
   .zoom .menu[hidden] { display: none; }
   .zoom .menu button { display: flex; align-items: center; gap: 6px; width: 100%; height: 26px; padding: 0 8px 0 6px; border: 0; border-radius: 5px; background: none; color: var(--text-primary); font: inherit; font-size: 12px; text-align: left; cursor: pointer; }
   .zoom .menu button:hover, .zoom .menu button:focus-visible { background: var(--bg-hover); outline: none; }
-  .zoom .menu svg { flex-shrink: 0; color: var(--accent); visibility: hidden; }
+  .zoom .menu svg { flex-shrink: 0; color: var(--accent-default); visibility: hidden; }
   .zoom .menu [aria-checked="true"] svg { visibility: visible; }
   .crumbs[hidden] { display: none; }
   .crumbs { display: flex; align-items: center; gap: 6px; min-width: 0; margin: 0; white-space: nowrap; overflow: hidden; }
@@ -249,7 +249,7 @@ ${tokens}
   img { display: block; width: 100%; height: auto; border-radius: 8px; }
   @media (max-width: 760px) {
     body { --page-gap: 32px; --page-pad: 16px; grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; }
-    nav { grid-row: auto; max-height: 30vh; border-right: 0; border-bottom: 1px solid var(--border); }
+    nav { grid-row: auto; max-height: 30vh; border-right: 0; border-bottom: 1px solid var(--border-default); }
   }
 </style>
 </head>

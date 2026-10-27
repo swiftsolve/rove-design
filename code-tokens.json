@@ -1,0 +1,32 @@
+{
+  "description": "What Figma variables can't hold. `figma` sets how a Figma variable is written in CSS; `tokens` adds code-only tokens. `{figma/name}` pulls a Figma variable's raw value in for each theme.",
+  "figma": {
+    "font-family/sans": "'{font-family/sans}', system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "font-family/numeric": "'{font-family/numeric}', ui-sans-serif, system-ui, sans-serif"
+  },
+  "tokens": {
+    "--shadow-panel": "0 1px 2px {shadow-color/panel-1}, 0 4px 12px {shadow-color/panel-2}",
+    "--shadow-raised": "0 12px 32px {shadow-color/raised}",
+
+    "--focus-ring-width": "1px",
+    "--focus-outline": "var(--focus-ring-width) solid var(--focus-ring)",
+    "--focus-inset": "calc(-1 * var(--focus-ring-width))",
+
+    "--section-padding": "var(--spacing-14)",
+    "--section-header-padding-y": "var(--section-padding)",
+    "--section-header-padding-x": "var(--section-padding)",
+    "--section-header-min-height": "42px",
+    "--section-header-height": "44px",
+    "--section-body-padding": "var(--section-padding)",
+    "--row-padding-y": "8px",
+
+    "--ease-out": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "--ease-in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "--duration-fast": "140ms",
+    "--duration-normal": "220ms",
+
+    "--weight-regular": "400",
+    "--weight-medium": "500",
+    "--weight-semibold": "600"
+  }
+}

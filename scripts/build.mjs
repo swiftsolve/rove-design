@@ -1,25 +1,27 @@
 /**
- * Build tokens.css and tokens.json from the Figma export plus the
+ * Build tokens.css and the DTCG files in tokens/ from the Figma export plus the
  * code-only tokens.
  *
- *   figma/variables.json    raw export of the Figma variables (see figma-plugin/)
+ *   figma/variables.json    raw export of the Figma variables (see figma/plugin/)
  *   figma/text-styles.json  raw export of the Figma text styles
- *   tokens/code.json        tokens Figma can't hold, which may pull Figma values in
+ *   code-tokens.json        what Figma variables can't hold, which may pull Figma values in
  *
- * Every Figma variable with a Web code syntax becomes the CSS variable it names.
+ * Every Figma variable with a Web code syntax becomes that CSS variable, and the
+ * code syntax must be the Figma name with `/` as `-` (`bg/app` is `--bg-app`).
  * Dark values go on :root; Light values that differ go on :root.theme-light.
  * Every text style becomes a --type-<name>-* group on :root.
  */
 import { readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { writeDtcg } from './dtcg.mjs'
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const read = async (path) => JSON.parse(await readFile(resolve(ROOT, path), 'utf8'))
 
 const figma = await read('figma/variables.json')
 const textStyles = await read('figma/text-styles.json')
-const code = await read('tokens/code.json')
+const code = await read('code-tokens.json')
 const pkg = await read('package.json')
 
 const DARK = 'Dark'
@@ -29,8 +31,13 @@ const COLLECTION_ORDER = ['Color', 'Spacing', 'Typography', 'Opacity']
 const byName = new Map(figma.variables.map((v) => [v.name, v]))
 const cssName = (v) => /^var\((--[\w-]+)\)$/.exec(v.code ?? '')?.[1] ?? null
 
+for (const v of figma.variables) {
+  const expected = `var(--${v.name.replace(/\//g, '-')})`
+  if (v.code && v.code !== expected) throw new Error(`${v.name} has code syntax ${v.code}; it must be ${expected}`)
+}
+
 const exported = figma.variables
-  .filter((v) => cssName(v) && !code.skip.includes(v.name) && COLLECTION_ORDER.includes(v.collection))
+  .filter((v) => cssName(v) && COLLECTION_ORDER.includes(v.collection))
   .sort((a, b) => COLLECTION_ORDER.indexOf(a.collection) - COLLECTION_ORDER.indexOf(b.collection))
 
 function hex(n) {
@@ -60,6 +67,7 @@ function rawValue(v, mode) {
  * reference to it; an alias of a Palette shade (not exported) becomes its value.
  */
 function cssValue(v, mode) {
+  if (code.figma[v.name]) return interpolate(code.figma[v.name], mode)
   const value = modeValue(v, mode)
   if (value && value.alias) {
     const target = byName.get(value.alias)
@@ -70,9 +78,7 @@ function cssValue(v, mode) {
     return `var(${name})`
   }
   if (v.type === 'COLOR') return formatColor(value)
-  if (v.collection === 'Opacity') {
-    return code.formats[cssName(v)] === 'fraction' ? String(value / 100) : `${value}%`
-  }
+  if (v.collection === 'Opacity') return `${value}%`
   if (v.type === 'FLOAT') return `${value}px`
   return String(value)
 }
@@ -80,14 +86,14 @@ function cssValue(v, mode) {
 function interpolate(template, mode) {
   return template.replace(/\{([\w/-]+)\}/g, (_, name) => {
     const v = byName.get(name)
-    if (!v) throw new Error(`code.json references unknown Figma variable ${name}`)
+    if (!v) throw new Error(`code-tokens.json references unknown Figma variable ${name}`)
     return rawValue(v, mode)
   })
 }
 
 const dark = []
 const light = []
-const json = {}
+let count = 0
 let collection = null
 for (const v of exported) {
   if (v.collection !== collection) {
@@ -97,13 +103,10 @@ for (const v of exported) {
   const name = cssName(v)
   const d = cssValue(v, DARK)
   dark.push(`  ${name}: ${d};${v.description ? ` /* ${v.description} */` : ''}`)
-  json[name] = { figma: v.name, value: d }
+  count++
   if (v.collection === 'Color') {
     const l = cssValue(v, LIGHT)
-    if (l !== d) {
-      light.push(`  ${name}: ${l};`)
-      json[name].light = l
-    }
+    if (l !== d) light.push(`  ${name}: ${l};`)
   }
 }
 dark.push('\n  /* Code-only */')
@@ -111,11 +114,8 @@ for (const [name, template] of Object.entries(code.tokens)) {
   const d = interpolate(template, DARK)
   const l = interpolate(template, LIGHT)
   dark.push(`  ${name}: ${d};`)
-  json[name] = { value: d }
-  if (l !== d) {
-    light.push(`  ${name}: ${l};`)
-    json[name].light = l
-  }
+  count++
+  if (l !== d) light.push(`  ${name}: ${l};`)
 }
 
 /** A text style field as CSS: a var() when it's bound to an exported variable, else the value. */
@@ -148,9 +148,8 @@ for (const style of textStyles.styles) {
     'letter-spacing': boundOr(style, 'letterSpacing', letterSpacing(style.letterSpacing)),
   }
   for (const [prop, value] of Object.entries(group)) {
-    const name = `--type-${slug}-${prop}`
-    dark.push(`  ${name}: ${value};`)
-    json[name] = { figma: style.name, value }
+    dark.push(`  --type-${slug}-${prop}: ${value};`)
+    count++
   }
 }
 
@@ -160,5 +159,13 @@ const css = `${header}\n:root {${dark.join('\n')}\n}\n\n:root.theme-light {\n${l
 // At the package root, where `@swiftsolve/rove-design/tokens.css` points, so
 // every tool (bundlers and editors alike) finds the same file.
 await writeFile(resolve(ROOT, 'tokens.css'), css)
-await writeFile(resolve(ROOT, 'tokens.json'), `${JSON.stringify(json, null, 2)}\n`)
-console.log(`tokens.css: ${Object.keys(json).length} tokens, ${light.length} light overrides`)
+console.log(`tokens.css: ${count} tokens, ${light.length} light overrides`)
+
+const files = await writeDtcg({
+  dir: resolve(ROOT, 'tokens'),
+  variables: figma.variables,
+  textStyles: textStyles.styles,
+  code,
+  figmaOverride: (v, mode) => code.figma[v.name] && interpolate(code.figma[v.name], mode),
+})
+console.log(`tokens/: ${files.join(', ')}`)

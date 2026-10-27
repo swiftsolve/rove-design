@@ -1,7 +1,7 @@
 {
   "name": "@swiftsolve/rove-design",
-  "version": "3.3.4",
-  "description": "Rove's design tokens, exported from the Rove Design System in Figma.",
+  "version": "4.0.0",
+  "description": "Rove's design tokens, exported from the Rove Design System in Figma, as CSS and DTCG.",
   "type": "module",
   "license": "UNLICENSED",
   "repository": {
@@ -10,15 +10,15 @@
   },
   "exports": {
     "./tokens.css": "./tokens.css",
-    "./tokens.json": "./tokens.json",
+    "./tokens/*": "./tokens/*",
     "./package.json": "./package.json"
   },
   "files": [
     "tokens.css",
-    "tokens.json",
+    "tokens",
     "figma/variables.json",
     "figma/text-styles.json",
-    "tokens/code.json"
+    "code-tokens.json"
   ],
   "scripts": {
     "build": "node scripts/build.mjs",

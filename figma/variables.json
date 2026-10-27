@@ -168,7 +168,7 @@
       "name": "border/default",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--border)",
+      "code": "var(--border-default)",
       "description": "Hairlines",
       "values": {
         "Dark": {
@@ -288,7 +288,7 @@
       "name": "accent/default",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--accent)",
+      "code": "var(--accent-default)",
       "description": "",
       "values": {
         "Dark": {
@@ -588,7 +588,7 @@
       "name": "spacing/2",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--space-2)",
+      "code": "var(--spacing-2)",
       "description": "",
       "values": {
         "Value": 2
@@ -598,7 +598,7 @@
       "name": "spacing/4",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--space-4)",
+      "code": "var(--spacing-4)",
       "description": "",
       "values": {
         "Value": 4
@@ -608,7 +608,7 @@
       "name": "spacing/6",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--space-6)",
+      "code": "var(--spacing-6)",
       "description": "",
       "values": {
         "Value": 6
@@ -618,7 +618,7 @@
       "name": "spacing/8",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--space-8)",
+      "code": "var(--spacing-8)",
       "description": "",
       "values": {
         "Value": 8
@@ -628,7 +628,7 @@
       "name": "spacing/10",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--space-10)",
+      "code": "var(--spacing-10)",
       "description": "",
       "values": {
         "Value": 10
@@ -638,7 +638,7 @@
       "name": "spacing/12",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--space-12)",
+      "code": "var(--spacing-12)",
       "description": "",
       "values": {
         "Value": 12
@@ -648,7 +648,7 @@
       "name": "spacing/14",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--space-14)",
+      "code": "var(--spacing-14)",
       "description": "",
       "values": {
         "Value": 14
@@ -658,7 +658,7 @@
       "name": "spacing/16",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--space-16)",
+      "code": "var(--spacing-16)",
       "description": "",
       "values": {
         "Value": 16
@@ -668,7 +668,7 @@
       "name": "spacing/20",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--space-20)",
+      "code": "var(--spacing-20)",
       "description": "",
       "values": {
         "Value": 20
@@ -798,7 +798,7 @@
       "name": "font-family/sans",
       "collection": "Typography",
       "type": "STRING",
-      "code": "var(--font)",
+      "code": "var(--font-family-sans)",
       "description": "",
       "values": {
         "Value": "Inter"
@@ -808,17 +808,17 @@
       "name": "font-family/numeric",
       "collection": "Typography",
       "type": "STRING",
-      "code": "var(--font-numeric)",
+      "code": "var(--font-family-numeric)",
       "description": "",
       "values": {
         "Value": "Questrial"
       }
     },
     {
-      "name": "shadow/panel-1",
+      "name": "shadow-color/panel-1",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--shadow-panel)",
+      "code": null,
       "description": "",
       "values": {
         "Dark": {
@@ -830,10 +830,10 @@
       }
     },
     {
-      "name": "shadow/panel-2",
+      "name": "shadow-color/panel-2",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--shadow-panel)",
+      "code": null,
       "description": "",
       "values": {
         "Dark": {
@@ -845,10 +845,10 @@
       }
     },
     {
-      "name": "shadow/raised",
+      "name": "shadow-color/raised",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--shadow-raised)",
+      "code": null,
       "description": "",
       "values": {
         "Dark": {
@@ -947,7 +947,7 @@
       "name": "focus/ring",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--accent)",
+      "code": "var(--focus-ring)",
       "description": "Keyboard focus ring",
       "values": {
         "Dark": {
@@ -962,7 +962,7 @@
       "name": "spacing/11",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--space-11)",
+      "code": "var(--spacing-11)",
       "description": "Rail and content side inset",
       "values": {
         "Value": 11
