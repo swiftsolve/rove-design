@@ -21,6 +21,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "present": "npm run build && node scripts/present.mjs",
+    "present:open": "node scripts/open-presentation.mjs",
     "prepare": "npm run build"
   },
   "publishConfig": {
