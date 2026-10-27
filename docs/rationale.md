@@ -36,11 +36,13 @@ The reasoning behind the token values, carried over from Rove's `index.css` when
      fill would drop the white label below 4.5:1. */
   --accent-fill: #476ec8;
   --accent-fill-hover: #3d62b8;
-  --status-negative-fill: #b75b5b;
+  --status-negative-fill: #ba4136;
 
   --status-positive: #43d6a0;
   --status-warning: #f5c451;
-  --status-negative: #f77b7b;
+  /* Red sits at hue 5°, a touch toward orange: at 0° or below, a light red
+     reads salmon or pink. Still well clear of --status-poor's orange. */
+  --status-negative: #f6675a;
   /* Status colour for words ("Online", "Slow"). Both themes use the same shade
      as the icons and bars beside them, so a green place is one green; these stay
      separate tokens so a theme could split them if text ever needed it. */
@@ -179,9 +181,11 @@ The reasoning behind the token values, carried over from Rove's `index.css` when
   --text-accent: #2c55b8;
   --accent-fill: #3a69d5;
   --accent-fill-hover: #2f5bc0;
-  /* The red Stop button: the lightest red that keeps its white label at 4.5:1,
-     a hair deeper than --status-negative. */
-  --status-negative-fill: #ed0132;
+  /* The red Stop button and its hover: each a step darker and duller than the
+     one before, as in the dark theme, so negative, fill and hover read as three
+     reds rather than two. White labels sit at 5.6:1 and 7.4:1. */
+  --status-negative-fill: #b24238;
+  --status-negative-fill-hover: #913930;
 
   /* One shade per status hue, shared by its words, icons, bars and dots so a
      place that's green is one green throughout. Each is the lightest shade of
@@ -193,10 +197,13 @@ The reasoning behind the token values, carried over from Rove's `index.css` when
      "Online", "5 Up") land near 3:1, short of the 4.5:1 text minimum, in
      exchange for colours that read bright rather than dark or brown. Green is
      nudged from the dark theme's mint toward pure green, where the gamut has
-     more room. The -text tokens fall back to these (see :root). */
+     more room. Red is the exception to the saturation rule: at the sRGB edge
+     it turns neon beside the other hues, so it stays a step below it, at the
+     dark theme's hue (still 3.3:1 or more on every surface). The -text tokens
+     fall back to these (see :root). */
   --status-positive: #01934a;
   --status-warning: #ac7601;
-  --status-negative: #f40134;
+  --status-negative: #cf4134;
   /* The capability scale's in-between steps, on the same rule. Their hues are
      pulled apart from their neighbours (good is yellow-green, poor is orange)
      so the four levels stay distinct. */
