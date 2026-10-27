@@ -1022,7 +1022,7 @@
       "name": "opacity/area-down",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": null,
+      "code": "var(--opacity-area-down)",
       "description": "Download chart area",
       "values": {
         "Value": 28
@@ -1032,7 +1032,7 @@
       "name": "opacity/area-up",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": null,
+      "code": "var(--opacity-area-up)",
       "description": "Upload chart area",
       "values": {
         "Value": 8
@@ -1042,7 +1042,7 @@
       "name": "opacity/series-up-line",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": null,
+      "code": "var(--opacity-series-up-line)",
       "description": "Upload chart line",
       "values": {
         "Value": 80
@@ -1062,7 +1062,7 @@
       "name": "opacity/muted-glyph",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": null,
+      "code": "var(--opacity-muted-glyph)",
       "description": "Empty-state icon",
       "values": {
         "Value": 55
