@@ -1,17 +1,38 @@
-# @swiftsolve/rove-design
+<div align="center">
 
-Design tokens for Rove, from the **Rove Design System** in Figma. Figma is the source of truth; this package turns its variables and text styles into DTCG token files, and those into CSS with [Style Dictionary](https://styledictionary.com/).
+<img src="docs/assets/rove-mark.svg" width="72" height="72" alt="Rove Mark">
 
-**See the design system:** the [Figma file](https://www.figma.com/design/NoICIoyhWNOya9tOnNfEhH/Rove-Design-System) itself, or <https://swiftsolve.github.io/rove-design/>, every page of it as a slideshow.
+# Rove Design System
 
-**Build with it:** [`DESIGN.md`](DESIGN.md) says which token to use for what, with every value. It ships in the package, so coding agents in Rove can read it from `node_modules/@swiftsolve/rove-design/DESIGN.md`.
+`@swiftsolve/rove-design` · tokens for Rove, straight from Figma
 
-## Use
+[![Version](https://img.shields.io/github/package-json/v/swiftsolve/rove-design?label=version&labelColor=17181b&color=5b8cff)](https://github.com/swiftsolve/rove-design/tags)
+[![Figma](https://img.shields.io/badge/Figma-source_of_truth-5b8cff?logo=figma&logoColor=white&labelColor=17181b)](https://www.figma.com/design/NoICIoyhWNOya9tOnNfEhH/Rove-Design-System)
+[![DTCG](https://img.shields.io/badge/DTCG-2025.10-5b8cff?labelColor=17181b)](https://www.designtokens.org/tr/2025.10/format/)
+[![Style Dictionary](https://img.shields.io/badge/Style_Dictionary-5-5b8cff?labelColor=17181b)](https://styledictionary.com/)
+[![Themes](https://img.shields.io/badge/themes-Dark_·_Light-5b8cff?labelColor=17181b)](#-use)
+[![Node](https://img.shields.io/badge/node-%E2%89%A522-5b8cff?logo=nodedotjs&logoColor=white&labelColor=17181b)](.nvmrc)
+
+[🎨 Figma file](https://www.figma.com/design/NoICIoyhWNOya9tOnNfEhH/Rove-Design-System) &nbsp;·&nbsp;
+[🖼️ Slideshow](https://swiftsolve.github.io/rove-design/) &nbsp;·&nbsp;
+[📐 DESIGN.md](DESIGN.md) &nbsp;·&nbsp;
+[💡 Rationale](docs/rationale.md)
+
+</div>
+
+---
+
+Figma is the source of truth; this package turns its variables and text styles into DTCG token files, and those into CSS with [Style Dictionary](https://styledictionary.com/).
+
+> [!TIP]
+> **Building Rove UI?** [`DESIGN.md`](DESIGN.md) says which token to use for what, with every value. It ships in the package, so coding agents in Rove can read it from `node_modules/@swiftsolve/rove-design/DESIGN.md`.
+
+## 📦 Use
 
 Install from a version tag. npm builds `tokens.css` and `tokens/` on install, which needs Node 22 (see `.nvmrc`).
 
 ```bash
-npm install github:swiftsolve/rove-design#v5.0.3
+npm install github:swiftsolve/rove-design#v5.3.0
 ```
 
 ```css
@@ -24,7 +45,7 @@ Each Figma text style becomes four tokens: `--type-<style>-size`, `-weight`, `-l
 
 The repo is public, so installing from a tag needs no token. The Publish workflow can also put the package on GitHub Packages.
 
-### DTCG
+### 🧩 DTCG
 
 `tokens/` holds the same tokens in the [Design Tokens Format](https://www.designtokens.org/tr/2025.10/format/) (2025.10), for Style Dictionary, Tokens Studio and similar tools:
 
@@ -38,14 +59,14 @@ The repo is public, so installing from a tag needs no token. The Publish workflo
 
 A theme is every file plus one of the two color files. Paths follow the Figma names (`bg/app` is `bg.app`). Tokens that other tokens point at but that aren't CSS variables (the palette, the shadow colours) are marked `"$extensions": { "net.swiftsolve.rove-design": { "css": false } }`. CSS-only expressions (`--focus-inset`, a `calc()`) aren't in them.
 
-## Update the tokens
+## 🔄 Update the tokens
 
 1. Change the variables or text styles in Figma.
 2. Export them to `src/figma/variables.json` and `src/figma/text-styles.json`, either with the plugin in `figma-plugin/` (Figma desktop: Plugins → Development → Import plugin from manifest; then **Export**) or by asking Claude to export them through the Figma connection.
 3. Run `npm run build` (Node 22) and check `tokens.css`. It writes the DTCG files, then generates `tokens.css` from them with Style Dictionary, then rewrites the token reference at the end of `DESIGN.md`. The build stops if a variable's code syntax doesn't match its name, or a DTCG reference doesn't resolve.
 4. Commit the change.
 
-## Release
+## 🚀 Release
 
 1. On the Figma cover (`COVER` page), set **Version** to the one you're about to release and **Updated** to today's date (`27 Oct 2026`). They're the one place a release can't be stamped from here: Figma's API can't edit canvas text on this plan, so do it by hand or ask Claude to through the Figma connection.
 2. Bump, commit and tag in one step, then push both:
@@ -62,7 +83,7 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
 3. The tag runs the **Presentation** workflow, which exports the Figma file and republishes <https://swiftsolve.github.io/rove-design/>. The page's header shows the version from `package.json`. To republish between releases (after Figma edits), run the workflow by hand from the Actions tab.
 4. Point Rove at the new tag (`github:swiftsolve/rove-design#v5.1.0`).
 
-## What's where
+## 🗂️ What's where
 
 | Path | What |
 | --- | --- |
