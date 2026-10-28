@@ -1,5 +1,5 @@
 {
-  "name": "Rove tokens export",
+  "name": "Rove Tokens Export",
   "id": "rove-tokens-export",
   "api": "1.0.0",
   "main": "code.js",
