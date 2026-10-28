@@ -100,7 +100,7 @@
 <main id="view"><div class="state"><div class="spinner"></div>Reading variables and text styles…</div></main>
 <footer>
   <span class="hint">Save to <code>src/figma/</code></span>
-  <button class="btn primary" id="download-all" disabled>Download all</button>
+  <button class="btn primary" id="export" disabled>Export</button>
 </footer>
 
 <script>
@@ -137,7 +137,7 @@
     $('meta').innerHTML = `<b>${variables.collections.length}</b> collections · <b>${variables.variables.length}</b> variables · <b>${styles.styles.length}</b> text styles`
     $('count-variables.json').textContent = variables.variables.length
     $('count-text-styles.json').textContent = styles.styles.length
-    $('download-all').disabled = false
+    $('export').disabled = false
     show()
   }
 
@@ -151,7 +151,7 @@
   }
 
   // A short gap, or the browser may drop the second download.
-  $('download-all').onclick = () => {
+  $('export').onclick = () => {
     download('variables.json')
     setTimeout(() => download('text-styles.json'), 300)
   }

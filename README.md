@@ -39,7 +39,7 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
 ## Update the tokens
 
 1. Change the variables or text styles in Figma.
-2. Export them to `src/figma/variables.json` and `src/figma/text-styles.json`, either with the plugin in `figma-plugin/` (Figma desktop: Plugins → Development → Import plugin from manifest; then **Download all**) or by asking Claude to export them through the Figma connection.
+2. Export them to `src/figma/variables.json` and `src/figma/text-styles.json`, either with the plugin in `figma-plugin/` (Figma desktop: Plugins → Development → Import plugin from manifest; then **Export**) or by asking Claude to export them through the Figma connection.
 3. Run `npm run build` (Node 22) and check `tokens.css`. It writes the DTCG files, then generates `tokens.css` from them with Style Dictionary. The build stops if a variable's code syntax doesn't match its name, or a DTCG reference doesn't resolve.
 4. Commit the change.
 
