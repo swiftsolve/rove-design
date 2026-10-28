@@ -4,9 +4,9 @@
 
 # Rove Design System
 
-`@swiftsolve/rove-design`
-
 Tokens for Rove, straight from Figma.
+
+`@swiftsolve/rove-design`
 
 [![Version](https://img.shields.io/github/package-json/v/swiftsolve/rove-design?label=version&labelColor=17181b&color=5b8cff)](https://github.com/swiftsolve/rove-design/tags)
 [![Figma](https://img.shields.io/badge/Figma-source_of_truth-5b8cff?logo=figma&logoColor=white&labelColor=17181b)](https://www.figma.com/design/NoICIoyhWNOya9tOnNfEhH/Rove-Design-System)
