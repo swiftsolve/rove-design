@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "build": "node scripts/tokens/build.mjs",
+    "import": "node scripts/tokens/import.mjs",
     "present": "npm run build && node scripts/presentation/export.mjs",
     "present:open": "node scripts/presentation/open.mjs",
     "present:publish": "node scripts/presentation/publish.mjs",
