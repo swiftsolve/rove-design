@@ -132,8 +132,7 @@
     files = message
     const variables = JSON.parse(files['variables.json'])
     const styles = JSON.parse(files['text-styles.json'])
-    const fileName = variables.source.match(/\((.*)\)$/)?.[1]
-    if (fileName) $('title').textContent = fileName
+    if (variables.file?.name) $('title').textContent = variables.file.name
     $('meta').innerHTML = `<b>${variables.collections.length}</b> collections · <b>${variables.variables.length}</b> variables · <b>${styles.styles.length}</b> text styles`
     $('count-variables.json').textContent = variables.variables.length
     $('count-text-styles.json').textContent = styles.styles.length
