@@ -4,21 +4,24 @@
     --bg: var(--figma-color-bg, #fff);
     --bg-secondary: var(--figma-color-bg-secondary, #f5f5f5);
     --bg-hover: var(--figma-color-bg-hover, #f5f5f5);
-    --bg-brand: var(--figma-color-bg-brand, #0d99ff);
-    --bg-brand-hover: var(--figma-color-bg-brand-hover, #007be5);
     --text: var(--figma-color-text, #000000e5);
     --text-secondary: var(--figma-color-text-secondary, #00000080);
     --text-tertiary: var(--figma-color-text-tertiary, #0000004d);
-    --text-onbrand: var(--figma-color-text-onbrand, #fff);
     --text-danger: var(--figma-color-text-danger, #dc3412);
     --text-success: var(--figma-color-text-success, #14ae5c);
     --border: var(--figma-color-border, #e6e6e6);
+    /* Rove's accent/fill, accent/fill-hover and text/on-fill. */
+    --accent-fill: #3a69d5;
+    --accent-fill-hover: #2f5bc0;
+    --text-on-fill: #fff;
     --syntax-key: #7c3aed;
     --syntax-string: #0f7b4f;
     --syntax-number: #c2410c;
     --syntax-literal: #0369a1;
   }
   .figma-dark {
+    --accent-fill: #476ec8;
+    --accent-fill-hover: #3d62b8;
     --syntax-key: #c4a5ff;
     --syntax-string: #7dd3a8;
     --syntax-number: #fdba74;
@@ -34,7 +37,8 @@
   }
   button { font: inherit; cursor: default; }
 
-  header { padding: 14px 16px 12px; }
+  header { display: flex; align-items: center; gap: 10px; padding: 14px 16px 12px; }
+  header svg { flex: none; }
   h1 { margin: 0; font-size: 13px; line-height: 20px; font-weight: 600; letter-spacing: -0.005em; }
   .meta { margin-top: 2px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
   .meta b { color: var(--text); font-weight: 500; }
@@ -67,7 +71,7 @@
 
   .state { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 24px; text-align: center; color: var(--text-secondary); }
   .state.error { color: var(--text-danger); }
-  .spinner { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--border); border-top-color: var(--bg-brand); animation: spin 0.7s linear infinite; }
+  .spinner { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--border); border-top-color: var(--accent-fill); animation: spin 0.7s linear infinite; }
   @keyframes spin { to { transform: rotate(1turn); } }
 
   footer { display: flex; align-items: center; gap: 8px; padding: 12px; }
@@ -78,15 +82,23 @@
   .secondary { border: 1px solid var(--border); background: var(--bg); color: var(--text); }
   .secondary:hover:not(:disabled) { background: var(--bg-hover); }
   .secondary.done { color: var(--text-success); }
-  .primary { border: 0; background: var(--bg-brand); color: var(--text-onbrand); }
-  .primary:hover:not(:disabled) { background: var(--bg-brand-hover); }
+  .primary { border: 0; background: var(--accent-fill); color: var(--text-on-fill); }
+  .primary:hover:not(:disabled) { background: var(--accent-fill-hover); }
 
   #clipboard { position: fixed; left: -9999px; }
 </style>
 
 <header>
-  <h1 id="title">Rove tokens export</h1>
-  <div class="meta" id="meta">Reading the file…</div>
+  <!-- The Rove Mark, as in scripts/presentation/export.mjs. -->
+  <svg width="32" height="32" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    <defs><linearGradient id="rove-mark" x1="24" y1="7" x2="24" y2="41" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7aa4ff"/><stop offset="1" stop-color="#5484f5"/></linearGradient></defs>
+    <circle cx="24" cy="24" r="7.5" fill="url(#rove-mark)"/>
+    <path d="M 11.98 36.02 A 17 17 0 1 1 36.02 36.02" stroke="url(#rove-mark)" stroke-width="5" stroke-linecap="round"/>
+  </svg>
+  <div>
+    <h1 id="title">Rove tokens export</h1>
+    <div class="meta" id="meta">Reading the file…</div>
+  </div>
 </header>
 <nav role="tablist">
   <button role="tab" data-file="variables.json" aria-selected="true">Variables<span class="count" id="count-variables.json"></span></button>
