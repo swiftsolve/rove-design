@@ -2,7 +2,7 @@
 
 Design tokens for Rove, from the **Rove Design System** in Figma. Figma is the source of truth; this package turns its variables and text styles into DTCG token files, and those into CSS with [Style Dictionary](https://styledictionary.com/).
 
-**See the design system:** <https://swiftsolve.github.io/rove-design/>, every page of the Figma file as a slideshow.
+**See the design system:** the [Figma file](https://www.figma.com/design/NoICIoyhWNOya9tOnNfEhH/Rove-Design-System) itself, or <https://swiftsolve.github.io/rove-design/>, every page of it as a slideshow.
 
 **Build with it:** [`DESIGN.md`](DESIGN.md) says which token to use for what, with every value. It ships in the package, so coding agents in Rove can read it from `node_modules/@swiftsolve/rove-design/DESIGN.md`.
 
