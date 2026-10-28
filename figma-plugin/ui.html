@@ -3,12 +3,10 @@
   :root {
     --bg: var(--figma-color-bg, #fff);
     --bg-secondary: var(--figma-color-bg-secondary, #f5f5f5);
-    --bg-hover: var(--figma-color-bg-hover, #f5f5f5);
     --text: var(--figma-color-text, #000000e5);
     --text-secondary: var(--figma-color-text-secondary, #00000080);
     --text-tertiary: var(--figma-color-text-tertiary, #0000004d);
     --text-danger: var(--figma-color-text-danger, #dc3412);
-    --text-success: var(--figma-color-text-success, #14ae5c);
     --border: var(--figma-color-border, #e6e6e6);
     /* Rove's accent/fill, accent/fill-hover and text/on-fill. */
     --accent-fill: #3a69d5;
@@ -79,13 +77,8 @@
   .hint code { font: 11px 'SF Mono', ui-monospace, Menlo, Consolas, monospace; color: var(--text); }
   .btn { height: 24px; padding: 0 10px; border-radius: 5px; font-weight: 500; white-space: nowrap; }
   .btn:disabled { opacity: 0.4; }
-  .secondary { border: 1px solid var(--border); background: var(--bg); color: var(--text); }
-  .secondary:hover:not(:disabled) { background: var(--bg-hover); }
-  .secondary.done { color: var(--text-success); }
   .primary { border: 0; background: var(--accent-fill); color: var(--text-on-fill); }
   .primary:hover:not(:disabled) { background: var(--accent-fill-hover); }
-
-  #clipboard { position: fixed; left: -9999px; }
 </style>
 
 <header>
@@ -107,11 +100,8 @@
 <main id="view"><div class="state"><div class="spinner"></div>Reading variables and text styles…</div></main>
 <footer>
   <span class="hint">Save to <code>src/figma/</code></span>
-  <button class="btn secondary" id="copy" disabled>Copy</button>
-  <button class="btn secondary" id="download" disabled>Download</button>
-  <button class="btn primary" id="download-both" disabled>Download both</button>
+  <button class="btn primary" id="download-all" disabled>Download all</button>
 </footer>
-<textarea id="clipboard" aria-hidden="true"></textarea>
 
 <script>
   const $ = (id) => document.getElementById(id)
@@ -147,21 +137,11 @@
     $('meta').innerHTML = `<b>${variables.collections.length}</b> collections · <b>${variables.variables.length}</b> variables · <b>${styles.styles.length}</b> text styles`
     $('count-variables.json').textContent = variables.variables.length
     $('count-text-styles.json').textContent = styles.styles.length
-    $('copy').disabled = $('download').disabled = $('download-both').disabled = false
+    $('download-all').disabled = false
     show()
   }
 
   for (const tab of document.querySelectorAll('[role=tab]')) tab.onclick = () => { current = tab.dataset.file; show() }
-
-  $('copy').onclick = () => {
-    // The plugin iframe has no Clipboard API, so copy through a hidden textarea.
-    $('clipboard').value = files[current]
-    $('clipboard').select()
-    document.execCommand('copy')
-    $('copy').textContent = 'Copied'
-    $('copy').classList.add('done')
-    setTimeout(() => { $('copy').textContent = 'Copy'; $('copy').classList.remove('done') }, 1400)
-  }
 
   const download = (name) => {
     const link = document.createElement('a')
@@ -170,9 +150,8 @@
     link.click()
   }
 
-  $('download').onclick = () => download(current)
   // A short gap, or the browser may drop the second download.
-  $('download-both').onclick = () => {
+  $('download-all').onclick = () => {
     download('variables.json')
     setTimeout(() => download('text-styles.json'), 300)
   }
