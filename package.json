@@ -16,7 +16,8 @@
   "files": [
     "tokens.css",
     "tokens",
-    "src"
+    "src",
+    "DESIGN.md"
   ],
   "scripts": {
     "build": "node scripts/tokens/build.mjs",

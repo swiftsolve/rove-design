@@ -3,6 +3,7 @@
  *
  *   1. Figma export -> DTCG files in tokens/ (scripts/tokens/dtcg.mjs)
  *   2. DTCG files -> tokens.css, with Style Dictionary (scripts/tokens/css.mjs)
+ *   3. The token reference at the end of DESIGN.md (scripts/tokens/design.mjs)
  *
  * so the CSS is generated from the same files other tools read.
  *
@@ -17,6 +18,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { buildCss } from './css.mjs'
+import { writeDesign } from './design.mjs'
 import { writeDtcg } from './dtcg.mjs'
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
@@ -75,3 +77,6 @@ const { css, count, overrides } = await buildCss({ dir, header, cssOnly })
 // every tool (bundlers and editors alike) finds the same file.
 await writeFile(resolve(ROOT, 'tokens.css'), css)
 console.log(`tokens.css: ${count} tokens, ${overrides} light overrides`)
+
+const design = await writeDesign({ path: resolve(ROOT, 'DESIGN.md'), variables: figma.variables, textStyles: textStyles.styles, code, css })
+console.log(`DESIGN.md: ${design.colours} colours, ${design.others} other tokens, ${design.styles} text styles, ${design.code} code-only tokens`)
