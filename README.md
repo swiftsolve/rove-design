@@ -74,7 +74,7 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
 | `scripts/tokens/build.mjs` | `npm run build`: runs the three steps below and writes `tokens.css` at the package root, where the import path points. |
 | `scripts/tokens/dtcg.mjs` | Figma export → the DTCG files in `tokens/`, checking that every reference resolves in both themes. |
 | `scripts/tokens/css.mjs` | DTCG files → `tokens.css`, with Style Dictionary and a `rove/css` format: Dark on `:root`, what differs in Light on `:root.theme-light`, each text style as four `--type-*` variables (letter spacing included). |
-| `scripts/tokens/design.mjs` | Figma export and `tokens.css` → the token reference in `DESIGN.md`: every colour (both themes, with its Palette shade), spacing, type, opacity and code-only token, with its Figma description. |
+| `scripts/tokens/design.mjs` | Figma export and `tokens.css` → the token reference in `DESIGN.md`: every token by name and Figma description, with values for the scales (spacing, radius, type, opacity) but not the colours, so nobody copies a hex. |
 | `scripts/presentation/export.mjs` | `npm run present`: exports the Figma file's pages to `presentation/index.html`, a slideshow styled with the tokens. Needs `FIGMA_TOKEN` (a Figma personal access token, `file_content:read`) in `.env.local`. |
 | `scripts/presentation/open.mjs` | `npm run present:open`: opens the exported presentation in your browser. |
 | `scripts/presentation/publish.mjs` | `npm run present:publish`: pushes the exported presentation to the `gh-pages` branch, which GitHub Pages serves at <https://swiftsolve.github.io/rove-design/>. Each publish replaces the last. |

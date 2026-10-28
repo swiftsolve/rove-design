@@ -78,5 +78,5 @@ const { css, count, overrides } = await buildCss({ dir, header, cssOnly })
 await writeFile(resolve(ROOT, 'tokens.css'), css)
 console.log(`tokens.css: ${count} tokens, ${overrides} light overrides`)
 
-const design = await writeDesign({ path: resolve(ROOT, 'DESIGN.md'), variables: figma.variables, textStyles: textStyles.styles, code, css, rawValue })
+const design = await writeDesign({ path: resolve(ROOT, 'DESIGN.md'), variables: figma.variables, textStyles: textStyles.styles, code, css })
 console.log(`DESIGN.md: ${design.colours} colours, ${design.others} other tokens, ${design.styles} text styles, ${design.code} code-only tokens`)
