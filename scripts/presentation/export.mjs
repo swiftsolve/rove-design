@@ -234,7 +234,9 @@ ${tokens}
   .zoom { position: fixed; right: 24px; bottom: 24px; z-index: 2; display: flex; align-items: center; gap: 2px; padding: 3px; background: var(--bg-raised); border: 1px solid var(--border-strong); border-radius: 10px; box-shadow: 0 8px 24px rgb(0 0 0 / .45); }
   .zoom > button { display: flex; align-items: center; justify-content: center; gap: 4px; height: 28px; min-width: 28px; padding: 0 6px; border: 0; border-radius: 7px; background: none; color: var(--text-secondary); font: inherit; font-size: 12px; cursor: pointer; }
   .zoom > button:hover, .zoom .level[aria-expanded="true"] { background: var(--fill-nav-hover); color: var(--text-primary); }
-  .zoom .level { min-width: 68px; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  /* Hugs its content, so the number sits as close to − and + as they sit to the edges. The number keeps a steady width as it changes. */
+  .zoom .level { padding: 0 4px 0 6px; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .zoom .value { min-width: 4.5ch; text-align: center; }
   .zoom .level svg { color: var(--text-tertiary); }
   .zoom .menu { position: absolute; right: 0; bottom: calc(100% + 6px); width: 100%; padding: 3px; background: var(--bg-raised); border: 1px solid var(--border-strong); border-radius: 8px; box-shadow: 0 8px 24px rgb(0 0 0 / .45); }
   .zoom .menu[hidden] { display: none; }
