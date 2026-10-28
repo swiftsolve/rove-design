@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/swiftsolve/rove-design.git"
+    "url": "git+https://github.com/swiftsolve/rove-design.git"
   },
   "exports": {
     "./tokens.css": "./tokens.css",
