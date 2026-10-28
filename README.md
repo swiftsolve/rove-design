@@ -8,6 +8,8 @@ Tokens for Rove, straight from Figma.
 
 `@swiftsolve/rove-design`
 
+[![Build](https://img.shields.io/github/actions/workflow/status/swiftsolve/rove-design/build.yml?branch=main&label=build&labelColor=17181b)](https://github.com/swiftsolve/rove-design/actions/workflows/build.yml)
+[![Slideshow](https://img.shields.io/github/actions/workflow/status/swiftsolve/rove-design/presentation.yml?label=slideshow&labelColor=17181b)](https://github.com/swiftsolve/rove-design/actions/workflows/presentation.yml)
 [![Version](https://img.shields.io/github/package-json/v/swiftsolve/rove-design?label=version&labelColor=17181b&color=5b8cff)](https://github.com/swiftsolve/rove-design/tags)
 [![Figma](https://img.shields.io/badge/Figma-source_of_truth-5b8cff?logo=figma&logoColor=white&labelColor=17181b)](https://www.figma.com/design/NoICIoyhWNOya9tOnNfEhH/Rove-Design-System)
 [![DTCG](https://img.shields.io/badge/DTCG-2025.10-5b8cff?labelColor=17181b)](https://www.designtokens.org/tr/2025.10/format/)
