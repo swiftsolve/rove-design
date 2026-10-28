@@ -66,6 +66,12 @@ Disabled controls use `--opacity-disabled`.
 - Keyboard focus is `outline: var(--focus-outline)` with `outline-offset: var(--focus-offset)`. Rows flush with a card's edge draw it inside instead, with `--focus-inset`.
 - Animate with `--ease-out` (or `--ease-in-out`) over `--duration-fast` or `--duration-normal`.
 
+### Icons
+
+- Icons share a 24px grid, a 1.75px stroke and round caps.
+- Icons are `--text-tertiary` by default. The active nav item's is `--accent-default`, an icon button's `--text-secondary`, a download icon `--series-down`, a secured or passing one `--status-positive`.
+- The brand mark is always `--accent-default`, 22px in the title bar.
+
 ## Changing the design
 
 Figma is the source of truth. Change a token in the Rove Design System Figma file, export it with the plugin in `figma-plugin/` into `src/figma/`, then run `npm run build` (see the [README](README.md#update-the-tokens)). Don't edit `tokens.css`, `tokens/` or the values in `src/figma/` by hand. What Figma can't hold (shadows, layout, motion) lives in `src/code-tokens.json`.
