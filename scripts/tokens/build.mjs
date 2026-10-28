@@ -73,7 +73,7 @@ console.log(`tokens/: ${written.join(', ')}`)
 
 const header = `/* ${pkg.name} ${pkg.version}. Generated from Figma by scripts/tokens/build.mjs; do not edit. */`
 const { css, count, overrides } = await buildCss({ dir, header, cssOnly })
-// At the package root, where `@swiftsolve/rove-design/tokens.css` points, so
+// At the package root, where `rove-design/tokens.css` points, so
 // every tool (bundlers and editors alike) finds the same file.
 await writeFile(resolve(ROOT, 'tokens.css'), css)
 console.log(`tokens.css: ${count} tokens, ${overrides} light overrides`)

@@ -5,7 +5,7 @@ How to build Rove's interface with these tokens, for anyone writing Rove UI, peo
 ## Setup
 
 ```css
-@import '@swiftsolve/rove-design/tokens.css';
+@import 'rove-design/tokens.css';
 ```
 
 Dark is the default, on `:root`. Add the `theme-light` class to the root element for Light. Every token has both values, so a screen that only uses tokens themes itself.
