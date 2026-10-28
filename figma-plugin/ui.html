@@ -94,9 +94,10 @@
 </nav>
 <main id="view"><div class="state"><div class="spinner"></div>Reading variables and text styles…</div></main>
 <footer>
-  <span class="hint">Save as <code id="path">src/figma/variables.json</code></span>
+  <span class="hint">Save to <code>src/figma/</code></span>
   <button class="btn secondary" id="copy" disabled>Copy</button>
-  <button class="btn primary" id="download" disabled>Download</button>
+  <button class="btn secondary" id="download" disabled>Download</button>
+  <button class="btn primary" id="download-both" disabled>Download both</button>
 </footer>
 <textarea id="clipboard" aria-hidden="true"></textarea>
 
@@ -115,7 +116,6 @@
 
   function show() {
     for (const tab of document.querySelectorAll('[role=tab]')) tab.setAttribute('aria-selected', tab.dataset.file === current)
-    $('path').textContent = `src/figma/${current}`
     if (!files) return
     $('view').innerHTML = `<pre>${files[current].split('\n').map((l) => `<span class="line">${highlight(l)}</span>`).join('')}</pre>`
   }
@@ -135,7 +135,7 @@
     $('meta').innerHTML = `<b>${variables.collections.length}</b> collections · <b>${variables.variables.length}</b> variables · <b>${styles.styles.length}</b> text styles`
     $('count-variables.json').textContent = variables.variables.length
     $('count-text-styles.json').textContent = styles.styles.length
-    $('copy').disabled = $('download').disabled = false
+    $('copy').disabled = $('download').disabled = $('download-both').disabled = false
     show()
   }
 
@@ -151,10 +151,17 @@
     setTimeout(() => { $('copy').textContent = 'Copy'; $('copy').classList.remove('done') }, 1400)
   }
 
-  $('download').onclick = () => {
+  const download = (name) => {
     const link = document.createElement('a')
-    link.href = URL.createObjectURL(new Blob([files[current] + '\n'], { type: 'application/json' }))
-    link.download = current
+    link.href = URL.createObjectURL(new Blob([files[name] + '\n'], { type: 'application/json' }))
+    link.download = name
     link.click()
+  }
+
+  $('download').onclick = () => download(current)
+  // A short gap, or the browser may drop the second download.
+  $('download-both').onclick = () => {
+    download('variables.json')
+    setTimeout(() => download('text-styles.json'), 300)
   }
 </script>
