@@ -63,10 +63,10 @@ async function exportTextStyles() {
   }
 }
 
-figma.showUI(__html__, { width: 420, height: 320 })
+figma.showUI(__html__, { width: 440, height: 520, themeColors: true })
 Promise.all([exportVariables(), exportTextStyles()]).then(([variables, textStyles]) =>
   figma.ui.postMessage({
     'variables.json': JSON.stringify(variables, null, 2),
     'text-styles.json': JSON.stringify(textStyles, null, 2),
   }),
-)
+).catch((error) => figma.ui.postMessage({ error: String(error) }))
