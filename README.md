@@ -6,7 +6,7 @@
 
 Tokens for Rove, straight from Figma.
 
-`rove-design`
+`@swiftsolve/rove-design`
 
 [![Build](https://img.shields.io/github/actions/workflow/status/swiftsolve/rove-design/build.yml?label=build&labelColor=17181b)](https://github.com/swiftsolve/rove-design/actions/workflows/build.yml)
 [![Slideshow](https://img.shields.io/github/actions/workflow/status/swiftsolve/rove-design/presentation.yml?label=slideshow&labelColor=17181b)](https://github.com/swiftsolve/rove-design/actions/workflows/presentation.yml)
@@ -29,18 +29,18 @@ Tokens for Rove, straight from Figma.
 Figma is the source of truth; this package turns its variables and text styles into DTCG token files, and those into CSS with [Style Dictionary](https://styledictionary.com/).
 
 > [!TIP]
-> **Building Rove UI?** [`DESIGN.md`](DESIGN.md) says which token to use for what, with every value. It ships in the package, so coding agents in Rove can read it from `node_modules/rove-design/DESIGN.md`.
+> **Building Rove UI?** [`DESIGN.md`](DESIGN.md) says which token to use for what, with every value. It ships in the package, so coding agents in Rove can read it from `node_modules/@swiftsolve/rove-design/DESIGN.md`.
 
 ## 📦 Use
 
 ```bash
-npm install rove-design
+npm install @swiftsolve/rove-design
 ```
 
 The package ships `tokens.css` and `tokens/` built. You can also install straight from a version tag (`github:swiftsolve/rove-design#v5.3.0`); then npm builds them on install, which needs Node 22 (see `.nvmrc`).
 
 ```css
-@import 'rove-design/tokens.css';
+@import '@swiftsolve/rove-design/tokens.css';
 ```
 
 Dark values sit on `:root`, Light values on `:root.theme-light`. CSS names follow the Figma names: `bg/app` is `--bg-app`, `spacing/12` is `--spacing-12`.
@@ -82,8 +82,8 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
    ```
 
    Use `patch` for fixes and `major` for breaking changes.
-3. The tag runs three workflows: **Build** checks the tokens, **Publish** puts the version on [npm](https://www.npmjs.com/package/rove-design), and **Presentation** exports the Figma file and republishes <https://swiftsolve.github.io/rove-design/>. The page's header shows the version from `package.json`. To republish the slideshow between releases (after Figma edits), run Presentation by hand from the Actions tab.
-4. Update Rove to the new version (`npm install rove-design@latest`).
+3. The tag runs three workflows: **Build** checks the tokens, **Publish** puts the version on [npm](https://www.npmjs.com/package/@swiftsolve/rove-design), and **Presentation** exports the Figma file and republishes <https://swiftsolve.github.io/rove-design/>. The page's header shows the version from `package.json`. To republish the slideshow between releases (after Figma edits), run Presentation by hand from the Actions tab.
+4. Update Rove to the new version (`npm install @swiftsolve/rove-design@latest`).
 
 ## 🗂️ What's where
 

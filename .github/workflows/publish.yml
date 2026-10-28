@@ -1,6 +1,6 @@
 name: Publish
 
-# Publish each release tag to npm (https://www.npmjs.com/package/rove-design).
+# Publish each release tag to npm (https://www.npmjs.com/package/@swiftsolve/rove-design).
 # It signs in with npm trusted publishing, so the repo holds no npm token: on
 # npmjs.com the package's Settings name this repository and publish.yml as a
 # trusted publisher. npm attaches a provenance statement to each version.
