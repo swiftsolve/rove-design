@@ -129,9 +129,11 @@ const LUCIDE = {
   BookOpen: '<path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>',
   Check: '<path d="M20 6 9 17l-5-5"/>',
   ChevronDown: '<path d="m6 9 6 6 6-6"/>',
+  ChevronLeft: '<path d="m15 18-6-6 6-6"/>',
   ChevronRight: '<path d="m9 18 6-6-6-6"/>',
   Component: '<path d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"/><path d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z"/><path d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z"/><path d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"/>',
   Folder: '<path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/>',
+  Menu: '<path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>',
   Minus: '<path d="M5 12h14"/>',
   Monitor: '<rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/>',
   Palette: '<path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>',
@@ -193,7 +195,7 @@ function renderHtml(file, groups, tokens, version) {
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${escapeHtml(file.name)}</title>
 <style>
 ${tokens}
@@ -202,7 +204,7 @@ ${tokens}
   /* One gap above and below the slide, so the page is framed evenly. */
   body { --page-gap: 64px; --page-pad: 32px; }
   /* Sidebar down the left; the top bar sits outside the scrolling area so it stays put when a zoomed slide scrolls. */
-  body { margin: 0; display: grid; grid-template-columns: 240px 1fr; grid-template-rows: auto 1fr; height: 100vh; background: var(--bg-app); color: var(--text-primary); font: 13px/1.45 var(--font-family-sans); -webkit-font-smoothing: antialiased; }
+  body { margin: 0; display: grid; grid-template-columns: 240px 1fr; grid-template-rows: auto 1fr; height: 100vh; height: 100dvh; background: var(--bg-app); color: var(--text-primary); font: 13px/1.45 var(--font-family-sans); -webkit-font-smoothing: antialiased; }
   nav, main { overflow: auto; scrollbar-width: thin; scrollbar-color: var(--fill-scrollbar) transparent; }
   nav { grid-row: 1 / 3; padding: 20px 10px 32px; background: var(--bg-panel); border-right: 1px solid var(--border-default); }
   /* Negative margins so the divider runs edge to edge of the sidebar. */
@@ -240,6 +242,11 @@ ${tokens}
   .zoom .menu button:hover, .zoom .menu button:focus-visible { background: var(--bg-hover); outline: none; }
   .zoom .menu svg { flex-shrink: 0; color: var(--accent-default); visibility: hidden; }
   .zoom .menu [aria-checked="true"] svg { visibility: visible; }
+  .trails { min-width: 0; }
+  /* The menu button and the slide arrows are for phones, which have no sidebar or arrow keys. */
+  .bar > button { display: none; flex-shrink: 0; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 8px; background: none; color: var(--text-secondary); cursor: pointer; }
+  .bar > button:hover { background: var(--fill-nav-hover); color: var(--text-primary); }
+  .bar > button:disabled { background: none; color: var(--text-tertiary); opacity: .5; cursor: default; }
   .crumbs[hidden] { display: none; }
   .crumbs { display: flex; align-items: center; gap: 6px; min-width: 0; margin: 0; white-space: nowrap; overflow: hidden; }
   .crumb { display: flex; align-items: center; gap: 6px; color: var(--text-secondary); text-decoration: none; }
@@ -248,13 +255,25 @@ ${tokens}
   .sep { display: flex; color: var(--text-tertiary); }
   img { display: block; width: 100%; height: auto; border-radius: 8px; }
   @media (max-width: 760px) {
-    body { --page-gap: 32px; --page-pad: 16px; grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; }
-    nav { grid-row: auto; max-height: 30vh; border-right: 0; border-bottom: 1px solid var(--border-default); }
+    body { --page-gap: 24px; --page-pad: 16px; grid-template-columns: 1fr; }
+    /* The sidebar becomes a drawer over the slide, opened from the top bar. */
+    nav { position: fixed; inset: 0 auto 0 0; z-index: 4; width: min(280px, 85vw); padding-bottom: calc(32px + env(safe-area-inset-bottom)); box-shadow: 0 8px 24px rgb(0 0 0 / .45); transform: translateX(-100%); visibility: hidden; transition: transform .2s ease, visibility 0s .2s; }
+    body.is-nav-open nav { transform: none; visibility: visible; transition: transform .2s ease; }
+    .scrim { position: fixed; inset: 0; z-index: 3; background: rgb(0 0 0 / .5); }
+    .bar { gap: 4px; min-height: 52px; padding: 0 8px; }
+    .bar > button { display: flex; }
+    .trails { flex: 1; }
+    /* One finger scrolls the slide; two zoom it (the page script), not the whole page. Pinching replaces the zoom toolbar. */
+    main { touch-action: pan-x pan-y; }
+    .zoom { display: none; }
+  }
+  @media (max-width: 760px) and (prefers-reduced-motion: reduce) {
+    nav, body.is-nav-open nav { transition: none; }
   }
 </style>
 </head>
 <body>
-  <nav>
+  <nav id="pages">
     <header>
       <p class="logo">${ROVE_MARK}<span>Rove</span></p>
       <h1>${escapeHtml(file.name.replace(/^Rove\s+/, ''))}</h1>
@@ -262,9 +281,13 @@ ${tokens}
     </header>${nav}
   </nav>
   <header class="bar">
+    <button type="button" class="menu-button" aria-label="Pages" aria-controls="pages" aria-expanded="false">${icon('Menu', 18)}</button>
     <div class="trails">${trails}
     </div>
+    <button type="button" data-step="-1" aria-label="Previous slide">${icon('ChevronLeft', 18)}</button>
+    <button type="button" data-step="1" aria-label="Next slide">${icon('ChevronRight', 18)}</button>
   </header>
+  <div class="scrim" hidden></div>
   <main>${figures}
   </main>
   <div class="zoom" role="group" aria-label="Zoom">
@@ -286,6 +309,9 @@ ${tokens}
   const value = levelButton.querySelector('.value')
   const choices = [...menu.querySelectorAll('[role=menuitemradio]')]
   const main = document.querySelector('main')
+  const menuButton = document.querySelector('.menu-button')
+  const scrim = document.querySelector('.scrim')
+  const stepButtons = [...document.querySelectorAll('[data-step]')]
   const STEPS = [0.1, 0.25, 0.33, 0.5, 0.67, 0.75, 0.9, 1, 1.25, 1.5, 2, 3, 4]
 
   let current = 0
@@ -349,11 +375,24 @@ ${tokens}
   const zoomIn = () => zoomCentred(STEPS.find((step) => step > scale + 0.001) ?? STEPS.at(-1))
   const zoomOut = () => zoomCentred(STEPS.findLast((step) => step < scale - 0.001) ?? STEPS[0])
 
+  // On a phone the sidebar is a drawer, closed once you pick a slide.
+  function setNavOpen(isOpen) {
+    document.body.classList.toggle('is-nav-open', isOpen)
+    menuButton.setAttribute('aria-expanded', String(isOpen))
+    scrim.hidden = !isOpen
+  }
+
+  const go = (step) => { location.hash = String(Math.min(Math.max(current + step, 0), slides.length - 1) + 1) }
+
   function show(index) {
     current = Math.min(Math.max(index, 0), slides.length - 1)
     slides.forEach((slide, i) => { slide.hidden = i !== current })
     trails.forEach((trail, i) => { trail.hidden = i !== current })
     links.forEach((link) => link.toggleAttribute('aria-current', Number(link.dataset.index) === current))
+    stepButtons.forEach((button) => {
+      const next = current + Number(button.dataset.step)
+      button.disabled = next < 0 || next >= slides.length
+    })
     document.querySelector('nav a[aria-current]')?.scrollIntoView({ block: 'nearest' })
     layout()
     main.scrollTo(0, 0)
@@ -363,6 +402,11 @@ ${tokens}
   show(fromHash())
   addEventListener('hashchange', () => show(fromHash()))
   addEventListener('resize', layout)
+
+  menuButton.addEventListener('click', () => setNavOpen(!document.body.classList.contains('is-nav-open')))
+  scrim.addEventListener('click', () => setNavOpen(false))
+  links.forEach((link) => link.addEventListener('click', () => setNavOpen(false)))
+  stepButtons.forEach((button) => button.addEventListener('click', () => go(Number(button.dataset.step))))
 
   function setMenuOpen(isOpen) {
     menu.hidden = !isOpen
@@ -383,7 +427,10 @@ ${tokens}
 
   addEventListener('keydown', (event) => {
     if (event.ctrlKey || event.metaKey || event.altKey) return
-    if (event.key === 'Escape') return setMenuOpen(false)
+    if (event.key === 'Escape') {
+      setMenuOpen(false)
+      return setNavOpen(false)
+    }
     if (!menu.hidden && (event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
       event.preventDefault()
       const items = [...menu.querySelectorAll('button')]
@@ -391,7 +438,7 @@ ${tokens}
       return items[(at + (event.key === 'ArrowDown' ? 1 : items.length - 1)) % items.length].focus()
     }
     const step = { ArrowRight: 1, ArrowLeft: -1 }[event.key]
-    if (step) location.hash = String(Math.min(Math.max(current + step, 0), slides.length - 1) + 1)
+    if (step) go(step)
     else if (event.key === '+' || event.key === '=') zoomIn()
     else if (event.key === '-' || event.key === '_') zoomOut()
     else if (event.shiftKey && event.code === 'Digit1') zoomCentred('fit')
@@ -409,6 +456,26 @@ ${tokens}
     const delta = Math.max(-40, Math.min(40, event.deltaMode === 1 ? event.deltaY * 16 : event.deltaY))
     zoomAround(scale * Math.exp(-delta * 0.004), event.clientX, event.clientY, false)
   }, { passive: false })
+
+  // Pinch on a touch screen does the same, around the fingers, and moving
+  // both fingers pans. One finger is left to the browser's own scrolling.
+  let pinch = null
+  const midpoint = (touches) => [(touches[0].clientX + touches[1].clientX) / 2, (touches[0].clientY + touches[1].clientY) / 2]
+  const spread = (touches) => Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY)
+  main.addEventListener('touchstart', (event) => {
+    if (event.touches.length === 2) pinch = { spread: spread(event.touches), scale, at: midpoint(event.touches) }
+  }, { passive: true })
+  main.addEventListener('touchmove', (event) => {
+    if (!pinch || event.touches.length !== 2) return
+    event.preventDefault()
+    const [x, y] = midpoint(event.touches)
+    main.scrollBy(pinch.at[0] - x, pinch.at[1] - y)
+    pinch.at = [x, y]
+    zoomAround((pinch.scale * spread(event.touches)) / pinch.spread, x, y, false)
+  }, { passive: false })
+  const endPinch = (event) => { if (event.touches.length < 2) pinch = null }
+  main.addEventListener('touchend', endPinch)
+  main.addEventListener('touchcancel', endPinch)
 </script>
 </body>
 </html>
