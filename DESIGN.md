@@ -103,7 +103,7 @@ Names and uses, from Figma. The values are in `tokens.css`; Dark and Light diffe
 - **Font sizes:** `--font-size-2xs` 10px, `--font-size-xs` 11px, `--font-size-sm` 12px, `--font-size-md` 13px, `--font-size-lg` 14px, `--font-size-xl` 15px (dialog titles), `--font-size-2xl` 17px, `--font-size-3xl` 28px
 - **Font families:** `--font-family-sans` Inter, `--font-family-numeric` Questrial
 - **Focus:** `--focus-offset` 2px (focus ring offset)
-- **Opacity:** `--opacity-tint-md` 14% (icon tile tint), `--opacity-tint-sm` 10% (connection icon tint), `--opacity-tint-lg` 22% (hovered icon tile tint), `--opacity-unlit` 22% (unlit meter bars), `--opacity-area-down` 28% (download chart area), `--opacity-area-up` 8% (upload chart area), `--opacity-series-up-line` 80% (upload chart line), `--opacity-disabled` 40% (disabled controls), `--opacity-muted-glyph` 55% (empty-state icon), `--opacity-tint-xs` 8% (offline icon tint)
+- **Opacity:** `--opacity-tint-xs` 8% (offline icon tint), `--opacity-tint-sm` 10% (connection icon tint), `--opacity-tint-md` 14% (icon tile tint), `--opacity-tint-lg` 22% (hovered icon tile tint), `--opacity-unlit` 22% (unlit meter bars), `--opacity-area-down` 28% (download chart area), `--opacity-area-up` 8% (upload chart area), `--opacity-series-up-line` 80% (upload chart line), `--opacity-disabled` 40% (disabled controls), `--opacity-muted-glyph` 55% (empty-state icon)
 
 ### Text styles
 

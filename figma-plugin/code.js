@@ -9,10 +9,15 @@ async function exportVariables() {
   const collections = await figma.variables.getLocalVariableCollectionsAsync()
   const variables = await figma.variables.getLocalVariablesAsync()
   const byId = Object.fromEntries(variables.map((v) => [v.id, v]))
+  // getLocalVariablesAsync lists variables in creation order; within each
+  // collection, follow the order of the variables panel instead, so dragging a
+  // variable in Figma reorders the docs. Each collection keeps its slots.
+  const queues = Object.fromEntries(collections.map((c) => [c.id, c.variableIds.map((id) => byId[id])]))
+  const ordered = variables.map((v) => queues[v.variableCollectionId].shift())
   return {
     file: file(),
     collections: collections.map((c) => ({ name: c.name, modes: c.modes.map((m) => m.name) })),
-    variables: variables.map((v) => {
+    variables: ordered.map((v) => {
       const collection = collections.find((c) => c.id === v.variableCollectionId)
       const values = {}
       for (const mode of collection.modes) {

@@ -982,13 +982,13 @@
       }
     },
     {
-      "name": "opacity/tint-md",
+      "name": "opacity/tint-xs",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": "var(--opacity-tint-md)",
-      "description": "Icon tile tint",
+      "code": "var(--opacity-tint-xs)",
+      "description": "Offline icon tint",
       "values": {
-        "Value": 14
+        "Value": 8
       }
     },
     {
@@ -999,6 +999,16 @@
       "description": "Connection icon tint",
       "values": {
         "Value": 10
+      }
+    },
+    {
+      "name": "opacity/tint-md",
+      "collection": "Opacity",
+      "type": "FLOAT",
+      "code": "var(--opacity-tint-md)",
+      "description": "Icon tile tint",
+      "values": {
+        "Value": 14
       }
     },
     {
@@ -1062,16 +1072,6 @@
       }
     },
     {
-      "name": "opacity/muted-glyph",
-      "collection": "Opacity",
-      "type": "FLOAT",
-      "code": "var(--opacity-muted-glyph)",
-      "description": "Empty-state icon",
-      "values": {
-        "Value": 55
-      }
-    },
-    {
       "name": "level/color",
       "collection": "Capability level",
       "type": "COLOR",
@@ -1096,13 +1096,13 @@
       }
     },
     {
-      "name": "opacity/tint-xs",
+      "name": "opacity/muted-glyph",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": "var(--opacity-tint-xs)",
-      "description": "Offline icon tint",
+      "code": "var(--opacity-muted-glyph)",
+      "description": "Empty-state icon",
       "values": {
-        "Value": 8
+        "Value": 55
       }
     },
     {
