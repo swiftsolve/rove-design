@@ -117,16 +117,16 @@ Each style is four variables, `--type-<style>-size`, `-weight`, `-line-height` a
 | Body | `--type-body-*` | 13px 400 | Body and secondary lines. Code: .text-body |
 | Field label | `--type-field-label-*` | 11px 500 | Labels above or beside values. Code: .field-label |
 | Meta | `--type-meta-*` | 11px 400 | Badges, small captions. Code: .text-meta |
-| Meta strong | `--type-meta-strong-*` | 11px 500 | Title bar status. Code: .status-bar-link |
+| Meta strong | `--type-meta-strong-*` | 11px 500 | Title bar status. Code: .text-meta-strong |
 | Hint | `--type-hint-*` | 11px 400 | Card footer hints. Code: .text-hint |
 | Metric/Display | `--type-metric-display-*` | 28px 400, Questrial | Live speeds. Add a 0.43px outside stroke. Code: .metric-value, at weight 600: Questrial has one weight, so the browser emboldens it. |
 | Metric/Compact | `--type-metric-compact-*` | 17px 400, Questrial | Stat totals. Add a 0.26px outside stroke. Code: .metric-compact |
 | Metric/Unit | `--type-metric-unit-*` | 12px 400 | Units after values. Code: .metric-unit |
-| Chart label | `--type-chart-label-*` | 10px 400, Questrial | Chart axes and scale. Code: .tp-chart-axis |
+| Chart label | `--type-chart-label-*` | 10px 400, Questrial | Chart axes and scale. Code: .text-chart-label |
 | Value | `--type-value-*` | 13px 400, Questrial | Data row values. Code: .text-value |
-| Button/Large | `--type-button-large-*` | 12px 600 | Filled buttons. Code: .speed-run-btn |
-| Button/Default | `--type-button-default-*` | 11px 600 | Text buttons. Code: .btn-primary |
-| Button/Secondary | `--type-button-secondary-*` | 11px 500 | Secondary buttons. Code: .btn-secondary |
+| Button/Large | `--type-button-large-*` | 12px 600 | Filled buttons. Code: Button variant=filled |
+| Button/Default | `--type-button-default-*` | 11px 600 | Text buttons. Code: Button variant=primary |
+| Button/Secondary | `--type-button-secondary-*` | 11px 500 | Secondary buttons. Code: Button variant=secondary |
 | Small | `--type-small-*` | 12px 400 | Hints and helper text. Code: .text-small |
 
 ### Code-only tokens
