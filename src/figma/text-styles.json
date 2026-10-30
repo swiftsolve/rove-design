@@ -126,7 +126,7 @@
     },
     {
       "name": "Meta strong",
-      "description": "Title bar status. Code: .status-bar-link",
+      "description": "Title bar status. Code: .text-meta-strong",
       "fontFamily": "Inter",
       "fontStyle": "Medium",
       "fontWeight": 500,
@@ -226,7 +226,7 @@
     },
     {
       "name": "Chart label",
-      "description": "Chart axes and scale. Code: .tp-chart-axis",
+      "description": "Chart axes and scale. Code: .text-chart-label",
       "fontFamily": "Questrial",
       "fontStyle": "Regular",
       "fontWeight": 400,
@@ -266,7 +266,7 @@
     },
     {
       "name": "Button/Large",
-      "description": "Filled buttons. Code: .speed-run-btn",
+      "description": "Filled buttons. Code: Button variant=filled",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,
@@ -286,7 +286,7 @@
     },
     {
       "name": "Button/Default",
-      "description": "Text buttons. Code: .btn-primary",
+      "description": "Text buttons. Code: Button variant=primary",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,
@@ -306,7 +306,7 @@
     },
     {
       "name": "Button/Secondary",
-      "description": "Secondary buttons. Code: .btn-secondary",
+      "description": "Secondary buttons. Code: Button variant=secondary",
       "fontFamily": "Inter",
       "fontStyle": "Medium",
       "fontWeight": 500,
