@@ -310,7 +310,7 @@
       "description": "Fill under white labels",
       "values": {
         "Dark": {
-          "alias": "blue/440"
+          "alias": "blue/450"
         },
         "Light": {
           "alias": "accent/default"
@@ -325,7 +325,7 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "blue/490"
+          "alias": "blue/480"
         },
         "Light": {
           "alias": "blue/500"
@@ -373,7 +373,7 @@
           "alias": "amber/160"
         },
         "Light": {
-          "alias": "amber/390"
+          "alias": "amber/400"
         }
       }
     },
@@ -415,7 +415,7 @@
       "description": "Solid negative under white labels",
       "values": {
         "Dark": {
-          "alias": "red/460"
+          "alias": "red/470"
         },
         "Light": {
           "alias": "red/470"
@@ -505,7 +505,7 @@
       "description": "Download",
       "values": {
         "Dark": {
-          "alias": "blue/290"
+          "alias": "blue/300"
         },
         "Light": {
           "alias": "blue/450"
@@ -864,7 +864,7 @@
       "description": "Negative fill hover",
       "values": {
         "Dark": {
-          "alias": "red/520"
+          "alias": "red/540"
         },
         "Light": {
           "alias": "red/540"
@@ -1226,21 +1226,6 @@
       }
     },
     {
-      "name": "red/370",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.89804,
-          "g": 0.28235,
-          "b": 0.30196,
-          "a": 1
-        }
-      }
-    },
-    {
       "name": "red/420",
       "collection": "Palette",
       "type": "COLOR",
@@ -1271,21 +1256,6 @@
       }
     },
     {
-      "name": "red/460",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.72941,
-          "g": 0.2549,
-          "b": 0.21176,
-          "a": 1
-        }
-      }
-    },
-    {
       "name": "red/470",
       "collection": "Palette",
       "type": "COLOR",
@@ -1296,21 +1266,6 @@
           "r": 0.69804,
           "g": 0.25882,
           "b": 0.21961,
-          "a": 1
-        }
-      }
-    },
-    {
-      "name": "red/520",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.61176,
-          "g": 0.21569,
-          "b": 0.17647,
           "a": 1
         }
       }
@@ -1376,7 +1331,7 @@
       }
     },
     {
-      "name": "amber/390",
+      "name": "amber/400",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1481,21 +1436,6 @@
       }
     },
     {
-      "name": "blue/290",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.41569,
-          "g": 0.62745,
-          "b": 1,
-          "a": 1
-        }
-      }
-    },
-    {
       "name": "blue/300",
       "collection": "Palette",
       "type": "COLOR",
@@ -1541,21 +1481,6 @@
       }
     },
     {
-      "name": "blue/440",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.27843,
-          "g": 0.43137,
-          "b": 0.78431,
-          "a": 1
-        }
-      }
-    },
-    {
       "name": "blue/450",
       "collection": "Palette",
       "type": "COLOR",
@@ -1581,21 +1506,6 @@
           "r": 0.2,
           "g": 0.37647,
           "b": 0.78824,
-          "a": 1
-        }
-      }
-    },
-    {
-      "name": "blue/490",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.23922,
-          "g": 0.38431,
-          "b": 0.72157,
           "a": 1
         }
       }

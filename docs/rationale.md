@@ -4,7 +4,7 @@ The reasons behind the token values. The values themselves live in Figma (and in
 
 ## Structure
 
-- **Every colour lives once, in the Palette.** Color tokens point at Palette shades, and each shade is named by hue and darkness (`gray/850`, `blue/450`; higher is darker).
+- **Every colour lives once, in the Palette.** Color tokens point at Palette shades, and each shade is named by hue and darkness: `hue/N` has OKLCH lightness of about 100 − N/10, so `blue/450` is 55 (higher is darker).
 - **Gray is one even ramp.** Grays sit on 5-steps of OKLCH lightness, and the number says which: `gray/N` has lightness 100 − N/10, so `gray/850` is 15. The one exception is inset, which takes the half step between base and surface (`gray/25`, `gray/825`). They share one hue and one chroma curve, so the ramp reads as one family. Only the steps a token uses are in the Palette. The hues keep their own shades, each tuned for its job.
 - **CSS names follow Figma names.** `bg/base` is `--bg-base`, `border/default` is `--border-default`; the build refuses a code syntax that doesn't match.
 - **Typography comes from the text styles, not variables.** Figma can't bind a percentage line height to a variable, so line heights and letter spacings live only in the styles; copying them into variables would give the type scale two sources that could drift apart.
@@ -27,7 +27,7 @@ The reasons behind the token values. The values themselves live in Figma (and in
 
 - **`accent/fill` sits a step darker than the accent.** The bright accent reads well as text but gives a white label only 3.2:1; the fill clears 4.5:1.
 - **Fill hovers deepen rather than brighten:** any lighter fill would drop the white label below 4.5:1.
-- **The negative reds** (negative, fill, fill hover) each step darker and duller, so they read as three reds rather than two. White labels sit at 5.6:1 and 7.4:1 in light mode.
+- **The negative reds** (negative, fill, fill hover) each step darker and duller, so they read as three reds rather than two. Both themes share the fill and hover, where white labels sit at 5.6:1 and 7.4:1.
 
 ## Status
 
