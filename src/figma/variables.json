@@ -67,7 +67,7 @@
       "collection": "Color",
       "type": "COLOR",
       "code": "var(--bg-base)",
-      "description": "Backdrop and sunken areas",
+      "description": "Backdrop, title bar and rail",
       "values": {
         "Dark": {
           "alias": "gray/850"
@@ -1967,6 +1967,51 @@
           "g": 0.41176,
           "b": 0.83529,
           "a": 0.12
+        }
+      }
+    },
+    {
+      "name": "gray/25",
+      "collection": "Palette",
+      "type": "COLOR",
+      "code": null,
+      "description": "",
+      "values": {
+        "Value": {
+          "r": 0.96471,
+          "g": 0.96863,
+          "b": 0.97255,
+          "a": 1
+        }
+      }
+    },
+    {
+      "name": "gray/825",
+      "collection": "Palette",
+      "type": "COLOR",
+      "code": null,
+      "description": "",
+      "values": {
+        "Value": {
+          "r": 0.05882,
+          "g": 0.06275,
+          "b": 0.08235,
+          "a": 1
+        }
+      }
+    },
+    {
+      "name": "bg/inset",
+      "collection": "Color",
+      "type": "COLOR",
+      "code": "var(--bg-inset)",
+      "description": "Sunken areas inside a surface",
+      "values": {
+        "Dark": {
+          "alias": "gray/825"
+        },
+        "Light": {
+          "alias": "gray/25"
         }
       }
     }
