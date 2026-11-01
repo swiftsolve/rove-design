@@ -17,7 +17,7 @@ Dark is the default, on `:root`. Add the `theme-light` class to the root element
 
 ### Surfaces
 
-- Three backgrounds: `--bg-base` for the backdrop (window, title bar, rail), `--bg-surface` for content that sits on it (cards, menus, tooltips, dialogs), `--bg-inset` for areas sunk into a surface (bands, inputs, secondary buttons). `--bg-hover` is a hovered surface, `--bg-scrim` goes behind dialogs.
+- Three backgrounds: `--bg-base` for the backdrop (window, title bar, rail), `--bg-surface` for content that sits on it (cards, menus, tooltips, dialogs), `--bg-inset` for areas sunk into a surface (bands, inputs, soft buttons). `--bg-hover` is a hovered surface, `--bg-scrim` goes behind dialogs.
 - Cards get depth from `--shadow-panel` and a `--border-highlight` top edge, not hard outlines. Menus and tooltips use `--shadow-raised` on `--bg-surface`.
 - Hairlines are `--border-default`; `--border-strong` is for a line that must stand out more.
 - For hovers, chips and tracks on a surface, use the `--fill-*` overlays, by strength: `--fill-faint` (3%), `--fill-subtle` (5%), `--fill-default` (7%), `--fill-strong` (16%). They flip with the theme, so they stay visible on both.
@@ -31,8 +31,8 @@ Dark is the default, on `:root`. Add the `theme-light` class to the root element
 ### Accent and buttons
 
 - `--accent-default` is for accent text, icons and lines. It's too light under a white label.
-- Filled buttons use `--accent-fill`, hovering to `--accent-fill-hover`. Hovers deepen, never lighten, so the white label keeps its contrast.
-- A solid red control (the Danger button, the window close hover) uses `--status-negative-fill` and `--status-negative-fill-hover`.
+- Solid buttons use `--accent-fill`, hovering to `--accent-fill-hover`. Hovers deepen, never lighten, so the white label keeps its contrast.
+- A solid red control (a solid negative button, the window close hover) uses `--status-negative-fill` and `--status-negative-fill-hover`.
 
 ### Status
 
