@@ -45,7 +45,7 @@ The package ships `tokens.css` and `tokens/` built. You can also install straigh
 
 Dark values sit on `:root`, Light values on `:root.theme-light`. CSS names follow the Figma names: `bg/base` is `--bg-base`, `spacing/12` is `--spacing-12`.
 
-Each Figma text style becomes four tokens: `--type-<style>-size`, `-weight`, `-line-height` (a unitless ratio) and `-letter-spacing` (in `em`). `Metric/Display` gives `--type-metric-display-size` and so on. A size bound to a variable comes through as that variable (`var(--font-size-3xl)`).
+Each Figma text style becomes four tokens: `--type-<style>-size`, `-weight`, `-line-height` (a unitless ratio) and `-letter-spacing` (in `em`). `Number/Display` gives `--type-number-display-size` and so on. A size bound to a variable comes through as that variable (`var(--font-size-3xl)`).
 
 ### 🧩 DTCG
 

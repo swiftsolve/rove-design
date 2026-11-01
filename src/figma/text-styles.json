@@ -5,8 +5,8 @@
   },
   "styles": [
     {
-      "name": "Title",
-      "description": "Wordmark, network name, page titles. Code: .text-title",
+      "name": "Heading/Large",
+      "description": "Page titles, the wordmark. Code: .text-heading-large",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,
@@ -25,28 +25,8 @@
       }
     },
     {
-      "name": "Section title",
-      "description": "Card headings. Code: .section-title",
-      "fontFamily": "Inter",
-      "fontStyle": "Semi Bold",
-      "fontWeight": 600,
-      "fontSize": 14,
-      "lineHeight": {
-        "unit": "PERCENT",
-        "value": 120
-      },
-      "letterSpacing": {
-        "unit": "PERCENT",
-        "value": -1
-      },
-      "boundVariables": {
-        "fontFamily": "font-family/sans",
-        "fontSize": "font-size/lg"
-      }
-    },
-    {
-      "name": "Dialog title",
-      "description": "Dialog headings. Code: .text-dialog-title",
+      "name": "Heading/Medium",
+      "description": "Dialog titles. Code: .text-heading-medium",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,
@@ -65,8 +45,28 @@
       }
     },
     {
-      "name": "Body",
-      "description": "Body and secondary lines. Code: .text-body",
+      "name": "Heading/Small",
+      "description": "Card headings. Code: .text-heading-small",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontWeight": 600,
+      "fontSize": 14,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 120
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "boundVariables": {
+        "fontFamily": "font-family/sans",
+        "fontSize": "font-size/lg"
+      }
+    },
+    {
+      "name": "Body/Default",
+      "description": "Body text. Code: .text-body",
       "fontFamily": "Inter",
       "fontStyle": "Regular",
       "fontWeight": 400,
@@ -85,8 +85,8 @@
       }
     },
     {
-      "name": "Field label",
-      "description": "Labels above or beside values. Code: .field-label",
+      "name": "Overline",
+      "description": "Uppercase labels above values. Code: .text-overline",
       "fontFamily": "Inter",
       "fontStyle": "Medium",
       "fontWeight": 500,
@@ -105,31 +105,11 @@
       }
     },
     {
-      "name": "Meta",
-      "description": "Badges, small captions. Code: .text-meta",
+      "name": "Caption",
+      "description": "Badges, captions, footer hints. Code: .text-caption",
       "fontFamily": "Inter",
       "fontStyle": "Regular",
       "fontWeight": 400,
-      "fontSize": 11,
-      "lineHeight": {
-        "unit": "PERCENT",
-        "value": 135
-      },
-      "letterSpacing": {
-        "unit": "PERCENT",
-        "value": 0
-      },
-      "boundVariables": {
-        "fontFamily": "font-family/sans",
-        "fontSize": "font-size/xs"
-      }
-    },
-    {
-      "name": "Meta strong",
-      "description": "Title bar status. Code: .text-meta-strong",
-      "fontFamily": "Inter",
-      "fontStyle": "Medium",
-      "fontWeight": 500,
       "fontSize": 11,
       "lineHeight": {
         "unit": "PERCENT",
@@ -145,27 +125,27 @@
       }
     },
     {
-      "name": "Hint",
-      "description": "Card footer hints. Code: .text-hint",
+      "name": "Label/Large",
+      "description": "Filled button labels. Code: Button variant=filled",
       "fontFamily": "Inter",
-      "fontStyle": "Regular",
-      "fontWeight": 400,
-      "fontSize": 11,
+      "fontStyle": "Semi Bold",
+      "fontWeight": 600,
+      "fontSize": 12,
       "lineHeight": {
         "unit": "PERCENT",
-        "value": 150
+        "value": 145
       },
       "letterSpacing": {
         "unit": "PERCENT",
-        "value": 0
+        "value": 1
       },
       "boundVariables": {
         "fontFamily": "font-family/sans",
-        "fontSize": "font-size/xs"
+        "fontSize": "font-size/sm"
       }
     },
     {
-      "name": "Metric/Display",
+      "name": "Number/Display",
       "description": "Live speeds. Add a 0.43px outside stroke. Code: .metric-value, at weight 600: Questrial has one weight, so the browser emboldens it.",
       "fontFamily": "Questrial",
       "fontStyle": "Regular",
@@ -185,7 +165,7 @@
       }
     },
     {
-      "name": "Metric/Compact",
+      "name": "Number/Large",
       "description": "Stat totals. Add a 0.26px outside stroke. Code: .metric-compact",
       "fontFamily": "Questrial",
       "fontStyle": "Regular",
@@ -205,48 +185,8 @@
       }
     },
     {
-      "name": "Metric/Unit",
-      "description": "Units after values. Code: .metric-unit",
-      "fontFamily": "Inter",
-      "fontStyle": "Regular",
-      "fontWeight": 400,
-      "fontSize": 12,
-      "lineHeight": {
-        "unit": "PERCENT",
-        "value": 145
-      },
-      "letterSpacing": {
-        "unit": "PERCENT",
-        "value": 0
-      },
-      "boundVariables": {
-        "fontFamily": "font-family/sans",
-        "fontSize": "font-size/sm"
-      }
-    },
-    {
-      "name": "Chart label",
-      "description": "Chart axes and scale. Code: .text-chart-label",
-      "fontFamily": "Questrial",
-      "fontStyle": "Regular",
-      "fontWeight": 400,
-      "fontSize": 10,
-      "lineHeight": {
-        "unit": "PERCENT",
-        "value": 100
-      },
-      "letterSpacing": {
-        "unit": "PERCENT",
-        "value": 0
-      },
-      "boundVariables": {
-        "fontFamily": "font-family/numeric",
-        "fontSize": "font-size/2xs"
-      }
-    },
-    {
-      "name": "Value",
-      "description": "Data row values. Code: .text-value",
+      "name": "Number/Default",
+      "description": "Data row values. Code: .text-number",
       "fontFamily": "Questrial",
       "fontStyle": "Regular",
       "fontWeight": 400,
@@ -265,28 +205,28 @@
       }
     },
     {
-      "name": "Button/Large",
-      "description": "Filled buttons. Code: Button variant=filled",
-      "fontFamily": "Inter",
-      "fontStyle": "Semi Bold",
-      "fontWeight": 600,
-      "fontSize": 12,
+      "name": "Number/Small",
+      "description": "Chart axes and scale. Code: .text-number-small",
+      "fontFamily": "Questrial",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "fontSize": 10,
       "lineHeight": {
         "unit": "PERCENT",
-        "value": 145
+        "value": 100
       },
       "letterSpacing": {
         "unit": "PERCENT",
-        "value": 1
+        "value": 0
       },
       "boundVariables": {
-        "fontFamily": "font-family/sans",
-        "fontSize": "font-size/sm"
+        "fontFamily": "font-family/numeric",
+        "fontSize": "font-size/2xs"
       }
     },
     {
-      "name": "Button/Default",
-      "description": "Text buttons. Code: Button variant=primary",
+      "name": "Label/Default",
+      "description": "Text button labels. Code: Button variant=text",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,
@@ -305,8 +245,8 @@
       }
     },
     {
-      "name": "Button/Secondary",
-      "description": "Secondary buttons. Code: Button variant=secondary",
+      "name": "Label/Small",
+      "description": "Secondary buttons, title bar status. Code: .text-label-small",
       "fontFamily": "Inter",
       "fontStyle": "Medium",
       "fontWeight": 500,
@@ -325,8 +265,8 @@
       }
     },
     {
-      "name": "Small",
-      "description": "Hints and helper text. Code: .text-small",
+      "name": "Body/Small",
+      "description": "Helper text, hints and units. Code: .text-body-small",
       "fontFamily": "Inter",
       "fontStyle": "Regular",
       "fontWeight": 400,

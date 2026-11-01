@@ -25,7 +25,7 @@ Dark is the default, on `:root`. Add the `theme-light` class to the root element
 ### Text and icons
 
 - `--text-primary` for content, `--text-secondary` for supporting lines, `--text-tertiary` for the quietest text and for icons by default.
-- On a solid fill (accent or Stop button), labels and icons use `--text-on-fill`.
+- On a solid fill (accent or negative), labels and icons use `--text-on-fill`.
 - On `--accent-muted` (a selected item, a tinted button), text uses `--text-accent`.
 
 ### Accent and buttons
@@ -59,7 +59,7 @@ Disabled controls use `--opacity-disabled`.
 ### Type
 
 - Set text with a text style's four `--type-<style>-*` variables, not a font size alone. Each style's use and matching code class is in [Text styles](#text-styles).
-- Numbers that are data (speeds, totals, chart labels) use the Questrial styles (`metric-*`, `value`, `chart-label`); everything else is Inter.
+- Numbers that are data (speeds, totals, chart labels) use the Number styles (`number-*`), set in Questrial; everything else is Inter.
 
 ### Focus and motion
 
@@ -110,23 +110,20 @@ Each style is four variables, `--type-<style>-size`, `-weight`, `-line-height` a
 
 | Style | Variables | Size, weight | Use |
 | --- | --- | --- | --- |
-| Title | `--type-title-*` | 17px 600 | Wordmark, network name, page titles. Code: .text-title |
-| Section title | `--type-section-title-*` | 14px 600 | Card headings. Code: .section-title |
-| Dialog title | `--type-dialog-title-*` | 15px 600 | Dialog headings. Code: .text-dialog-title |
-| Body | `--type-body-*` | 13px 400 | Body and secondary lines. Code: .text-body |
-| Field label | `--type-field-label-*` | 11px 500 | Labels above or beside values. Code: .field-label |
-| Meta | `--type-meta-*` | 11px 400 | Badges, small captions. Code: .text-meta |
-| Meta strong | `--type-meta-strong-*` | 11px 500 | Title bar status. Code: .text-meta-strong |
-| Hint | `--type-hint-*` | 11px 400 | Card footer hints. Code: .text-hint |
-| Metric/Display | `--type-metric-display-*` | 28px 400, Questrial | Live speeds. Add a 0.43px outside stroke. Code: .metric-value, at weight 600: Questrial has one weight, so the browser emboldens it. |
-| Metric/Compact | `--type-metric-compact-*` | 17px 400, Questrial | Stat totals. Add a 0.26px outside stroke. Code: .metric-compact |
-| Metric/Unit | `--type-metric-unit-*` | 12px 400 | Units after values. Code: .metric-unit |
-| Chart label | `--type-chart-label-*` | 10px 400, Questrial | Chart axes and scale. Code: .text-chart-label |
-| Value | `--type-value-*` | 13px 400, Questrial | Data row values. Code: .text-value |
-| Button/Large | `--type-button-large-*` | 12px 600 | Filled buttons. Code: Button variant=filled |
-| Button/Default | `--type-button-default-*` | 11px 600 | Text buttons. Code: Button variant=primary |
-| Button/Secondary | `--type-button-secondary-*` | 11px 500 | Secondary buttons. Code: Button variant=secondary |
-| Small | `--type-small-*` | 12px 400 | Hints and helper text. Code: .text-small |
+| Heading/Large | `--type-heading-large-*` | 17px 600 | Page titles, the wordmark. Code: .text-heading-large |
+| Heading/Medium | `--type-heading-medium-*` | 15px 600 | Dialog titles. Code: .text-heading-medium |
+| Heading/Small | `--type-heading-small-*` | 14px 600 | Card headings. Code: .text-heading-small |
+| Body/Default | `--type-body-default-*` | 13px 400 | Body text. Code: .text-body |
+| Overline | `--type-overline-*` | 11px 500 | Uppercase labels above values. Code: .text-overline |
+| Caption | `--type-caption-*` | 11px 400 | Badges, captions, footer hints. Code: .text-caption |
+| Label/Large | `--type-label-large-*` | 12px 600 | Filled button labels. Code: Button variant=filled |
+| Number/Display | `--type-number-display-*` | 28px 400, Questrial | Live speeds. Add a 0.43px outside stroke. Code: .metric-value, at weight 600: Questrial has one weight, so the browser emboldens it. |
+| Number/Large | `--type-number-large-*` | 17px 400, Questrial | Stat totals. Add a 0.26px outside stroke. Code: .metric-compact |
+| Number/Default | `--type-number-default-*` | 13px 400, Questrial | Data row values. Code: .text-number |
+| Number/Small | `--type-number-small-*` | 10px 400, Questrial | Chart axes and scale. Code: .text-number-small |
+| Label/Default | `--type-label-default-*` | 11px 600 | Text button labels. Code: Button variant=text |
+| Label/Small | `--type-label-small-*` | 11px 500 | Secondary buttons, title bar status. Code: .text-label-small |
+| Body/Small | `--type-body-small-*` | 12px 400 | Helper text, hints and units. Code: .text-body-small |
 
 ### Code-only tokens
 

@@ -27,7 +27,7 @@ The reasons behind the token values. The values themselves live in Figma (and in
 
 - **`accent/fill` sits a step darker than the accent.** The bright accent reads well as text but gives a white label only 3.2:1; the fill clears 4.5:1.
 - **Fill hovers deepen rather than brighten:** any lighter fill would drop the white label below 4.5:1.
-- **The Stop button's reds** (negative, fill, fill hover) each step darker and duller, so they read as three reds rather than two. White labels sit at 5.6:1 and 7.4:1 in light mode.
+- **The negative reds** (negative, fill, fill hover) each step darker and duller, so they read as three reds rather than two. White labels sit at 5.6:1 and 7.4:1 in light mode.
 
 ## Status
 
@@ -50,4 +50,4 @@ The reasons behind the token values. The values themselves live in Figma (and in
 
 ## Type sizes
 
-- **`font-size/xl` is for dialog titles,** a step under the page title.
+- **`font-size/xl` is for Heading/Medium,** a step under Heading/Large.
