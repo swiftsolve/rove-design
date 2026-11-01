@@ -32,7 +32,7 @@
         "Positive",
         "Primary",
         "On fill",
-        "Level",
+        "Capability",
         "Negative",
         "Download",
         "Upload"
@@ -827,7 +827,7 @@
         "On fill": {
           "alias": "text/on-fill"
         },
-        "Level": {
+        "Capability": {
           "alias": "level/color"
         },
         "Negative": {
