@@ -142,7 +142,7 @@ export async function writeDtcg({ dir, variables, textStyles, code, figmaOverrid
     place(files['text-styles'], ['type', slug], textStyleToken(style))
   }
 
-  // A code-only token is named as in CSS, without the dashes: --section-padding is section-padding.
+  // A code-only token is named as in CSS, without the dashes: --card-padding is card-padding.
   const figmaByCss = new Map(variables.filter((v) => v.code).map((v) => [/--[\w-]+/.exec(v.code)[0], v.name]))
   const refTo = (cssName) => {
     if (figmaByCss.has(cssName)) return ref(figmaByCss.get(cssName))

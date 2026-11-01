@@ -15,12 +15,12 @@
     "--titlebar-height": "56px",
     "--rail-item-size": "38px",
 
-    "--section-padding": "var(--spacing-14)",
-    "--section-header-padding-y": "var(--section-padding)",
-    "--section-header-padding-x": "var(--section-padding)",
-    "--section-header-min-height": "42px",
-    "--section-header-height": "44px",
-    "--section-body-padding": "var(--section-padding)",
+    "--card-padding": "var(--spacing-14)",
+    "--card-header-padding-y": "var(--card-padding)",
+    "--card-header-padding-x": "var(--card-padding)",
+    "--card-header-min-height": "42px",
+    "--card-header-height": "44px",
+    "--card-body-padding": "var(--card-padding)",
     "--row-padding-y": "8px",
 
     "--ease-out": "cubic-bezier(0.16, 1, 0.3, 1)",

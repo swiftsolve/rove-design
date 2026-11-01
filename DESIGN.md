@@ -53,7 +53,7 @@ Disabled controls use `--opacity-disabled`.
 ### Spacing and shape
 
 - Every gap, padding and margin is a `--spacing-*` step.
-- Cards use `--section-padding` on every side. The rail and the content column share the side inset `--spacing-12`.
+- Cards use `--card-padding` on every side. The rail and the content column share the side inset `--spacing-12`.
 - Corners are `--radius-*`. `--radius-md` is for nav items and the page-header chip, a step rounder than `--radius-sm`; `--radius-full` makes pills.
 
 ### Type
@@ -132,6 +132,6 @@ What Figma variables can't hold, from `src/code-tokens.json`.
 - **Shadows:** `--shadow-panel`, `--shadow-raised`
 - **Focus:** `--focus-ring-width` 1px, `--focus-outline`, `--focus-inset`
 - **Layout:** `--titlebar-height` 56px, `--rail-item-size` 38px
-- **Cards:** `--section-padding` `var(--spacing-14)`, `--section-header-padding-y` `var(--section-padding)`, `--section-header-padding-x` `var(--section-padding)`, `--section-header-min-height` 42px, `--section-header-height` 44px, `--section-body-padding` `var(--section-padding)`, `--row-padding-y` 8px
+- **Cards:** `--card-padding` `var(--spacing-14)`, `--card-header-padding-y` `var(--card-padding)`, `--card-header-padding-x` `var(--card-padding)`, `--card-header-min-height` 42px, `--card-header-height` 44px, `--card-body-padding` `var(--card-padding)`, `--row-padding-y` 8px
 - **Motion:** `--ease-out`, `--ease-in-out`, `--ease-pulse`, `--duration-fast` 140ms, `--duration-normal` 220ms
 - **Font weights:** `--weight-regular` 400, `--weight-medium` 500, `--weight-semibold` 600

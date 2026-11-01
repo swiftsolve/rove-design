@@ -30,7 +30,7 @@ const GROUPS = {
   shadow: 'Shadows',
   titlebar: 'Layout',
   rail: 'Layout',
-  section: 'Cards',
+  card: 'Cards',
   row: 'Cards',
   ease: 'Motion',
   duration: 'Motion',
