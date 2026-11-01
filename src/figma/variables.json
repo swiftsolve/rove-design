@@ -911,7 +911,7 @@
       "collection": "Opacity",
       "type": "FLOAT",
       "code": "var(--opacity-tint-xs)",
-      "description": "Offline icon tint",
+      "description": "Faintest tint",
       "values": {
         "Value": 8
       }
@@ -921,7 +921,7 @@
       "collection": "Opacity",
       "type": "FLOAT",
       "code": "var(--opacity-tint-sm)",
-      "description": "Connection icon tint",
+      "description": "Light tint",
       "values": {
         "Value": 10
       }
@@ -931,7 +931,7 @@
       "collection": "Opacity",
       "type": "FLOAT",
       "code": "var(--opacity-tint-md)",
-      "description": "Icon tile tint",
+      "description": "Tint",
       "values": {
         "Value": 14
       }
@@ -941,59 +941,29 @@
       "collection": "Opacity",
       "type": "FLOAT",
       "code": "var(--opacity-tint-lg)",
-      "description": "Hovered icon tile tint",
+      "description": "Strong tint",
       "values": {
         "Value": 22
       }
     },
     {
-      "name": "opacity/unlit",
+      "name": "opacity/tint-xl",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": "var(--opacity-unlit)",
-      "description": "Unlit meter bars",
-      "values": {
-        "Value": 22
-      }
-    },
-    {
-      "name": "opacity/area-down",
-      "collection": "Opacity",
-      "type": "FLOAT",
-      "code": "var(--opacity-area-down)",
-      "description": "Download chart area",
+      "code": "var(--opacity-tint-xl)",
+      "description": "Strongest tint",
       "values": {
         "Value": 28
       }
     },
     {
-      "name": "opacity/area-up",
+      "name": "opacity/high",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": "var(--opacity-area-up)",
-      "description": "Upload chart area",
-      "values": {
-        "Value": 8
-      }
-    },
-    {
-      "name": "opacity/series-up-line",
-      "collection": "Opacity",
-      "type": "FLOAT",
-      "code": "var(--opacity-series-up-line)",
-      "description": "Upload chart line",
+      "code": "var(--opacity-high)",
+      "description": "Nearly opaque",
       "values": {
         "Value": 80
-      }
-    },
-    {
-      "name": "opacity/disabled",
-      "collection": "Opacity",
-      "type": "FLOAT",
-      "code": "var(--opacity-disabled)",
-      "description": "Disabled controls",
-      "values": {
-        "Value": 40
       }
     },
     {
@@ -1021,13 +991,13 @@
       }
     },
     {
-      "name": "opacity/muted-glyph",
+      "name": "opacity/disabled",
       "collection": "Opacity",
       "type": "FLOAT",
-      "code": "var(--opacity-muted-glyph)",
-      "description": "Empty-state icon",
+      "code": "var(--opacity-disabled)",
+      "description": "Disabled controls",
       "values": {
-        "Value": 55
+        "Value": 40
       }
     },
     {
