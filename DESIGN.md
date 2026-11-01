@@ -53,7 +53,7 @@ Disabled controls use `--opacity-disabled`.
 ### Spacing and shape
 
 - Every gap, padding and margin is a `--spacing-*` step.
-- Cards use `--section-padding` on every side. The rail and the content column share the side inset `--spacing-11`.
+- Cards use `--section-padding` on every side. The rail and the content column share the side inset `--spacing-12`.
 - Corners are `--radius-*`. `--radius-md` is for nav items and the page-header chip, a step rounder than `--radius-sm`; `--radius-full` makes pills.
 
 ### Type
@@ -97,7 +97,7 @@ Names and uses, from Figma. The values are in `tokens.css`; Dark and Light diffe
 
 ### Scales
 
-- **Spacing:** `--spacing-<n>`, n in px: 2, 4, 6, 8, 10, 11 (rail and content side inset), 12, 14, 16, 20
+- **Spacing:** `--spacing-<n>`, n in px: 2, 4, 6, 8, 10, 12, 14, 16, 20
 - **Radius:** `--radius-xs` 5px, `--radius-sm` 8px, `--radius-md` 10px, `--radius-lg` 13px, `--radius-full` 999px
 - **Font sizes:** `--font-size-2xs` 10px, `--font-size-xs` 11px, `--font-size-sm` 12px, `--font-size-md` 13px, `--font-size-lg` 14px, `--font-size-xl` 15px (dialog titles), `--font-size-2xl` 17px, `--font-size-3xl` 28px
 - **Font families:** `--font-family-sans` Inter, `--font-family-numeric` Questrial

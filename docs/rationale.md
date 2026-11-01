@@ -43,7 +43,7 @@ The reasons behind the token values. The values themselves live in Figma (and in
 
 ## Spacing, radius and focus
 
-- **One 2px-based spacing scale:** every gap, padding and margin is one of its steps. `spacing/11` is the side inset the nav rail and the content column share, so the content sits as far from the window edge as the nav icons do.
+- **One 2px spacing scale:** every gap, padding and margin is one of its steps, with no odd ones out. The nav rail and the content column share the `spacing/12` side inset, so the content sits as far from the window edge as the nav icons do.
 - **Cards use one padding on every axis** (`--section-padding`), matching the gap the cards stack at, so they read as evenly inset.
 - **`radius/md` is for the nav item and page-header chip,** a step rounder than `radius/sm`.
 - **The focus ring is the same 1px accent line as the nav-flash highlight.** Controls get it outside their edge (`focus/offset`). Rows flush in a card draw it just inside (`--focus-inset`), square-cornered like the highlight.
