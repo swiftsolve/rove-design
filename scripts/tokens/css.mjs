@@ -5,7 +5,7 @@
  * color.light) and resolves the references; the `rove/css` format writes the
  * Dark theme on :root and only what differs in Light on :root.theme-light.
  *
- * - Names follow the token paths: `bg.app` is `--bg-app`.
+ * - Names follow the token paths: `bg.base` is `--bg-base`.
  * - A reference to a token that's in the CSS stays a var() (`var(--accent-default)`);
  *   a reference to one that isn't (a Palette shade, a shadow colour) becomes its value.
  * - Tokens marked `css: false` (Figma variables without a code syntax, the Palette)

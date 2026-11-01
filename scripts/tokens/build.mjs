@@ -11,8 +11,8 @@
  *   src/figma/text-styles.json  raw export of the Figma text styles
  *   src/code-tokens.json        what Figma variables can't hold, which may pull Figma values in
  *
- * A Figma variable's code syntax must be its name with `/` as `-` (`bg/app`
- * is `--bg-app`); variables without one are inputs only, not CSS variables.
+ * A Figma variable's code syntax must be its name with `/` as `-` (`bg/base`
+ * is `--bg-base`); variables without one are inputs only, not CSS variables.
  */
 import { readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'

@@ -204,9 +204,9 @@ ${tokens}
   /* One gap above and below the slide, so the page is framed evenly. */
   body { --page-gap: 64px; --page-pad: 32px; }
   /* Sidebar down the left; the top bar sits outside the scrolling area so it stays put when a zoomed slide scrolls. */
-  body { margin: 0; display: grid; grid-template-columns: 240px 1fr; grid-template-rows: auto 1fr; height: 100vh; height: 100dvh; background: var(--bg-app); color: var(--text-primary); font: 13px/1.45 var(--font-family-sans); -webkit-font-smoothing: antialiased; }
-  nav, main { overflow: auto; scrollbar-width: thin; scrollbar-color: var(--fill-scrollbar) transparent; }
-  nav { grid-row: 1 / 3; padding: 20px 10px 32px; background: var(--bg-panel); border-right: 1px solid var(--border-default); }
+  body { margin: 0; display: grid; grid-template-columns: 240px 1fr; grid-template-rows: auto 1fr; height: 100vh; height: 100dvh; background: var(--bg-base); color: var(--text-primary); font: 13px/1.45 var(--font-family-sans); -webkit-font-smoothing: antialiased; }
+  nav, main { overflow: auto; scrollbar-width: thin; scrollbar-color: var(--fill-strong) transparent; }
+  nav { grid-row: 1 / 3; padding: 20px 10px 32px; background: var(--bg-surface); border-right: 1px solid var(--border-default); }
   /* Negative margins so the divider runs edge to edge of the sidebar. */
   nav > header { margin: 0 -10px; padding: 0 20px 18px; border-bottom: 1px solid var(--border-default); }
   nav h1 { margin: 0 0 2px; font-size: 14px; font-weight: 600; }
@@ -221,24 +221,24 @@ ${tokens}
   nav .tree { margin: 2px 0 6px 15.5px; padding-left: 8px; border-left: 1px solid var(--border-strong); }
   nav .tree .tree { margin: 0 0 2px 8px; }
   nav p.page { color: var(--text-tertiary); }
-  nav a:hover { background: var(--fill-nav-hover); color: var(--text-primary); }
+  nav a:hover { background: var(--fill-subtle); color: var(--text-primary); }
   nav a[aria-current] { background: var(--bg-hover); color: var(--text-primary); }
   /* A near-black gray canvas, between the panels and the app backdrop. */
-  main { display: flex; flex-direction: column; padding: var(--page-gap) var(--page-pad); background: var(--bg-inset); }
+  main { display: flex; flex-direction: column; padding: var(--page-gap) var(--page-pad); background: var(--bg-base); }
   /* The page script sets each slide's width from the zoom. */
   /* Auto margins centre the slide both ways when there's room, and fall back to the top-left edge (still scrollable) when it's bigger than the canvas. */
   figure { flex-shrink: 0; margin: auto; }
   /* A top bar across the content area, like the sidebar's panel. */
-  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 58px; padding: 0 var(--page-pad); background: var(--bg-panel); border-bottom: 1px solid var(--border-default); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 58px; padding: 0 var(--page-pad); background: var(--bg-surface); border-bottom: 1px solid var(--border-default); }
   /* Zoom: − [90% ▾] + floating in the bottom-right corner, with a menu of fit options, as in Figma. */
-  .zoom { position: fixed; right: 24px; bottom: 24px; z-index: 2; display: flex; align-items: center; gap: 2px; padding: 3px; background: var(--bg-raised); border: 1px solid var(--border-strong); border-radius: 10px; box-shadow: 0 8px 24px rgb(0 0 0 / .45); }
+  .zoom { position: fixed; right: 24px; bottom: 24px; z-index: 2; display: flex; align-items: center; gap: 2px; padding: 3px; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 10px; box-shadow: 0 8px 24px rgb(0 0 0 / .45); }
   .zoom > button { display: flex; align-items: center; justify-content: center; gap: 4px; height: 28px; min-width: 28px; padding: 0 6px; border: 0; border-radius: 7px; background: none; color: var(--text-secondary); font: inherit; font-size: 12px; cursor: pointer; }
-  .zoom > button:hover, .zoom .level[aria-expanded="true"] { background: var(--fill-nav-hover); color: var(--text-primary); }
+  .zoom > button:hover, .zoom .level[aria-expanded="true"] { background: var(--fill-subtle); color: var(--text-primary); }
   /* Hugs its content, so the number sits as close to − and + as they sit to the edges. The number keeps a steady width as it changes. */
   .zoom .level { padding: 0 4px 0 6px; color: var(--text-primary); font-variant-numeric: tabular-nums; }
   .zoom .value { min-width: 4.5ch; text-align: center; }
   .zoom .level svg { color: var(--text-tertiary); }
-  .zoom .menu { position: absolute; right: 0; bottom: calc(100% + 6px); width: 100%; padding: 3px; background: var(--bg-raised); border: 1px solid var(--border-strong); border-radius: 8px; box-shadow: 0 8px 24px rgb(0 0 0 / .45); }
+  .zoom .menu { position: absolute; right: 0; bottom: calc(100% + 6px); width: 100%; padding: 3px; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; box-shadow: 0 8px 24px rgb(0 0 0 / .45); }
   .zoom .menu[hidden] { display: none; }
   .zoom .menu button { display: flex; align-items: center; gap: 6px; width: 100%; height: 26px; padding: 0 8px 0 6px; border: 0; border-radius: 5px; background: none; color: var(--text-primary); font: inherit; font-size: 12px; text-align: left; cursor: pointer; }
   .zoom .menu button:hover, .zoom .menu button:focus-visible { background: var(--bg-hover); outline: none; }
@@ -247,7 +247,7 @@ ${tokens}
   .trails { min-width: 0; }
   /* The menu button and the slide arrows are for phones, which have no sidebar or arrow keys. */
   .bar > button { display: none; flex-shrink: 0; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 8px; background: none; color: var(--text-secondary); cursor: pointer; }
-  .bar > button:hover { background: var(--fill-nav-hover); color: var(--text-primary); }
+  .bar > button:hover { background: var(--fill-subtle); color: var(--text-primary); }
   .bar > button:disabled { background: none; color: var(--text-tertiary); opacity: .5; cursor: default; }
   .crumbs[hidden] { display: none; }
   .crumbs { display: flex; align-items: center; gap: 6px; min-width: 0; margin: 0; white-space: nowrap; overflow: hidden; }

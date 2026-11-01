@@ -13,14 +13,14 @@ Dark is the default, on `:root`. Add the `theme-light` class to the root element
 ## Rules
 
 - **Use a token, never a raw value.** No hex colours, no pixel gaps, no font sizes typed by hand. If nothing fits, the design needs a new token in Figma, not a one-off in code.
-- **Name by job, not by look.** Pick `--bg-panel` because it's a card, not because it's the right grey. The Palette shades (`gray/850`) aren't CSS variables, on purpose.
+- **Name by job, not by look.** Pick `--bg-surface` because it's content on the backdrop, not because it's the right grey. The Palette shades (`gray/850`) aren't CSS variables, on purpose.
 
 ### Surfaces
 
-- Backgrounds are an elevation ladder: `--bg-app` (window) → `--bg-chrome` (title bar, rail) → `--bg-shell` (behind the cards) → `--bg-panel` (cards) → `--bg-raised` (menus, tooltips). `--bg-inset` is for sunken bands and secondary buttons, `--bg-hover` for hovered rows and buttons, `--bg-scrim` behind dialogs.
-- Cards get depth from `--shadow-panel` and a `--border-hairline-top` highlight, not hard outlines. Menus and tooltips use `--shadow-raised` on `--bg-raised`.
+- Two backgrounds: `--bg-base` for the backdrop and anything sunken or on it (window, title bar, rail, inset bands, secondary buttons), `--bg-surface` for content that sits on it (cards, menus, tooltips, dialogs). `--bg-hover` is a hovered surface, `--bg-scrim` goes behind dialogs.
+- Cards get depth from `--shadow-panel` and a `--border-highlight` top edge, not hard outlines. Menus and tooltips use `--shadow-raised` on `--bg-surface`.
 - Hairlines are `--border-default`; `--border-strong` is for a line that must stand out more.
-- For hovers, chips and tracks on a surface, use the `--fill-*` overlays. They flip with the theme, so they stay visible on both.
+- For hovers, chips and tracks on a surface, use the `--fill-*` overlays, by strength: `--fill-faint` (3%), `--fill-subtle` (5%), `--fill-default` (7%), `--fill-strong` (16%). They flip with the theme, so they stay visible on both.
 
 ### Text and icons
 
@@ -32,7 +32,7 @@ Dark is the default, on `:root`. Add the `theme-light` class to the root element
 
 - `--accent-default` is for accent text, icons and lines. It's too light under a white label.
 - Filled buttons use `--accent-fill`, hovering to `--accent-fill-hover`. Hovers deepen, never lighten, so the white label keeps its contrast.
-- The Stop button uses `--status-negative-fill` and `--status-negative-fill-hover`.
+- A solid red control (the Danger button, the window close hover) uses `--status-negative-fill` and `--status-negative-fill-hover`.
 
 ### Status
 
@@ -86,14 +86,13 @@ Names and uses, from Figma. The values are in `tokens.css`; Dark and Light diffe
 
 ### Colour
 
-- **Backgrounds:** `--bg-app` (window backdrop), `--bg-chrome` (title bar, rail, dialog wells), `--bg-shell` (behind the cards), `--bg-panel` (cards), `--bg-raised` (tooltips, menus), `--bg-inset` (sunken bands, secondary buttons), `--bg-hover` (hovered rows and buttons), `--bg-scrim` (behind dialogs)
-- **Lines:** `--border-default` (hairlines), `--border-strong`, `--border-hairline-top`
-- **Fills and overlays:** `--fill-track` (unlit meter segments), `--fill-nav-hover` (nav hover), `--fill-chip` (page header icon chip), `--fill-row-hover` (hovered rows and strips), `--fill-track-lit` (lit bars while testing), `--fill-scrollbar` (scrollbar thumb), `--fill-selection` (text selection)
+- **Backgrounds:** `--bg-base` (backdrop and sunken areas), `--bg-surface` (content on the backdrop), `--bg-hover` (hovered rows and buttons), `--bg-scrim` (behind dialogs)
+- **Lines:** `--border-default` (hairlines), `--border-strong`, `--border-highlight` (top edge highlight)
+- **Fills and overlays:** `--fill-default` (overlay), `--fill-subtle` (light overlay), `--fill-faint` (faintest overlay), `--fill-strong` (strong overlay), `--fill-selection` (text selection)
 - **Text:** `--text-primary`, `--text-secondary`, `--text-tertiary` (default icon colour), `--text-accent` (text on accent/muted), `--text-positive`, `--text-good`, `--text-warning`, `--text-poor`, `--text-negative`, `--text-on-fill` (labels and icons on solid fills)
-- **Accent:** `--accent-default`, `--accent-hover`, `--accent-press`, `--accent-muted` (selected nav, tinted buttons), `--accent-fill` (fill under white labels), `--accent-fill-hover`
-- **Status:** `--status-positive`, `--status-good` (between positive and warning), `--status-warning`, `--status-poor` (between warning and negative), `--status-negative`, `--status-negative-fill` (stop button), `--status-negative-fill-hover` (stop button hover)
+- **Accent:** `--accent-default`, `--accent-hover`, `--accent-press`, `--accent-muted` (tinted accent background), `--accent-fill` (fill under white labels), `--accent-fill-hover`
+- **Status:** `--status-positive`, `--status-good` (between positive and warning), `--status-warning`, `--status-poor` (between warning and negative), `--status-negative`, `--status-negative-fill` (solid negative under white labels), `--status-negative-fill-hover` (negative fill hover)
 - **Chart series:** `--series-down` (download), `--series-up` (upload)
-- **Window:** `--window-close-hover` (close button hover)
 - **Focus:** `--focus-ring` (keyboard focus ring)
 
 ### Scales

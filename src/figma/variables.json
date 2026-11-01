@@ -63,11 +63,11 @@
   ],
   "variables": [
     {
-      "name": "bg/app",
+      "name": "bg/base",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--bg-app)",
-      "description": "Window backdrop",
+      "code": "var(--bg-base)",
+      "description": "Backdrop and sunken areas",
       "values": {
         "Dark": {
           "alias": "gray/850"
@@ -78,77 +78,17 @@
       }
     },
     {
-      "name": "bg/chrome",
+      "name": "bg/surface",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--bg-chrome)",
-      "description": "Title bar, rail, dialog wells",
-      "values": {
-        "Dark": {
-          "alias": "gray/850"
-        },
-        "Light": {
-          "alias": "white"
-        }
-      }
-    },
-    {
-      "name": "bg/shell",
-      "collection": "Color",
-      "type": "COLOR",
-      "code": "var(--bg-shell)",
-      "description": "Behind the cards",
-      "values": {
-        "Dark": {
-          "alias": "gray/850"
-        },
-        "Light": {
-          "alias": "gray/50"
-        }
-      }
-    },
-    {
-      "name": "bg/panel",
-      "collection": "Color",
-      "type": "COLOR",
-      "code": "var(--bg-panel)",
-      "description": "Cards",
+      "code": "var(--bg-surface)",
+      "description": "Content on the backdrop",
       "values": {
         "Dark": {
           "alias": "gray/800"
         },
         "Light": {
           "alias": "white"
-        }
-      }
-    },
-    {
-      "name": "bg/raised",
-      "collection": "Color",
-      "type": "COLOR",
-      "code": "var(--bg-raised)",
-      "description": "Tooltips, menus",
-      "values": {
-        "Dark": {
-          "alias": "gray/800"
-        },
-        "Light": {
-          "alias": "gray/50"
-        }
-      }
-    },
-    {
-      "name": "bg/inset",
-      "collection": "Color",
-      "type": "COLOR",
-      "code": "var(--bg-inset)",
-      "description": "Sunken bands, secondary buttons",
-      "values": {
-        "Dark": {
-          "alias": "gray/850"
-        },
-        "Light": {
-          "alias": "gray/50"
         }
       }
     },
@@ -198,11 +138,11 @@
       }
     },
     {
-      "name": "border/hairline-top",
+      "name": "border/highlight",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--border-hairline-top)",
-      "description": "",
+      "code": "var(--border-highlight)",
+      "description": "Top edge highlight",
       "values": {
         "Dark": {
           "alias": "white-alpha/5"
@@ -213,11 +153,11 @@
       }
     },
     {
-      "name": "fill/track",
+      "name": "fill/default",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--fill-track)",
-      "description": "Unlit meter segments",
+      "code": "var(--fill-default)",
+      "description": "Overlay",
       "values": {
         "Dark": {
           "alias": "white-alpha/7"
@@ -228,11 +168,11 @@
       }
     },
     {
-      "name": "fill/nav-hover",
+      "name": "fill/subtle",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--fill-nav-hover)",
-      "description": "Nav hover",
+      "code": "var(--fill-subtle)",
+      "description": "Light overlay",
       "values": {
         "Dark": {
           "alias": "white-alpha/5"
@@ -337,7 +277,7 @@
       "collection": "Color",
       "type": "COLOR",
       "code": "var(--accent-muted)",
-      "description": "Selected nav, tinted buttons",
+      "description": "Tinted accent background",
       "values": {
         "Dark": {
           "alias": "blue-alpha/340-14"
@@ -472,7 +412,7 @@
       "collection": "Color",
       "type": "COLOR",
       "code": "var(--status-negative-fill)",
-      "description": "Stop button",
+      "description": "Solid negative under white labels",
       "values": {
         "Dark": {
           "alias": "red/460"
@@ -917,26 +857,11 @@
       }
     },
     {
-      "name": "window/close-hover",
-      "collection": "Color",
-      "type": "COLOR",
-      "code": "var(--window-close-hover)",
-      "description": "Close button hover",
-      "values": {
-        "Dark": {
-          "alias": "red/370"
-        },
-        "Light": {
-          "alias": "red/370"
-        }
-      }
-    },
-    {
       "name": "status/negative-fill-hover",
       "collection": "Color",
       "type": "COLOR",
       "code": "var(--status-negative-fill-hover)",
-      "description": "Stop button hover",
+      "description": "Negative fill hover",
       "values": {
         "Dark": {
           "alias": "red/520"
@@ -1106,26 +1031,11 @@
       }
     },
     {
-      "name": "fill/chip",
+      "name": "fill/faint",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--fill-chip)",
-      "description": "Page header icon chip",
-      "values": {
-        "Dark": {
-          "alias": "white-alpha/5"
-        },
-        "Light": {
-          "alias": "ink-alpha/5"
-        }
-      }
-    },
-    {
-      "name": "fill/row-hover",
-      "collection": "Color",
-      "type": "COLOR",
-      "code": "var(--fill-row-hover)",
-      "description": "Hovered rows and strips",
+      "code": "var(--fill-faint)",
+      "description": "Faintest overlay",
       "values": {
         "Dark": {
           "alias": "white-alpha/3"
@@ -1136,29 +1046,14 @@
       }
     },
     {
-      "name": "fill/track-lit",
+      "name": "fill/strong",
       "collection": "Color",
       "type": "COLOR",
-      "code": "var(--fill-track-lit)",
-      "description": "Lit bars while testing",
+      "code": "var(--fill-strong)",
+      "description": "Strong overlay",
       "values": {
         "Dark": {
           "alias": "white-alpha/16"
-        },
-        "Light": {
-          "alias": "ink-alpha/16"
-        }
-      }
-    },
-    {
-      "name": "fill/scrollbar",
-      "collection": "Color",
-      "type": "COLOR",
-      "code": "var(--fill-scrollbar)",
-      "description": "Scrollbar thumb",
-      "values": {
-        "Dark": {
-          "alias": "white-alpha/10"
         },
         "Light": {
           "alias": "ink-alpha/16"
