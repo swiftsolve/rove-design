@@ -226,7 +226,7 @@
     },
     {
       "name": "Label/Default",
-      "description": "Text button labels. Code: Button variant=text",
+      "description": "Bold small labels on tinted chips. Code: tracking-label-default",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,

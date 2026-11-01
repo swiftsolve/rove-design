@@ -121,7 +121,7 @@ Each style is four variables, `--type-<style>-size`, `-weight`, `-line-height` a
 | Number/Large | `--type-number-large-*` | 17px 400, Questrial | Stat totals. Add a 0.26px outside stroke. Code: .metric-compact |
 | Number/Default | `--type-number-default-*` | 13px 400, Questrial | Data row values. Code: .text-number |
 | Number/Small | `--type-number-small-*` | 10px 400, Questrial | Chart axes and scale. Code: .text-number-small |
-| Label/Default | `--type-label-default-*` | 11px 600 | Text button labels. Code: Button variant=text |
+| Label/Default | `--type-label-default-*` | 11px 600 | Bold small labels on tinted chips. Code: tracking-label-default |
 | Label/Small | `--type-label-small-*` | 11px 500 | Secondary buttons, title bar status. Code: .text-label-small |
 | Body/Small | `--type-body-small-*` | 12px 400 | Helper text, hints and units. Code: .text-body-small |
 
