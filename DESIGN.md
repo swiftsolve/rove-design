@@ -64,7 +64,7 @@ Disabled controls use `--opacity-disabled`.
 ### Focus and motion
 
 - Keyboard focus is `outline: var(--focus-outline)` with `outline-offset: var(--focus-offset)`. Rows flush with a card's edge draw it inside instead, with `--focus-inset`.
-- Animate with `--ease-out` (or `--ease-in-out`) over `--duration-fast` or `--duration-normal`.
+- Animate with `--ease-out` (or `--ease-in-out`) over `--duration-fast` or `--duration-normal`. A looping pulse uses `--ease-pulse`, which is symmetric, so it fades out and back in alike.
 
 ### Icons
 
@@ -133,5 +133,5 @@ What Figma variables can't hold, from `src/code-tokens.json`.
 - **Focus:** `--focus-ring-width` 1px, `--focus-outline`, `--focus-inset`
 - **Layout:** `--titlebar-height` 56px, `--rail-item-size` 38px
 - **Cards:** `--section-padding` `var(--spacing-14)`, `--section-header-padding-y` `var(--section-padding)`, `--section-header-padding-x` `var(--section-padding)`, `--section-header-min-height` 42px, `--section-header-height` 44px, `--section-body-padding` `var(--section-padding)`, `--row-padding-y` 8px
-- **Motion:** `--ease-out`, `--ease-in-out`, `--duration-fast` 140ms, `--duration-normal` 220ms
+- **Motion:** `--ease-out`, `--ease-in-out`, `--ease-pulse`, `--duration-fast` 140ms, `--duration-normal` 220ms
 - **Font weights:** `--weight-regular` 400, `--weight-medium` 500, `--weight-semibold` 600
