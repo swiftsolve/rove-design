@@ -73,7 +73,7 @@
           "alias": "gray/850"
         },
         "Light": {
-          "alias": "gray/20"
+          "alias": "gray/50"
         }
       }
     },
@@ -85,10 +85,10 @@
       "description": "Title bar, rail, dialog wells",
       "values": {
         "Dark": {
-          "alias": "gray/840"
+          "alias": "gray/850"
         },
         "Light": {
-          "alias": "gray/10"
+          "alias": "white"
         }
       }
     },
@@ -103,7 +103,7 @@
           "alias": "gray/850"
         },
         "Light": {
-          "alias": "gray/40"
+          "alias": "gray/50"
         }
       }
     },
@@ -130,10 +130,10 @@
       "description": "Tooltips, menus",
       "values": {
         "Dark": {
-          "alias": "gray/780"
+          "alias": "gray/800"
         },
         "Light": {
-          "alias": "gray/20"
+          "alias": "gray/50"
         }
       }
     },
@@ -145,10 +145,10 @@
       "description": "Sunken bands, secondary buttons",
       "values": {
         "Dark": {
-          "alias": "gray/830"
+          "alias": "gray/850"
         },
         "Light": {
-          "alias": "gray/35"
+          "alias": "gray/50"
         }
       }
     },
@@ -163,7 +163,7 @@
           "alias": "gray/750"
         },
         "Light": {
-          "alias": "gray/60"
+          "alias": "gray/100"
         }
       }
     },
@@ -190,7 +190,7 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "white-alpha/11"
+          "alias": "white-alpha/10"
         },
         "Light": {
           "alias": "ink-alpha/16"
@@ -220,7 +220,7 @@
       "description": "Unlit meter segments",
       "values": {
         "Dark": {
-          "alias": "white-alpha/6"
+          "alias": "white-alpha/7"
         },
         "Light": {
           "alias": "ink-alpha/7"
@@ -235,7 +235,7 @@
       "description": "Nav hover",
       "values": {
         "Dark": {
-          "alias": "white-alpha/4"
+          "alias": "white-alpha/5"
         },
         "Light": {
           "alias": "ink-alpha/5"
@@ -250,10 +250,10 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "gray/30"
+          "alias": "gray/50"
         },
         "Light": {
-          "alias": "gray/770"
+          "alias": "gray/800"
         }
       }
     },
@@ -265,10 +265,10 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "gray/270"
+          "alias": "gray/250"
         },
         "Light": {
-          "alias": "gray/530"
+          "alias": "gray/550"
         }
       }
     },
@@ -280,10 +280,10 @@
       "description": "Default icon colour",
       "values": {
         "Dark": {
-          "alias": "gray/370"
+          "alias": "gray/350"
         },
         "Light": {
-          "alias": "gray/460"
+          "alias": "gray/500"
         }
       }
     },
@@ -638,6 +638,16 @@
       }
     },
     {
+      "name": "spacing/11",
+      "collection": "Spacing",
+      "type": "FLOAT",
+      "code": "var(--spacing-11)",
+      "description": "Rail and content side inset",
+      "values": {
+        "Value": 11
+      }
+    },
+    {
       "name": "spacing/12",
       "collection": "Spacing",
       "type": "FLOAT",
@@ -718,16 +728,6 @@
       }
     },
     {
-      "name": "radius/full",
-      "collection": "Spacing",
-      "type": "FLOAT",
-      "code": "var(--radius-full)",
-      "description": "",
-      "values": {
-        "Value": 999
-      }
-    },
-    {
       "name": "font-size/2xs",
       "collection": "Typography",
       "type": "FLOAT",
@@ -778,6 +778,16 @@
       }
     },
     {
+      "name": "font-size/xl",
+      "collection": "Typography",
+      "type": "FLOAT",
+      "code": "var(--font-size-xl)",
+      "description": "Dialog titles",
+      "values": {
+        "Value": 15
+      }
+    },
+    {
       "name": "font-size/2xl",
       "collection": "Typography",
       "type": "FLOAT",
@@ -808,16 +818,6 @@
       }
     },
     {
-      "name": "font-family/numeric",
-      "collection": "Typography",
-      "type": "STRING",
-      "code": "var(--font-family-numeric)",
-      "description": "",
-      "values": {
-        "Value": "Questrial"
-      }
-    },
-    {
       "name": "shadow-color/panel-1",
       "collection": "Color",
       "type": "COLOR",
@@ -828,7 +828,7 @@
           "alias": "black-alpha/35"
         },
         "Light": {
-          "alias": "navy-alpha/6"
+          "alias": "ink-alpha/7"
         }
       }
     },
@@ -843,7 +843,7 @@
           "alias": "black-alpha/22"
         },
         "Light": {
-          "alias": "navy-alpha/5"
+          "alias": "ink-alpha/5"
         }
       }
     },
@@ -858,7 +858,7 @@
           "alias": "black-alpha/45"
         },
         "Light": {
-          "alias": "navy-alpha/14"
+          "alias": "ink-alpha/16"
         }
       }
     },
@@ -962,13 +962,13 @@
       }
     },
     {
-      "name": "spacing/11",
+      "name": "radius/full",
       "collection": "Spacing",
       "type": "FLOAT",
-      "code": "var(--spacing-11)",
-      "description": "Rail and content side inset",
+      "code": "var(--radius-full)",
+      "description": "",
       "values": {
-        "Value": 11
+        "Value": 999
       }
     },
     {
@@ -1146,7 +1146,7 @@
           "alias": "white-alpha/16"
         },
         "Light": {
-          "alias": "ink-alpha/18"
+          "alias": "ink-alpha/16"
         }
       }
     },
@@ -1161,7 +1161,7 @@
           "alias": "white-alpha/10"
         },
         "Light": {
-          "alias": "ink-alpha/18"
+          "alias": "ink-alpha/16"
         }
       }
     },
@@ -1173,10 +1173,10 @@
       "description": "Text selection",
       "values": {
         "Dark": {
-          "alias": "blue-alpha/385-35"
+          "alias": "blue-alpha/340-35"
         },
         "Light": {
-          "alias": "blue-alpha/385-35"
+          "alias": "blue-alpha/340-35"
         }
       }
     },
@@ -1196,13 +1196,13 @@
       }
     },
     {
-      "name": "font-size/xl",
+      "name": "font-family/numeric",
       "collection": "Typography",
-      "type": "FLOAT",
-      "code": "var(--font-size-xl)",
-      "description": "Dialog titles",
+      "type": "STRING",
+      "code": "var(--font-family-numeric)",
+      "description": "",
       "values": {
-        "Value": 15
+        "Value": "Questrial"
       }
     },
     {
@@ -1221,151 +1221,91 @@
       }
     },
     {
-      "name": "gray/10",
+      "name": "gray/50",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
       "description": "",
       "values": {
         "Value": {
-          "r": 0.98039,
-          "g": 0.98431,
-          "b": 0.99216,
+          "r": 0.92941,
+          "g": 0.93333,
+          "b": 0.9451,
           "a": 1
         }
       }
     },
     {
-      "name": "gray/20",
+      "name": "gray/100",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
       "description": "",
       "values": {
         "Value": {
-          "r": 0.96471,
-          "g": 0.96863,
-          "b": 0.98039,
+          "r": 0.86275,
+          "g": 0.87059,
+          "b": 0.8902,
           "a": 1
         }
       }
     },
     {
-      "name": "gray/30",
+      "name": "gray/250",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
       "description": "",
       "values": {
         "Value": {
-          "r": 0.96078,
-          "g": 0.96471,
-          "b": 0.97255,
+          "r": 0.66667,
+          "g": 0.68235,
+          "b": 0.71765,
           "a": 1
         }
       }
     },
     {
-      "name": "gray/35",
+      "name": "gray/350",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
       "description": "",
       "values": {
         "Value": {
-          "r": 0.95686,
-          "g": 0.96471,
-          "b": 0.98039,
+          "r": 0.5451,
+          "g": 0.56078,
+          "b": 0.60392,
           "a": 1
         }
       }
     },
     {
-      "name": "gray/40",
+      "name": "gray/500",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
       "description": "",
       "values": {
         "Value": {
-          "r": 0.94118,
-          "g": 0.94902,
-          "b": 0.96471,
+          "r": 0.37255,
+          "g": 0.38824,
+          "b": 0.43137,
           "a": 1
         }
       }
     },
     {
-      "name": "gray/60",
+      "name": "gray/550",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
       "description": "",
       "values": {
         "Value": {
-          "r": 0.91373,
-          "g": 0.92549,
-          "b": 0.94902,
-          "a": 1
-        }
-      }
-    },
-    {
-      "name": "gray/270",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.64314,
-          "g": 0.6549,
-          "b": 0.69804,
-          "a": 1
-        }
-      }
-    },
-    {
-      "name": "gray/370",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.52549,
-          "g": 0.53725,
-          "b": 0.57255,
-          "a": 1
-        }
-      }
-    },
-    {
-      "name": "gray/460",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.41569,
-          "g": 0.42745,
-          "b": 0.46667,
-          "a": 1
-        }
-      }
-    },
-    {
-      "name": "gray/530",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.33725,
-          "g": 0.35294,
-          "b": 0.4,
+          "r": 0.31765,
+          "g": 0.33333,
+          "b": 0.37647,
           "a": 1
         }
       }
@@ -1378,39 +1318,9 @@
       "description": "",
       "values": {
         "Value": {
-          "r": 0.12549,
+          "r": 0.12157,
           "g": 0.12941,
-          "b": 0.15294,
-          "a": 1
-        }
-      }
-    },
-    {
-      "name": "gray/770",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.10196,
-          "g": 0.1098,
-          "b": 0.13333,
-          "a": 1
-        }
-      }
-    },
-    {
-      "name": "gray/780",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.09804,
-          "g": 0.10196,
-          "b": 0.12157,
+          "b": 0.16078,
           "a": 1
         }
       }
@@ -1424,38 +1334,8 @@
       "values": {
         "Value": {
           "r": 0.07843,
-          "g": 0.08235,
-          "b": 0.09804,
-          "a": 1
-        }
-      }
-    },
-    {
-      "name": "gray/830",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.0549,
-          "g": 0.05882,
-          "b": 0.07451,
-          "a": 1
-        }
-      }
-    },
-    {
-      "name": "gray/840",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.04706,
-          "g": 0.05098,
-          "b": 0.06667,
+          "g": 0.08627,
+          "b": 0.1098,
           "a": 1
         }
       }
@@ -1470,7 +1350,7 @@
         "Value": {
           "r": 0.03922,
           "g": 0.04314,
-          "b": 0.0549,
+          "b": 0.05882,
           "a": 1
         }
       }
@@ -1528,9 +1408,9 @@
       "description": "",
       "values": {
         "Value": {
-          "r": 0.77255,
-          "g": 0.23137,
-          "b": 0.18431,
+          "r": 0.76863,
+          "g": 0.22745,
+          "b": 0.18039,
           "a": 1
         }
       }
@@ -1618,9 +1498,9 @@
       "description": "",
       "values": {
         "Value": {
-          "r": 0.80784,
-          "g": 0.37647,
-          "b": 0.00392,
+          "r": 0.79608,
+          "g": 0.36471,
+          "b": 0,
           "a": 1
         }
       }
@@ -1648,9 +1528,9 @@
       "description": "",
       "values": {
         "Value": {
-          "r": 0.67451,
-          "g": 0.46275,
-          "b": 0.00392,
+          "r": 0.66275,
+          "g": 0.45098,
+          "b": 0,
           "a": 1
         }
       }
@@ -1663,9 +1543,9 @@
       "description": "",
       "values": {
         "Value": {
-          "r": 0.57255,
-          "g": 0.39216,
-          "b": 0.00392,
+          "r": 0.56863,
+          "g": 0.38824,
+          "b": 0,
           "a": 1
         }
       }
@@ -1693,9 +1573,9 @@
       "description": "",
       "values": {
         "Value": {
-          "r": 0.2902,
-          "g": 0.56471,
-          "b": 0.00392,
+          "r": 0.28627,
+          "g": 0.55686,
+          "b": 0,
           "a": 1
         }
       }
@@ -1723,9 +1603,9 @@
       "description": "",
       "values": {
         "Value": {
-          "r": 0.00392,
-          "g": 0.57647,
-          "b": 0.2902,
+          "r": 0,
+          "g": 0.56471,
+          "b": 0.27843,
           "a": 1
         }
       }
@@ -1738,9 +1618,9 @@
       "description": "",
       "values": {
         "Value": {
-          "r": 0.00392,
-          "g": 0.49412,
-          "b": 0.25098,
+          "r": 0,
+          "g": 0.4902,
+          "b": 0.24706,
           "a": 1
         }
       }
@@ -1941,21 +1821,6 @@
       }
     },
     {
-      "name": "white-alpha/4",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 1,
-          "g": 1,
-          "b": 1,
-          "a": 0.04
-        }
-      }
-    },
-    {
       "name": "white-alpha/5",
       "collection": "Palette",
       "type": "COLOR",
@@ -1967,21 +1832,6 @@
           "g": 1,
           "b": 1,
           "a": 0.05
-        }
-      }
-    },
-    {
-      "name": "white-alpha/6",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 1,
-          "g": 1,
-          "b": 1,
-          "a": 0.06
         }
       }
     },
@@ -2012,21 +1862,6 @@
           "g": 1,
           "b": 1,
           "a": 0.1
-        }
-      }
-    },
-    {
-      "name": "white-alpha/11",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 1,
-          "g": 1,
-          "b": 1,
-          "a": 0.11
         }
       }
     },
@@ -2196,66 +2031,6 @@
       }
     },
     {
-      "name": "ink-alpha/18",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.05882,
-          "g": 0.07059,
-          "b": 0.11765,
-          "a": 0.18
-        }
-      }
-    },
-    {
-      "name": "navy-alpha/5",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.05882,
-          "g": 0.07843,
-          "b": 0.13725,
-          "a": 0.05
-        }
-      }
-    },
-    {
-      "name": "navy-alpha/6",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.05882,
-          "g": 0.07843,
-          "b": 0.13725,
-          "a": 0.06
-        }
-      }
-    },
-    {
-      "name": "navy-alpha/14",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0.05882,
-          "g": 0.07843,
-          "b": 0.13725,
-          "a": 0.14
-        }
-      }
-    },
-    {
       "name": "blue-alpha/340-14",
       "collection": "Palette",
       "type": "COLOR",
@@ -2271,16 +2046,16 @@
       }
     },
     {
-      "name": "blue-alpha/385-35",
+      "name": "blue-alpha/340-35",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
       "description": "",
       "values": {
         "Value": {
-          "r": 0.23137,
-          "g": 0.5098,
-          "b": 0.96471,
+          "r": 0.35686,
+          "g": 0.54902,
+          "b": 1,
           "a": 0.35
         }
       }

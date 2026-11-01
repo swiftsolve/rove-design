@@ -4,21 +4,23 @@ The reasons behind the token values. The values themselves live in Figma (and in
 
 ## Structure
 
-- **Every colour lives once, in the Palette.** Color tokens point at Palette shades, and each shade is named by hue and darkness (`gray/850`, `blue/450`; higher is darker). The numbers aren't even steps: each shade was tuned for one job, and the number says how dark it is.
+- **Every colour lives once, in the Palette.** Color tokens point at Palette shades, and each shade is named by hue and darkness (`gray/850`, `blue/450`; higher is darker).
+- **Gray is one even ramp.** Every gray is a 5-step in OKLCH lightness, and its number says which: `gray/N` has lightness 100 − N/10, so `gray/850` is 15. They share one hue and one chroma curve, so the ramp reads as one family. Only the steps a token uses are in the Palette. The hues keep their own shades, each tuned for its job.
 - **CSS names follow Figma names.** `bg/app` is `--bg-app`, `border/default` is `--border-default`; the build refuses a code syntax that doesn't match.
 - **Typography comes from the text styles, not variables.** Figma can't bind a percentage line height to a variable, so line heights and letter spacings live only in the styles; copying them into variables would give the type scale two sources that could drift apart.
 
 ## Surfaces and lines
 
 - **Backgrounds are an elevation ladder** (app, chrome, shell, panel, raised, inset, hover), not one flat panel colour.
-- **The shell sits behind the cards.** Dark mode keeps it on the backdrop; light mode greys it a touch so the white cards keep floating on it. In light mode the title bar and rail sit near-white for the same reason.
+- **The ladder steps one ramp step at a time.** Dark mode: backdrop, shell, title bar and inset bands at 15, cards and menus at 20, hover at 25. Light mode: white cards, title bar and rail on a 95 backdrop, hover at 90.
 - **Hairlines and the top highlight** make panels read as real surfaces lit from above.
 - **Overlays flip with the theme:** white-on-dark in dark mode, near-black-on-light in light mode, so hovers, chips and tracks darken pale surfaces rather than disappearing on them.
+- **Both overlay families share one set of strengths** (3, 5, 7, 10, 16%), so a dark-mode token and its light-mode partner sit on the same steps. Light-mode shadows use the same near-black ink; dark-mode shadows use black, since ink would be lighter than the backdrop.
 - **Shadows give depth** instead of hard outlines; panels get a soft two-layer lift, menus and tooltips a deeper one.
 
 ## Text
 
-- **`text/tertiary` is the lightest grey that still clears AA (4.5:1)**: on a hovered row in dark mode, and on the grey shell (not just the white cards) in light mode.
+- **`text/tertiary` is the quietest ramp step that still clears AA (4.5:1)**: on a hovered row in dark mode, and on the grey backdrop (not just the white cards) in light mode.
 - **`text/accent` is for words on `accent/muted`** (a selected segment, a tinted button). The tint lowers contrast, so light mode uses the pressed accent to keep 4.5:1; dark mode's accent already clears it.
 
 ## Accent and fills
