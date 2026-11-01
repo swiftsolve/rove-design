@@ -126,7 +126,7 @@
     },
     {
       "name": "Label/Large",
-      "description": "Filled button labels. Code: Button variant=filled",
+      "description": "Solid button labels. Code: Button variant=solid",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,
@@ -246,7 +246,7 @@
     },
     {
       "name": "Label/Small",
-      "description": "Secondary buttons, title bar status. Code: .text-label-small",
+      "description": "Soft buttons, title bar status. Code: .text-label-small",
       "fontFamily": "Inter",
       "fontStyle": "Medium",
       "fontWeight": 500,
