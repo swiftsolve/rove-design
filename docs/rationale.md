@@ -21,7 +21,7 @@ The reasons behind the token values. The values themselves live in Figma (and in
 ## Text
 
 - **`text/tertiary` is the quietest ramp step that still clears AA (4.5:1)**: on a hovered row in dark mode, and on the grey backdrop (not just the white cards) in light mode.
-- **`text/accent` is for words on `accent/muted`** (a selected segment, a tinted button). The tint lowers contrast, so light mode uses the pressed accent to keep 4.5:1; dark mode's accent already clears it.
+- **`text/accent` is for accent words**, on a surface or on `accent/muted` (a selected segment, a tinted button). Light mode's accent is 4.3:1 on the grey backdrop, and the tint lowers it further, so light mode uses the pressed accent to keep 4.5:1 (5.0:1 on the tint); dark mode's accent already clears it.
 
 ## Accent and fills
 
@@ -34,7 +34,7 @@ The reasons behind the token values. The values themselves live in Figma (and in
 - **One shade per status hue for icons, bars and dots.** In light mode each is the lightest shade of its hue that clears 3:1 (the bar for graphics) on every surface it sits on, including the 14% tints of icon tiles and timeline markers. Each is held at the most saturated it can be at that lightness (OKLCH chroma at the sRGB edge), so the colours read bright rather than dark or brown.
 - **Green moves from the dark theme's mint toward pure green** in light mode, where the gamut has more room.
 - **Red stays a step below the sRGB edge,** where it would turn neon beside the other hues. Its hue sits a touch toward orange: at 0° or below, a light red reads salmon or pink.
-- **Status words need 4.5:1, which the light-mode icon shades miss (3.5–4.4:1).** `text/positive`, `text/warning` and `text/negative` are the same hues, darkened just enough to clear it on every surface. Dark mode uses the icon shades, which already pass.
+- **Status words need 4.5:1, which the light-mode icon shades miss (3.5–4.4:1).** `text/positive`, `text/warning` and `text/negative` are the same hues, darkened just enough to clear it on every surface, including the 14% tint of their own hue that a badge sits on. Dark mode uses the icon shades, which already pass.
 - **The capability scale's in-between steps** (good, poor) follow the same rules, with their hues pulled apart from their neighbours (good is yellow-green, poor is orange) so the four levels stay distinct.
 
 ## Opacity
