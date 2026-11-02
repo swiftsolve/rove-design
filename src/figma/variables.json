@@ -70,10 +70,10 @@
       "description": "Backdrop, title bar and rail",
       "values": {
         "Dark": {
-          "alias": "gray/850"
+          "alias": "neutral/850"
         },
         "Light": {
-          "alias": "gray/50"
+          "alias": "neutral/50"
         }
       }
     },
@@ -85,10 +85,10 @@
       "description": "Content on the backdrop",
       "values": {
         "Dark": {
-          "alias": "gray/800"
+          "alias": "neutral/800"
         },
         "Light": {
-          "alias": "white"
+          "alias": "neutral/0"
         }
       }
     },
@@ -100,10 +100,10 @@
       "description": "Hovered rows and buttons",
       "values": {
         "Dark": {
-          "alias": "gray/750"
+          "alias": "neutral/750"
         },
         "Light": {
-          "alias": "gray/100"
+          "alias": "neutral/100"
         }
       }
     },
@@ -115,10 +115,10 @@
       "description": "Hairlines",
       "values": {
         "Dark": {
-          "alias": "white-alpha/7"
+          "alias": "neutral/0-a7"
         },
         "Light": {
-          "alias": "ink-alpha/10"
+          "alias": "neutral/850-a10"
         }
       }
     },
@@ -130,10 +130,10 @@
       "description": "Overlay",
       "values": {
         "Dark": {
-          "alias": "white-alpha/7"
+          "alias": "neutral/0-a7"
         },
         "Light": {
-          "alias": "ink-alpha/7"
+          "alias": "neutral/850-a7"
         }
       }
     },
@@ -145,10 +145,10 @@
       "description": "Light overlay",
       "values": {
         "Dark": {
-          "alias": "white-alpha/5"
+          "alias": "neutral/0-a5"
         },
         "Light": {
-          "alias": "ink-alpha/5"
+          "alias": "neutral/850-a5"
         }
       }
     },
@@ -160,10 +160,10 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "gray/50"
+          "alias": "neutral/50"
         },
         "Light": {
-          "alias": "gray/800"
+          "alias": "neutral/800"
         }
       }
     },
@@ -175,10 +175,10 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "gray/250"
+          "alias": "neutral/250"
         },
         "Light": {
-          "alias": "gray/550"
+          "alias": "neutral/550"
         }
       }
     },
@@ -190,10 +190,10 @@
       "description": "Default icon colour",
       "values": {
         "Dark": {
-          "alias": "gray/350"
+          "alias": "neutral/350"
         },
         "Light": {
-          "alias": "gray/500"
+          "alias": "neutral/500"
         }
       }
     },
@@ -250,10 +250,10 @@
       "description": "Tinted accent background",
       "values": {
         "Dark": {
-          "alias": "blue-alpha/340-14"
+          "alias": "blue/340-a14"
         },
         "Light": {
-          "alias": "blue-alpha/450-12"
+          "alias": "blue/450-a12"
         }
       }
     },
@@ -735,10 +735,10 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "black-alpha/22"
+          "alias": "neutral/1000-a22"
         },
         "Light": {
-          "alias": "ink-alpha/7"
+          "alias": "neutral/850-a7"
         }
       }
     },
@@ -750,10 +750,10 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "black-alpha/10"
+          "alias": "neutral/1000-a10"
         },
         "Light": {
-          "alias": "ink-alpha/5"
+          "alias": "neutral/850-a5"
         }
       }
     },
@@ -765,10 +765,10 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "black-alpha/22"
+          "alias": "neutral/1000-a22"
         },
         "Light": {
-          "alias": "ink-alpha/10"
+          "alias": "neutral/850-a10"
         }
       }
     },
@@ -819,10 +819,10 @@
       "description": "Labels and icons on solid fills",
       "values": {
         "Dark": {
-          "alias": "white"
+          "alias": "neutral/0"
         },
         "Light": {
-          "alias": "white"
+          "alias": "neutral/0"
         }
       }
     },
@@ -968,10 +968,10 @@
       "description": "Faintest overlay",
       "values": {
         "Dark": {
-          "alias": "white-alpha/3"
+          "alias": "neutral/0-a3"
         },
         "Light": {
-          "alias": "ink-alpha/3"
+          "alias": "neutral/850-a3"
         }
       }
     },
@@ -983,10 +983,10 @@
       "description": "Strong overlay",
       "values": {
         "Dark": {
-          "alias": "white-alpha/16"
+          "alias": "neutral/0-a16"
         },
         "Light": {
-          "alias": "ink-alpha/16"
+          "alias": "neutral/850-a16"
         }
       }
     },
@@ -998,10 +998,10 @@
       "description": "Text selection",
       "values": {
         "Dark": {
-          "alias": "blue-alpha/340-35"
+          "alias": "blue/340-a35"
         },
         "Light": {
-          "alias": "blue-alpha/340-35"
+          "alias": "blue/340-a35"
         }
       }
     },
@@ -1013,10 +1013,10 @@
       "description": "Behind dialogs",
       "values": {
         "Dark": {
-          "alias": "black-alpha/50"
+          "alias": "neutral/1000-a50"
         },
         "Light": {
-          "alias": "black-alpha/50"
+          "alias": "neutral/1000-a50"
         }
       }
     },
@@ -1031,7 +1031,7 @@
       }
     },
     {
-      "name": "white",
+      "name": "neutral/0",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1046,7 +1046,7 @@
       }
     },
     {
-      "name": "gray/50",
+      "name": "neutral/50",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1061,7 +1061,7 @@
       }
     },
     {
-      "name": "gray/100",
+      "name": "neutral/100",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1076,7 +1076,7 @@
       }
     },
     {
-      "name": "gray/250",
+      "name": "neutral/250",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1091,7 +1091,7 @@
       }
     },
     {
-      "name": "gray/350",
+      "name": "neutral/350",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1106,7 +1106,7 @@
       }
     },
     {
-      "name": "gray/500",
+      "name": "neutral/500",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1121,7 +1121,7 @@
       }
     },
     {
-      "name": "gray/550",
+      "name": "neutral/550",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1136,7 +1136,7 @@
       }
     },
     {
-      "name": "gray/750",
+      "name": "neutral/750",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1151,7 +1151,7 @@
       }
     },
     {
-      "name": "gray/800",
+      "name": "neutral/800",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1166,7 +1166,7 @@
       }
     },
     {
-      "name": "gray/850",
+      "name": "neutral/850",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1541,7 +1541,7 @@
       }
     },
     {
-      "name": "white-alpha/3",
+      "name": "neutral/0-a3",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1556,7 +1556,7 @@
       }
     },
     {
-      "name": "white-alpha/5",
+      "name": "neutral/0-a5",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1571,7 +1571,7 @@
       }
     },
     {
-      "name": "white-alpha/7",
+      "name": "neutral/0-a7",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1586,7 +1586,7 @@
       }
     },
     {
-      "name": "white-alpha/16",
+      "name": "neutral/0-a16",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1601,7 +1601,7 @@
       }
     },
     {
-      "name": "black-alpha/22",
+      "name": "neutral/1000-a22",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1616,7 +1616,7 @@
       }
     },
     {
-      "name": "black-alpha/50",
+      "name": "neutral/1000-a50",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1631,7 +1631,7 @@
       }
     },
     {
-      "name": "ink-alpha/3",
+      "name": "neutral/850-a3",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1646,7 +1646,7 @@
       }
     },
     {
-      "name": "ink-alpha/5",
+      "name": "neutral/850-a5",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1661,7 +1661,7 @@
       }
     },
     {
-      "name": "ink-alpha/7",
+      "name": "neutral/850-a7",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1676,7 +1676,7 @@
       }
     },
     {
-      "name": "ink-alpha/10",
+      "name": "neutral/850-a10",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1691,7 +1691,7 @@
       }
     },
     {
-      "name": "ink-alpha/16",
+      "name": "neutral/850-a16",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1706,7 +1706,7 @@
       }
     },
     {
-      "name": "blue-alpha/340-14",
+      "name": "blue/340-a14",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1721,7 +1721,7 @@
       }
     },
     {
-      "name": "blue-alpha/340-35",
+      "name": "blue/340-a35",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1736,7 +1736,7 @@
       }
     },
     {
-      "name": "blue-alpha/450-12",
+      "name": "blue/450-a12",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1751,7 +1751,7 @@
       }
     },
     {
-      "name": "gray/25",
+      "name": "neutral/25",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1766,7 +1766,7 @@
       }
     },
     {
-      "name": "gray/825",
+      "name": "neutral/825",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1788,15 +1788,15 @@
       "description": "Sunken areas inside a surface",
       "values": {
         "Dark": {
-          "alias": "gray/825"
+          "alias": "neutral/825"
         },
         "Light": {
-          "alias": "gray/25"
+          "alias": "neutral/25"
         }
       }
     },
     {
-      "name": "black-alpha/10",
+      "name": "neutral/1000-a10",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1811,7 +1811,7 @@
       }
     },
     {
-      "name": "gray/775",
+      "name": "neutral/775",
       "collection": "Palette",
       "type": "COLOR",
       "code": null,
@@ -1833,10 +1833,10 @@
       "description": "Tooltips and menus",
       "values": {
         "Dark": {
-          "alias": "gray/775"
+          "alias": "neutral/775"
         },
         "Light": {
-          "alias": "white"
+          "alias": "neutral/0"
         }
       }
     },
@@ -1848,10 +1848,10 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "black-alpha/22"
+          "alias": "neutral/1000-a22"
         },
         "Light": {
-          "alias": "ink-alpha/7"
+          "alias": "neutral/850-a7"
         }
       }
     },
@@ -1863,10 +1863,10 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "black-alpha/22"
+          "alias": "neutral/1000-a22"
         },
         "Light": {
-          "alias": "ink-alpha/10"
+          "alias": "neutral/850-a10"
         }
       }
     }

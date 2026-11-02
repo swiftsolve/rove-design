@@ -23,7 +23,7 @@ export const isCss = (token) => token.$extensions?.['net.swiftsolve.rove-design'
 
 export const cssName = (path) => `--${path.join('-')}`
 
-// A reference in the Figma name's form: `{gray.850}` is gray/850.
+// A reference in the Figma name's form: `{neutral.850}` is neutral/850.
 export const refName = (value) => value.slice(1, -1).replaceAll('.', '/')
 
 // The token's value in the current theme, as tokens.css resolves it. Chrome

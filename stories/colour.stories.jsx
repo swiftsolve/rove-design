@@ -147,9 +147,8 @@ function ColourTable({ names }) {
   )
 }
 
-// A family's shades. White leads gray, as on the Figma page. A see-through
-// shade sits on the backdrop of the theme that uses it: dark for Dark only,
-// unless it's black, which only shows on white.
+// A row of shades. A see-through shade sits on the backdrop of the theme that
+// uses it: dark for Dark only, unless it's black, which only shows on white.
 function Family({ name, shades }) {
   const hexes = new Set(shades.map(({ token }) => token.$value.hex))
   const sharedHex = hexes.size === 1 && shades.length > 1 ? [...hexes][0] : null
@@ -182,20 +181,27 @@ function Family({ name, shades }) {
   )
 }
 
+// Solid shades in a row per hue; see-through ones (`neutral/850-a10`) in a row
+// per base shade, labelled by opacity, as on the Figma page.
 function PaletteGrid() {
-  const shades = flatten(palette)
-  const families = Object.groupBy(
-    shades.filter((token) => token.path[0] !== 'white'),
-    (token) => token.path[0],
-  )
-  const white = shades.find((token) => token.path[0] === 'white')
-  const entries = Object.entries(families).map(([name, tokens]) => {
-    const labelled = tokens.map((token) => ({ label: token.path.slice(1).join('/'), token }))
-    return [name, name === 'gray' ? [{ label: 'white', token: white }, ...labelled] : labelled]
+  const shades = flatten(palette).map((token) => {
+    const [base, alpha] = token.path[1].split('-a')
+    return { token, hue: token.path[0], base: Number(base), alpha: alpha && Number(alpha) }
   })
+  const hues = [...new Set(shades.map(({ hue }) => hue))]
+  const solid = hues.map((hue) => [
+    hue,
+    shades.filter((shade) => shade.hue === hue && !shade.alpha).map(({ token }) => ({ label: token.path[1], token })),
+  ])
+  const seeThrough = shades
+    .filter(({ alpha }) => alpha)
+    .sort((a, b) => hues.indexOf(a.hue) - hues.indexOf(b.hue) || a.base - b.base || a.alpha - b.alpha)
+  const translucent = Object.entries(
+    Object.groupBy(seeThrough, ({ hue, base }) => `${hue}/${base}`),
+  ).map(([name, rowShades]) => [name, rowShades.map(({ token, alpha }) => ({ label: `a${alpha}`, token }))])
   const groups = [
-    ['Solid', entries.filter(([name]) => !name.endsWith('-alpha'))],
-    ['Translucent', entries.filter(([name]) => name.endsWith('-alpha'))],
+    ['Solid', solid],
+    ['Translucent', translucent],
   ]
   return groups.map(([title, groupEntries]) => (
     <div key={title} className="palette-group">

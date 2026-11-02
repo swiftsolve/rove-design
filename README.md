@@ -57,7 +57,7 @@ Each Figma text style becomes four tokens: `--type-<style>-size`, `-weight`, `-l
 | File | What |
 | --- | --- |
 | `palette.tokens.json` | Every colour, once |
-| `color.dark.tokens.json`, `color.light.tokens.json` | The Color tokens in each theme, pointing at the palette (`{gray.850}`) |
+| `color.dark.tokens.json`, `color.light.tokens.json` | The Color tokens in each theme, pointing at the palette (`{neutral.850}`) |
 | `spacing.tokens.json`, `typography.tokens.json`, `opacity.tokens.json` | The other Figma collections |
 | `text-styles.tokens.json` | Each text style as a `typography` token |
 | `code.tokens.json` | The code-only tokens (shadows, motion, layout) |
@@ -120,4 +120,4 @@ It opens on <http://localhost:6007>; the Theme menu in the toolbar switches Dark
 | `.github/workflows/presentation.yml` | Runs the export and publish on every `v*` tag, or by hand. Needs the `FIGMA_TOKEN` repository secret. |
 | `docs/rationale.md` | Why the values are what they are (contrast targets, theme choices). |
 
-Every colour lives once in the Palette collection (`gray/850`, `blue/450`; higher numbers are darker), and the Color tokens point at it. The Palette isn't in `tokens.css`: a token that points at a shade gets the shade's value there. Figma-only collections (Icon tone, Capability level) and variables without a code syntax aren't in `tokens.css` either.
+Every colour lives once in the Palette collection (`neutral/850`, `blue/450`; higher numbers are darker; a see-through shade adds `-a` and its opacity, `neutral/850-a10`), and the Color tokens point at it. The Palette isn't in `tokens.css`: a token that points at a shade gets the shade's value there. Figma-only collections (Icon tone, Capability level) and variables without a code syntax aren't in `tokens.css` either.

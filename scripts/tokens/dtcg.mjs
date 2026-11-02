@@ -3,7 +3,7 @@
  *
  * One file per Figma collection, two for Color (one per mode), plus the text
  * styles and the code-only tokens. Paths follow the Figma names (`bg/base` is
- * `bg.base`), and Figma aliases stay references (`{gray.850}`). A theme is every
+ * `bg.base`), and Figma aliases stay references (`{neutral.850}`). A theme is every
  * file except one of color.dark / color.light.
  *
  * Figma variables without a code syntax (the Palette, the shadow colours) are

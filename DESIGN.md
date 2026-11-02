@@ -13,7 +13,7 @@ Dark is the default, on `:root`. Add the `theme-light` class to the root element
 ## Rules
 
 - **Use a token, never a raw value.** No hex colours, no pixel gaps, no font sizes typed by hand. If nothing fits, the design needs a new token in Figma, not a one-off in code.
-- **Name by job, not by look.** Pick `--bg-surface` because it's content on the backdrop, not because it's the right grey. The Palette shades (`gray/850`) aren't CSS variables, on purpose.
+- **Name by job, not by look.** Pick `--bg-surface` because it's content on the backdrop, not because it's the right grey. The Palette shades (`neutral/850`) aren't CSS variables, on purpose.
 
 ### Surfaces
 
