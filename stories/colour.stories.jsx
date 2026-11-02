@@ -15,8 +15,6 @@ const SECTIONS = [
     intro: 'Thin borders and see-through fills.',
     names: [
       'border.default',
-      'border.strong',
-      'border.highlight',
       'fill.default',
       'fill.strong',
       'fill.selection',

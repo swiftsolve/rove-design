@@ -13,9 +13,9 @@ The reasons behind the token values. The values themselves live in Figma (and in
 
 - **Three backgrounds, named by role.** `bg/base` is the backdrop, `bg/surface` is content that sits on it, and `bg/inset` is sunk into a surface. Tokens say what a colour is for, not which component uses it, so a new component picks from the same few.
 - **They're half a ramp step apart.** Dark mode: base 15, inset 17.5, surface 20, hover 25. Light mode: base 95, inset 97.5, white surface, hover 90.
-- **Hairlines and the top highlight** make panels read as real surfaces lit from above.
+- **Hairlines** separate content inside a surface; the surfaces themselves are lifted by shadow.
 - **Overlays flip with the theme:** white-on-dark in dark mode, near-black-on-light in light mode, so hovers, chips and tracks darken pale surfaces rather than disappearing on them.
-- **Both overlay families share one set of strengths** (3, 5, 7, 10, 16%), so a dark-mode token and its light-mode partner sit on the same steps. The light-mode ink is `gray/850`, so its overlays tint like the ramp, not navy. Light-mode shadows use the same ink; dark-mode shadows use black, since ink would be lighter than the backdrop.
+- **Both overlay families share one set of strengths** (3, 5, 7, 16%), so a dark-mode token and its light-mode partner sit on the same steps. Light-mode hairlines take ink at 10%. The light-mode ink is `gray/850`, so its overlays tint like the ramp, not navy. Light-mode shadows use the same ink; dark-mode shadows use black, since ink would be lighter than the backdrop.
 - **Shadows give depth** instead of hard outlines; panels get a soft two-layer lift, menus and tooltips a deeper one.
 
 ## Text

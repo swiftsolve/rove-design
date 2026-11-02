@@ -123,21 +123,6 @@
       }
     },
     {
-      "name": "border/highlight",
-      "collection": "Color",
-      "type": "COLOR",
-      "code": "var(--border-highlight)",
-      "description": "Top edge highlight",
-      "values": {
-        "Dark": {
-          "alias": "white-alpha/5"
-        },
-        "Light": {
-          "alias": "white-alpha/70"
-        }
-      }
-    },
-    {
       "name": "fill/default",
       "collection": "Color",
       "type": "COLOR",
@@ -1601,21 +1586,6 @@
       }
     },
     {
-      "name": "white-alpha/10",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 1,
-          "g": 1,
-          "b": 1,
-          "a": 0.1
-        }
-      }
-    },
-    {
       "name": "white-alpha/16",
       "collection": "Palette",
       "type": "COLOR",
@@ -1627,21 +1597,6 @@
           "g": 1,
           "b": 1,
           "a": 0.16
-        }
-      }
-    },
-    {
-      "name": "white-alpha/70",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 1,
-          "g": 1,
-          "b": 1,
-          "a": 0.7
         }
       }
     },
