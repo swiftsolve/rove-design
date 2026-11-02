@@ -99,6 +99,7 @@
         "unit": "PERCENT",
         "value": 6
       },
+      "textCase": "UPPER",
       "boundVariables": {
         "fontFamily": "font-family/sans",
         "fontSize": "font-size/xs"

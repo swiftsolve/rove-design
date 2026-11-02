@@ -58,7 +58,7 @@ Disabled controls use `--opacity-disabled`.
 
 ### Type
 
-- Set text with a text style's four `--type-<style>-*` variables, not a font size alone. Each style's use and matching code class is in [Text styles](#text-styles).
+- Set text with a text style's class from `text-styles.css` (`.type-heading-large`), or all four of its `--type-<style>-*` variables, never a font size alone. Each style's use is in [Text styles](#text-styles).
 - Numbers that are data (speeds, totals, chart labels) use the Number styles (`number-*`), set in Questrial; everything else is Inter.
 
 ### Focus and motion
@@ -106,24 +106,24 @@ Names and uses, from Figma. The values are in `tokens.css`; Dark and Light diffe
 
 ### Text styles
 
-Each style is four variables, `--type-<style>-size`, `-weight`, `-line-height` and `-letter-spacing`; use all four.
+Apply a style with its class from `text-styles.css`. Each class reads four variables, `--type-<style>-size`, `-weight`, `-line-height` and `-letter-spacing`; set all four if you use them directly.
 
-| Style | Variables | Size, weight | Use |
+| Style | Class | Size, weight | Use |
 | --- | --- | --- | --- |
-| Heading/Large | `--type-heading-large-*` | 17px 600 | Page titles, the wordmark. Code: .text-heading-large |
-| Heading/Medium | `--type-heading-medium-*` | 15px 600 | Dialog titles. Code: .text-heading-medium |
-| Heading/Small | `--type-heading-small-*` | 14px 600 | Card headings. Code: .text-heading-small |
-| Body/Default | `--type-body-default-*` | 13px 400 | Body text. Code: .text-body |
-| Overline | `--type-overline-*` | 11px 500 | Uppercase labels above values. Code: .text-overline |
-| Caption | `--type-caption-*` | 11px 400 | Badges, captions, footer hints. Code: .text-caption |
-| Label/Large | `--type-label-large-*` | 12px 600 | Filled button labels. Code: Button variant=filled |
-| Number/Display | `--type-number-display-*` | 28px 400, Questrial | Live speeds. Add a 0.43px outside stroke. Code: .metric-value, at weight 600: Questrial has one weight, so the browser emboldens it. |
-| Number/Large | `--type-number-large-*` | 17px 400, Questrial | Stat totals. Add a 0.26px outside stroke. Code: .metric-compact |
-| Number/Default | `--type-number-default-*` | 13px 400, Questrial | Data row values. Code: .text-number |
-| Number/Small | `--type-number-small-*` | 10px 400, Questrial | Chart axes and scale. Code: .text-number-small |
-| Label/Default | `--type-label-default-*` | 11px 600 | Bold small labels on tinted chips. Code: tracking-label-default |
-| Label/Small | `--type-label-small-*` | 11px 500 | Secondary buttons, title bar status. Code: .text-label-small |
-| Body/Small | `--type-body-small-*` | 12px 400 | Helper text, hints and units. Code: .text-body-small |
+| Heading/Large | `.type-heading-large` | 17px 600 | Page titles, the wordmark. Code: .text-heading-large |
+| Heading/Medium | `.type-heading-medium` | 15px 600 | Dialog titles. Code: .text-heading-medium |
+| Heading/Small | `.type-heading-small` | 14px 600 | Card headings. Code: .text-heading-small |
+| Body/Default | `.type-body-default` | 13px 400 | Body text. Code: .text-body |
+| Overline | `.type-overline` | 11px 500 | Uppercase labels above values. Code: .text-overline |
+| Caption | `.type-caption` | 11px 400 | Badges, captions, footer hints. Code: .text-caption |
+| Label/Large | `.type-label-large` | 12px 600 | Filled button labels. Code: Button variant=filled |
+| Number/Display | `.type-number-display` | 28px 400, Questrial | Live speeds. Add a 0.43px outside stroke. Code: .metric-value, at weight 600: Questrial has one weight, so the browser emboldens it. |
+| Number/Large | `.type-number-large` | 17px 400, Questrial | Stat totals. Add a 0.26px outside stroke. Code: .metric-compact |
+| Number/Default | `.type-number-default` | 13px 400, Questrial | Data row values. Code: .text-number |
+| Number/Small | `.type-number-small` | 10px 400, Questrial | Chart axes and scale. Code: .text-number-small |
+| Label/Default | `.type-label-default` | 11px 600 | Bold small labels on tinted chips. Code: tracking-label-default |
+| Label/Small | `.type-label-small` | 11px 500 | Secondary buttons, title bar status. Code: .text-label-small |
+| Body/Small | `.type-body-small` | 12px 400 | Helper text, hints and units. Code: .text-body-small |
 
 ### Code-only tokens
 

@@ -63,6 +63,8 @@ async function exportTextStyles() {
         fontSize: s.fontSize,
         lineHeight: s.lineHeight.unit === 'AUTO' ? { unit: 'AUTO' } : { unit: s.lineHeight.unit, value: round(s.lineHeight.value, 4) },
         letterSpacing: { unit: s.letterSpacing.unit, value: round(s.letterSpacing.value, 4) },
+        // Only when set, such as Overline's UPPER.
+        ...(s.textCase && s.textCase !== 'ORIGINAL' ? { textCase: s.textCase } : {}),
         boundVariables: bound,
       }
     })),
