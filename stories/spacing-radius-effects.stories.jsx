@@ -31,10 +31,10 @@ const LEVELS = [
   { name: 'Base', use: 'Window, title bar, rail', background: 'bg/base' },
   { name: 'Panel', use: 'Cards. Shadow/Raised on hover', background: 'bg/surface', shadow: 'panel', radius: 'lg' },
   {
-    name: 'Raised',
+    name: 'Popover',
     use: 'Tooltips, menus',
-    background: 'bg/surface',
-    shadow: 'raised',
+    background: 'bg/popover',
+    shadow: 'popover',
     border: 'border/default',
     radius: 'sm',
   },
@@ -139,7 +139,7 @@ function LevelSample({ theme, level }) {
         <span
           className="level-surface"
           style={{
-            background: colorIn(theme, 'bg.surface'),
+            background: colorIn(theme, level.background.replace('/', '.')),
             boxShadow: shadowIn(theme, `shadow-${level.shadow}`),
             border: level.border ? `1px solid ${colorIn(theme, level.border.replace('/', '.'))}` : undefined,
             borderRadius: `var(--radius-${level.radius})`,

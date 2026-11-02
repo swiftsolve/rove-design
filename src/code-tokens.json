@@ -7,6 +7,7 @@
   "tokens": {
     "--shadow-panel": "0 1px 2px {shadow-color/panel-1}, 0 4px 12px {shadow-color/panel-2}",
     "--shadow-raised": "0 12px 32px {shadow-color/raised}",
+    "--shadow-popover": "0 2px 6px {shadow-color/popover-1}, 0 6px 16px {shadow-color/popover-2}",
 
     "--focus-ring-width": "1px",
     "--focus-outline": "var(--focus-ring-width) solid var(--focus-ring)",
