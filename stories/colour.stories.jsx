@@ -147,76 +147,58 @@ function ColourTable({ names }) {
   )
 }
 
-// A row of shades. A see-through shade sits on the backdrop of the theme that
-// uses it: dark for Dark only, unless it's black, which only shows on white.
-function Family({ name, shades }) {
-  const hexes = new Set(shades.map(({ token }) => token.$value.hex))
-  const sharedHex = hexes.size === 1 && shades.length > 1 ? [...hexes][0] : null
+// A hue's shades: the solid ramp, then the see-through shades on a line of
+// their own. A see-through shade sits on the backdrop of the theme that uses
+// it: dark for Dark only, unless it's black, which only shows on white.
+function Family({ name, rows }) {
   return (
     <div className="family">
-      <p className="family-name">
-        {name}
-        {sharedHex && <span className="family-hex">{sharedHex.toUpperCase()}</span>}
-      </p>
-      <div className="swatches">
-        {shades.map(({ label, token }) => {
-          const color = paletteColor(token.$value)
-          const isAlpha = (token.$value.alpha ?? 1) < 1
-          const isDarkOnly = isUsedIn('dark', token.path) && !isUsedIn('light', token.path)
-          const isOnDark = isDarkOnly && token.$value.hex !== '#000000'
-          const backdrop = isOnDark ? colorIn('dark', 'bg.base') : '#ffffff'
-          return (
-            <div key={label} className="swatch">
-              <span
-                className="swatch-color"
-                style={{ background: isAlpha ? `linear-gradient(${color}, ${color}), ${backdrop}` : color }}
-              />
-              <span className="swatch-name">{label}</span>
-              {!sharedHex && <span className="swatch-hex">{hexText(token.$value)}</span>}
-            </div>
-          )
-        })}
-      </div>
+      <p className="family-name">{name}</p>
+      {rows.map((shades) => (
+        <div key={shades[0].label} className="swatches">
+          {shades.map(({ label, token }) => {
+            const color = paletteColor(token.$value)
+            const isAlpha = (token.$value.alpha ?? 1) < 1
+            const isDarkOnly = isUsedIn('dark', token.path) && !isUsedIn('light', token.path)
+            const isOnDark = isDarkOnly && token.$value.hex !== '#000000'
+            const backdrop = isOnDark ? colorIn('dark', 'bg.base') : '#ffffff'
+            return (
+              <div key={label} className="swatch">
+                <span
+                  className="swatch-color"
+                  style={{ background: isAlpha ? `linear-gradient(${color}, ${color}), ${backdrop}` : color }}
+                />
+                <span className="swatch-name">{label}</span>
+                <span className="swatch-hex">{hexText(token.$value)}</span>
+              </div>
+            )
+          })}
+        </div>
+      ))}
     </div>
   )
 }
 
-// Solid shades in a row per hue; see-through ones (`neutral/850-a10`) in a row
-// per base shade, labelled by opacity, as on the Figma page.
+// A family per hue, as on the Figma page. See-through shades (`neutral/850-a10`)
+// follow the solid ones, by base shade, then opacity.
 function PaletteGrid() {
   const shades = flatten(palette).map((token) => {
     const [base, alpha] = token.path[1].split('-a')
-    return { token, hue: token.path[0], base: Number(base), alpha: alpha && Number(alpha) }
+    return { label: token.path[1], token, hue: token.path[0], base: Number(base), alpha: Number(alpha ?? 0) }
   })
   const hues = [...new Set(shades.map(({ hue }) => hue))]
-  const solid = hues.map((hue) => [
-    hue,
-    shades.filter((shade) => shade.hue === hue && !shade.alpha).map(({ token }) => ({ label: token.path[1], token })),
-  ])
-  const seeThrough = shades
-    .filter(({ alpha }) => alpha)
-    .sort((a, b) => hues.indexOf(a.hue) - hues.indexOf(b.hue) || a.base - b.base || a.alpha - b.alpha)
-  const translucent = Object.entries(
-    Object.groupBy(seeThrough, ({ hue, base }) => `${hue}/${base}`),
-  ).map(([name, rowShades]) => [name, rowShades.map(({ token, alpha }) => ({ label: `a${alpha}`, token }))])
-  const groups = [
-    ['Solid', solid],
-    ['Translucent', translucent],
-  ]
-  return groups.map(([title, groupEntries]) => (
-    <div key={title} className="palette-group">
-      <p className="table-label">{title}</p>
-      {groupEntries.map(([name, familyShades]) => (
-        <Family key={name} name={name} shades={familyShades} />
-      ))}
-    </div>
-  ))
+  return hues.map((hue) => {
+    const own = shades.filter((shade) => shade.hue === hue)
+    const solid = own.filter(({ alpha }) => !alpha)
+    const seeThrough = own.filter(({ alpha }) => alpha).sort((a, b) => a.base - b.base || a.alpha - b.alpha)
+    return <Family key={hue} name={hue} rows={[solid, seeThrough].filter((row) => row.length)} />
+  })
 }
 
 export const Colour = {
   render: () => (
     <Page title="Colour" intro="Palette shades, and the semantic tokens that point at them, in Dark and Light.">
-      <Section title="Palette" intro="Every colour the tokens point at. Higher numbers are darker.">
+      <Section title="Palette" intro="Every colour the tokens point at. Higher numbers are darker; -a is opacity.">
         <PaletteGrid />
       </Section>
       {SECTIONS.map(({ title, intro, names }) => (
