@@ -72,7 +72,7 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
 npm run storybook
 ```
 
-It opens on <http://localhost:6007>; the Theme menu in the toolbar switches Dark and Light. The pages read the DTCG files in `tokens/` and are styled with `tokens.css`, so a new build shows up without editing them. `npm run build:storybook` writes a static copy to `storybook-static/`.
+It opens on <http://localhost:6007>; the Theme menu in the toolbar switches Dark and Light. The pages read the DTCG files in `tokens/` and are styled with `tokens.css`, so a new build shows up without editing them. `npm run build:storybook` writes a static copy to `storybook-static/`. Every push publishes it to Chromatic, which runs visual tests on it; the workflow skips until the `CHROMATIC_PROJECT_TOKEN` repository secret exists.
 
 ## 🔄 Update the tokens
 
@@ -116,6 +116,7 @@ It opens on <http://localhost:6007>; the Theme menu in the toolbar switches Dark
 | `scripts/presentation/open.mjs` | `npm run present:open`: opens the exported presentation in your browser. |
 | `.storybook/` | The Rove Tokens Storybook's config, and the Inter and Questrial files it serves. |
 | `stories/` | Its pages, one file per sidebar group. `tokens.js` reads the DTCG files. |
+| `.github/workflows/chromatic.yml`, `chromatic.config.json` | Publish the Storybook to Chromatic on every push. Needs the `CHROMATIC_PROJECT_TOKEN` repository secret. |
 | `scripts/presentation/publish.mjs` | `npm run present:publish`: pushes the exported presentation to the `gh-pages` branch, which GitHub Pages serves at <https://swiftsolve.github.io/rove-design/>. Each publish replaces the last. |
 | `.github/workflows/presentation.yml` | Runs the export and publish on every `v*` tag, or by hand. Needs the `FIGMA_TOKEN` repository secret. |
 | `docs/rationale.md` | Why the values are what they are (contrast targets, theme choices). |

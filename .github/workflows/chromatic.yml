@@ -1,0 +1,39 @@
+name: Chromatic
+
+# Publish the Rove Tokens Storybook to Chromatic and run its visual tests on
+# every push. No TurboSnap: the pages read tokens/, which the build writes and
+# git ignores, so a token change wouldn't show up as a changed story.
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    env:
+      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      # npm ci builds the tokens through `prepare`, so the pages have them.
+      - run: npm ci
+
+      # Skipped until the CHROMATIC_PROJECT_TOKEN secret exists.
+      - name: Publish to Chromatic
+        if: env.CHROMATIC_PROJECT_TOKEN != ''
+        uses: chromaui/action@v18
+        with:
+          projectToken: ${{ env.CHROMATIC_PROJECT_TOKEN }}
+          configFile: chromatic.config.json
+          # Changes are reviewed in Chromatic, not failed here.
+          exitZeroOnChanges: true
