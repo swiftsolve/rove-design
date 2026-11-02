@@ -94,12 +94,18 @@ export async function writeDesign({ path, variables, textStyles, code: codeToken
     out.push(`- **${heading(prefix)}:** ${list}`)
   }
 
-  out.push('', '### Text styles', '', 'Each style is four variables, `--type-<style>-size`, `-weight`, `-line-height` and `-letter-spacing`; use all four.', '')
-  out.push('| Style | Variables | Size, weight | Use |', '| --- | --- | --- | --- |')
+  out.push(
+    '',
+    '### Text styles',
+    '',
+    'Apply a style with its class from `text-styles.css`. Each class reads four variables, `--type-<style>-size`, `-weight`, `-line-height` and `-letter-spacing`; set all four if you use them directly.',
+    '',
+  )
+  out.push('| Style | Class | Size, weight | Use |', '| --- | --- | --- | --- |')
   for (const s of textStyles) {
     const slug = s.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
     const numeric = s.boundVariables?.fontFamily === 'font-family/numeric' ? ', Questrial' : ''
-    out.push(`| ${s.name} | ${code(`--type-${slug}-*`)} | ${s.fontSize}px ${dark.get(`--type-${slug}-weight`)}${numeric} | ${s.description.replace(/\|/g, '\\|')} |`)
+    out.push(`| ${s.name} | ${code(`.type-${slug}`)} | ${s.fontSize}px ${dark.get(`--type-${slug}-weight`)}${numeric} | ${s.description.replace(/\|/g, '\\|')} |`)
   }
 
   const codeNames = Object.keys(codeTokens.tokens)

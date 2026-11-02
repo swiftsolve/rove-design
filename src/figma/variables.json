@@ -32,10 +32,7 @@
         "Positive",
         "Primary",
         "On fill",
-        "Capability",
-        "Negative",
-        "Download",
-        "Upload"
+        "Negative"
       ]
     },
     {
@@ -827,17 +824,8 @@
         "On fill": {
           "alias": "text/on-fill"
         },
-        "Capability": {
-          "alias": "level/color"
-        },
         "Negative": {
           "alias": "status/negative"
-        },
-        "Download": {
-          "alias": "series/down"
-        },
-        "Upload": {
-          "alias": "series/up"
         }
       }
     },
@@ -961,7 +949,7 @@
       "collection": "Capability level",
       "type": "COLOR",
       "code": null,
-      "description": "Capability level colour. Used by Icon tone: Level.",
+      "description": "Capability level colour. Capability glyphs bind to it.",
       "values": {
         "Excellent": {
           "alias": "status/positive"
