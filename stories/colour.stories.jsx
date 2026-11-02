@@ -7,8 +7,8 @@ export default { title: 'Colour' }
 const SECTIONS = [
   {
     title: 'Backgrounds',
-    intro: 'Base, surface and inset, plus a hover and the dialog scrim. Cards use bg/surface.',
-    names: ['bg.base', 'bg.surface', 'bg.inset', 'bg.hover', 'bg.scrim'],
+    intro: 'Base, surface and inset, plus popover, hover and the dialog scrim. Cards use bg/surface.',
+    names: ['bg.base', 'bg.surface', 'bg.popover', 'bg.inset', 'bg.hover', 'bg.scrim'],
   },
   {
     title: 'Borders & fills',
@@ -73,7 +73,7 @@ const SECTIONS = [
   {
     title: 'Shadow colours',
     intro: 'The colours behind the shadow styles. Softer in Light mode.',
-    names: ['shadow-color.panel-1', 'shadow-color.panel-2', 'shadow-color.raised'],
+    names: ['shadow-color.panel-1', 'shadow-color.panel-2', 'shadow-color.raised', 'shadow-color.popover-1', 'shadow-color.popover-2'],
   },
 ]
 
@@ -103,7 +103,7 @@ function ModeCell({ theme, path }) {
     <span className="mode">
       <span
         className="mode-frame"
-        style={{ background: colorIn(theme, 'bg.surface'), borderColor: colorIn(theme, 'border.strong') }}
+        style={{ background: colorIn(theme, 'bg.surface'), borderColor: colorIn(theme, 'border.default') }}
       >
         {isText ? (
           <span className="mode-text" style={{ color, background: surface }}>
@@ -126,7 +126,7 @@ function ModeCell({ theme, path }) {
 // The shadow colours aren't CSS variables; they live inside the shadow tokens.
 const codeFor = (path) =>
   path[0] === 'shadow-color'
-    ? `in var(--shadow-${path[1] === 'raised' ? 'raised' : 'panel'})`
+    ? `in var(--shadow-${path[1].replace(/-\d$/, '')})`
     : `var(${cssName(path)})`
 
 function ColourTable({ names }) {

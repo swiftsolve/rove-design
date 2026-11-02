@@ -17,9 +17,9 @@ Dark is the default, on `:root`. Add the `theme-light` class to the root element
 
 ### Surfaces
 
-- Three backgrounds: `--bg-base` for the backdrop (window, title bar, rail), `--bg-surface` for content that sits on it (cards, menus, tooltips, dialogs), `--bg-inset` for areas sunk into a surface (bands, inputs, soft and icon buttons). `--bg-hover` is a hovered surface, `--bg-scrim` goes behind dialogs.
-- Cards get depth from `--shadow-panel` and a `--border-highlight` top edge, not hard outlines. Menus and tooltips use `--shadow-raised` on `--bg-surface`.
-- Hairlines are `--border-default`; `--border-strong` is for a line that must stand out more.
+- Three backgrounds: `--bg-base` for the backdrop (window, title bar, rail), `--bg-surface` for content that sits on it (cards, dialogs), `--bg-inset` for areas sunk into a surface (bands, inputs, soft and icon buttons). `--bg-popover` is a step lighter in Dark, for tooltips and menus. `--bg-hover` is a hovered surface, `--bg-scrim` goes behind dialogs.
+- Cards get depth from `--shadow-panel` and a `--border-highlight` top edge, not hard outlines. Tooltips and menus use `--shadow-popover` on `--bg-popover`; dialogs and hovered cards use `--shadow-raised`.
+- Every line is `--border-default`: hairlines, and the edges of menus, tooltips and dialogs.
 - For hovers, chips and tracks on a surface, use the `--fill-*` overlays, by strength: `--fill-faint` (3%), `--fill-subtle` (5%), `--fill-default` (7%), `--fill-strong` (16%). They flip with the theme, so they stay visible on both.
 
 ### Text and icons
@@ -86,8 +86,8 @@ Names and uses, from Figma. The values are in `tokens.css`; Dark and Light diffe
 
 ### Colour
 
-- **Backgrounds:** `--bg-base` (backdrop, title bar and rail), `--bg-surface` (content on the backdrop), `--bg-hover` (hovered rows and buttons), `--bg-scrim` (behind dialogs), `--bg-inset` (sunken areas inside a surface)
-- **Lines:** `--border-default` (hairlines), `--border-strong`, `--border-highlight` (top edge highlight)
+- **Backgrounds:** `--bg-base` (backdrop, title bar and rail), `--bg-surface` (content on the backdrop), `--bg-hover` (hovered rows and buttons), `--bg-scrim` (behind dialogs), `--bg-inset` (sunken areas inside a surface), `--bg-popover` (tooltips and menus)
+- **Lines:** `--border-default` (hairlines), `--border-highlight` (top edge highlight)
 - **Fills and overlays:** `--fill-default` (overlay), `--fill-subtle` (light overlay), `--fill-faint` (faintest overlay), `--fill-strong` (strong overlay), `--fill-selection` (text selection)
 - **Text:** `--text-primary`, `--text-secondary`, `--text-tertiary` (default icon colour), `--text-accent` (accent words, also on accent/muted), `--text-positive`, `--text-good`, `--text-warning`, `--text-poor`, `--text-negative`, `--text-on-fill` (labels and icons on solid fills)
 - **Accent:** `--accent-default`, `--accent-hover`, `--accent-press`, `--accent-muted` (tinted accent background), `--accent-fill` (fill under white labels), `--accent-fill-hover`
@@ -129,7 +129,7 @@ Apply a style with its class from `text-styles.css`. Each class reads four varia
 
 What Figma variables can't hold, from `src/code-tokens.json`.
 
-- **Shadows:** `--shadow-panel`, `--shadow-raised`
+- **Shadows:** `--shadow-panel`, `--shadow-raised`, `--shadow-popover`
 - **Focus:** `--focus-ring-width` 1px, `--focus-outline`, `--focus-inset`
 - **Layout:** `--titlebar-height` 56px, `--rail-item-size` 38px
 - **Cards:** `--card-padding` `var(--spacing-14)`, `--card-header-padding-y` `var(--card-padding)`, `--card-header-padding-x` `var(--card-padding)`, `--card-header-min-height` 42px, `--card-header-height` 44px, `--card-body-padding` `var(--card-padding)`, `--row-padding-y` 8px

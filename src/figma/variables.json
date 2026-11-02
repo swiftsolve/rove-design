@@ -123,21 +123,6 @@
       }
     },
     {
-      "name": "border/strong",
-      "collection": "Color",
-      "type": "COLOR",
-      "code": "var(--border-strong)",
-      "description": "",
-      "values": {
-        "Dark": {
-          "alias": "white-alpha/10"
-        },
-        "Light": {
-          "alias": "ink-alpha/16"
-        }
-      }
-    },
-    {
       "name": "border/highlight",
       "collection": "Color",
       "type": "COLOR",
@@ -1867,6 +1852,66 @@
           "g": 0,
           "b": 0,
           "a": 0.1
+        }
+      }
+    },
+    {
+      "name": "gray/775",
+      "collection": "Palette",
+      "type": "COLOR",
+      "code": null,
+      "description": "",
+      "values": {
+        "Value": {
+          "r": 0.11373,
+          "g": 0.11765,
+          "b": 0.12549,
+          "a": 1
+        }
+      }
+    },
+    {
+      "name": "bg/popover",
+      "collection": "Color",
+      "type": "COLOR",
+      "code": "var(--bg-popover)",
+      "description": "Tooltips and menus",
+      "values": {
+        "Dark": {
+          "alias": "gray/775"
+        },
+        "Light": {
+          "alias": "white"
+        }
+      }
+    },
+    {
+      "name": "shadow-color/popover-1",
+      "collection": "Color",
+      "type": "COLOR",
+      "code": null,
+      "description": "",
+      "values": {
+        "Dark": {
+          "alias": "black-alpha/22"
+        },
+        "Light": {
+          "alias": "ink-alpha/7"
+        }
+      }
+    },
+    {
+      "name": "shadow-color/popover-2",
+      "collection": "Color",
+      "type": "COLOR",
+      "code": null,
+      "description": "",
+      "values": {
+        "Dark": {
+          "alias": "black-alpha/22"
+        },
+        "Light": {
+          "alias": "ink-alpha/10"
         }
       }
     }
