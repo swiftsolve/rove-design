@@ -1676,36 +1676,6 @@
       }
     },
     {
-      "name": "black-alpha/35",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0,
-          "g": 0,
-          "b": 0,
-          "a": 0.35
-        }
-      }
-    },
-    {
-      "name": "black-alpha/45",
-      "collection": "Palette",
-      "type": "COLOR",
-      "code": null,
-      "description": "",
-      "values": {
-        "Value": {
-          "r": 0,
-          "g": 0,
-          "b": 0,
-          "a": 0.45
-        }
-      }
-    },
-    {
       "name": "black-alpha/50",
       "collection": "Palette",
       "type": "COLOR",
