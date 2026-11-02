@@ -12,7 +12,7 @@ The reasons behind the token values. The values themselves live in Figma (and in
 
 ## Surfaces and lines
 
-- **Three backgrounds, named by role.** `bg/base` is the backdrop, `bg/surface` is content that sits on it, and `bg/inset` is sunk into a surface. Tokens say what a colour is for, not which component uses it, so a new component picks from the same few.
+- **Three backgrounds, named by role.** `bg/base` is the backdrop, `bg/surface` is content that sits on it, and `bg/inset` is sunk into a surface. The title bar and rail take `bg/chrome`, the inset shades, so the window's frame reads as one band with a card's details, apart from the backdrop. Tokens say what a colour is for, not which component uses it, so a new component picks from the same few.
 - **They're half a ramp step apart.** Dark mode: base 15, inset 17.5, surface 20, hover 25. Light mode: base 95, inset 97.5, white surface, hover 90.
 - **Hairlines** separate content inside a surface; the surfaces themselves are lifted by shadow.
 - **Overlays flip with the theme:** white-on-dark in dark mode, near-black-on-light in light mode, so hovers, chips and tracks darken pale surfaces rather than disappearing on them.

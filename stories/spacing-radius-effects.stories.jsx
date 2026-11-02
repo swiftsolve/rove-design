@@ -28,7 +28,7 @@ const OPACITY_ORDER = ['tint-xs', 'tint-sm', 'tint-md', 'tint-lg', 'tint-xl', 'd
 
 // The four depth levels: what each sits on, and the shadow, border and radius it takes.
 const LEVELS = [
-  { name: 'Base', use: 'Window, title bar, rail', background: 'bg/base' },
+  { name: 'Base', use: 'Window', background: 'bg/base' },
   { name: 'Panel', use: 'Cards. Shadow/Raised on hover', background: 'bg/surface', shadow: 'panel', radius: 'lg' },
   {
     name: 'Popover',

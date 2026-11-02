@@ -67,7 +67,7 @@
       "collection": "Color",
       "type": "COLOR",
       "code": "var(--bg-base)",
-      "description": "Backdrop, title bar and rail",
+      "description": "Backdrop",
       "values": {
         "Dark": {
           "alias": "neutral/850"
@@ -1867,6 +1867,21 @@
         },
         "Light": {
           "alias": "neutral/850-a10"
+        }
+      }
+    },
+    {
+      "name": "bg/chrome",
+      "collection": "Color",
+      "type": "COLOR",
+      "code": "var(--bg-chrome)",
+      "description": "Title bar and rail",
+      "values": {
+        "Dark": {
+          "alias": "neutral/825"
+        },
+        "Light": {
+          "alias": "neutral/25"
         }
       }
     }

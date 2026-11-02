@@ -7,8 +7,8 @@ export default { title: 'Colour' }
 const SECTIONS = [
   {
     title: 'Backgrounds',
-    intro: 'Base, surface and inset, plus popover, hover and the dialog scrim. Cards use bg/surface.',
-    names: ['bg.base', 'bg.surface', 'bg.popover', 'bg.inset', 'bg.hover', 'bg.scrim'],
+    intro: 'Base, surface and inset, plus chrome, popover, hover and the dialog scrim. Cards use bg/surface.',
+    names: ['bg.base', 'bg.chrome', 'bg.surface', 'bg.popover', 'bg.inset', 'bg.hover', 'bg.scrim'],
   },
   {
     title: 'Borders & fills',
