@@ -94,7 +94,7 @@ It opens on <http://localhost:6007>; the Theme menu in the toolbar switches Dark
    git push --follow-tags
    ```
 
-   Use `patch` for fixes and `major` for breaking changes.
+   Use `patch` for fixes and `major` for breaking changes. npm has already used 5.3.0, 5.3.1 and 6.0.0–6.1.2 (an old numbering, now deprecated), and it never lets a version be published twice. Skip them: after 5.2, go to 5.4 or 6.0; after 6.1, go to 6.2.
 3. The tag runs three workflows: **Build** checks the tokens, **Publish** puts the version on [npm](https://www.npmjs.com/package/@swiftsolve/rove-design), and **Presentation** exports the Figma file and republishes <https://swiftsolve.github.io/rove-design/>. The page's header shows the version from `package.json`. To republish the slideshow between releases (after Figma edits), run Presentation by hand from the Actions tab.
 4. Update Rove to the new version (`npm install @swiftsolve/rove-design@latest`).
 
