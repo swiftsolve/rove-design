@@ -20,7 +20,7 @@ Dark is the default, on `:root`. Add the `theme-light` class to the root element
 - Three backgrounds: `--bg-base` for the backdrop, `--bg-surface` for content that sits on it (cards, dialogs), `--bg-inset` for areas sunk into a surface (bands, inputs, soft and icon buttons). `--bg-chrome` is the title bar and rail, a half step off the backdrop. `--bg-popover` is a step lighter in Dark, for tooltips and menus. `--bg-hover` is a hovered surface, `--bg-scrim` goes behind dialogs.
 - Cards get depth from `--shadow-panel`, not hard outlines. Tooltips and menus use `--shadow-popover` on `--bg-popover`; dialogs and hovered cards use `--shadow-raised`.
 - Every line is `--border-default`: hairlines, and the edges of menus, tooltips and dialogs.
-- For hovers, chips and tracks on a surface, use the `--fill-*` overlays, by strength: `--fill-faint` (3%), `--fill-subtle` (5%), `--fill-default` (7%), `--fill-strong` (16%). They flip with the theme, so they stay visible on both.
+- For hovers, chips and tracks on a surface, use the `--fill-*` overlays, by strength: `--fill-faint` (3%), `--fill-subtle` (5%), `--fill-default` (7%), `--fill-strong` (16%). They flip with the theme, so they stay visible on both. A hovered row or expandable header uses `--fill-hover`: 3% white in Dark, 2% ink in Light, so in Light it stays lighter than an open `--bg-inset` panel below it.
 
 ### Text and icons
 
@@ -88,7 +88,7 @@ Names and uses, from Figma. The values are in `tokens.css`; Dark and Light diffe
 
 - **Backgrounds:** `--bg-base` (backdrop), `--bg-surface` (content on the backdrop), `--bg-hover` (hovered rows and buttons), `--bg-scrim` (behind dialogs), `--bg-inset` (sunken areas inside a surface), `--bg-popover` (tooltips and menus), `--bg-chrome` (title bar and rail)
 - **Lines:** `--border-default` (hairlines)
-- **Fills and overlays:** `--fill-default` (overlay), `--fill-subtle` (light overlay), `--fill-faint` (faintest overlay), `--fill-strong` (strong overlay), `--fill-selection` (text selection)
+- **Fills and overlays:** `--fill-default` (overlay), `--fill-subtle` (light overlay), `--fill-faint` (faintest overlay), `--fill-strong` (strong overlay), `--fill-selection` (text selection), `--fill-hover` (hovered rows and headers)
 - **Text:** `--text-primary`, `--text-secondary`, `--text-tertiary` (default icon colour), `--text-accent` (accent words, also on accent/muted), `--text-positive`, `--text-good`, `--text-warning`, `--text-poor`, `--text-negative`, `--text-on-fill` (labels and icons on solid fills)
 - **Accent:** `--accent-default`, `--accent-hover`, `--accent-press`, `--accent-muted` (tinted accent background), `--accent-fill` (fill under white labels), `--accent-fill-hover`
 - **Status:** `--status-positive`, `--status-good` (between positive and warning), `--status-warning`, `--status-poor` (between warning and negative), `--status-negative`, `--status-negative-fill` (solid negative under white labels), `--status-negative-fill-hover` (negative fill hover)

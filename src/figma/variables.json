@@ -1814,6 +1814,21 @@
       }
     },
     {
+      "name": "neutral/850-a2",
+      "collection": "Palette",
+      "type": "COLOR",
+      "code": null,
+      "description": "",
+      "values": {
+        "Value": {
+          "r": 0.04314,
+          "g": 0.04314,
+          "b": 0.04706,
+          "a": 0.02
+        }
+      }
+    },
+    {
       "name": "bg/popover",
       "collection": "Color",
       "type": "COLOR",
@@ -1870,6 +1885,21 @@
         },
         "Light": {
           "alias": "neutral/25"
+        }
+      }
+    },
+    {
+      "name": "fill/hover",
+      "collection": "Color",
+      "type": "COLOR",
+      "code": "var(--fill-hover)",
+      "description": "Hovered rows and headers",
+      "values": {
+        "Dark": {
+          "alias": "neutral/0-a3"
+        },
+        "Light": {
+          "alias": "neutral/850-a2"
         }
       }
     }
