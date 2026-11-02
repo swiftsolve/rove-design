@@ -34,4 +34,6 @@ jobs:
       # again before packing, so the package ships tokens.css and tokens/.
       - run: npm ci
 
-      - run: npm publish
+      # --tag latest because 2.0.0 sits below the old 6.x line: without it npm
+      # won't move latest to a version lower than the highest published.
+      - run: npm publish --tag latest
