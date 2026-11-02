@@ -765,7 +765,7 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "black-alpha/35"
+          "alias": "black-alpha/22"
         },
         "Light": {
           "alias": "ink-alpha/7"
@@ -780,7 +780,7 @@
       "description": "",
       "values": {
         "Dark": {
-          "alias": "black-alpha/22"
+          "alias": "black-alpha/10"
         },
         "Light": {
           "alias": "ink-alpha/5"
@@ -798,7 +798,7 @@
           "alias": "black-alpha/22"
         },
         "Light": {
-          "alias": "ink-alpha/16"
+          "alias": "ink-alpha/10"
         }
       }
     },
@@ -1882,6 +1882,21 @@
         },
         "Light": {
           "alias": "gray/25"
+        }
+      }
+    },
+    {
+      "name": "black-alpha/10",
+      "collection": "Palette",
+      "type": "COLOR",
+      "code": null,
+      "description": "",
+      "values": {
+        "Value": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.1
         }
       }
     }
