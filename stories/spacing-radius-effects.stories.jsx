@@ -35,7 +35,7 @@ const LEVELS = [
     use: 'Tooltips, menus',
     background: 'bg/surface',
     shadow: 'raised',
-    border: 'border/strong',
+    border: 'border/default',
     radius: 'sm',
   },
   {
@@ -43,7 +43,7 @@ const LEVELS = [
     use: 'Over bg/scrim',
     background: 'bg/surface',
     shadow: 'raised',
-    border: 'border/strong',
+    border: 'border/default',
     radius: 'lg',
     isOverScrim: true,
   },

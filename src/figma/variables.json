@@ -123,21 +123,6 @@
       }
     },
     {
-      "name": "border/strong",
-      "collection": "Color",
-      "type": "COLOR",
-      "code": "var(--border-strong)",
-      "description": "",
-      "values": {
-        "Dark": {
-          "alias": "white-alpha/10"
-        },
-        "Light": {
-          "alias": "ink-alpha/16"
-        }
-      }
-    },
-    {
       "name": "border/highlight",
       "collection": "Color",
       "type": "COLOR",

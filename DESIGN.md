@@ -19,7 +19,7 @@ Dark is the default, on `:root`. Add the `theme-light` class to the root element
 
 - Three backgrounds: `--bg-base` for the backdrop (window, title bar, rail), `--bg-surface` for content that sits on it (cards, menus, tooltips, dialogs), `--bg-inset` for areas sunk into a surface (bands, inputs, soft and icon buttons). `--bg-hover` is a hovered surface, `--bg-scrim` goes behind dialogs.
 - Cards get depth from `--shadow-panel` and a `--border-highlight` top edge, not hard outlines. Menus and tooltips use `--shadow-raised` on `--bg-surface`.
-- Hairlines are `--border-default`; `--border-strong` is for a line that must stand out more.
+- Every line is `--border-default`: hairlines, and the edges of menus, tooltips and dialogs.
 - For hovers, chips and tracks on a surface, use the `--fill-*` overlays, by strength: `--fill-faint` (3%), `--fill-subtle` (5%), `--fill-default` (7%), `--fill-strong` (16%). They flip with the theme, so they stay visible on both.
 
 ### Text and icons
@@ -87,7 +87,7 @@ Names and uses, from Figma. The values are in `tokens.css`; Dark and Light diffe
 ### Colour
 
 - **Backgrounds:** `--bg-base` (backdrop, title bar and rail), `--bg-surface` (content on the backdrop), `--bg-hover` (hovered rows and buttons), `--bg-scrim` (behind dialogs), `--bg-inset` (sunken areas inside a surface)
-- **Lines:** `--border-default` (hairlines), `--border-strong`, `--border-highlight` (top edge highlight)
+- **Lines:** `--border-default` (hairlines), `--border-highlight` (top edge highlight)
 - **Fills and overlays:** `--fill-default` (overlay), `--fill-subtle` (light overlay), `--fill-faint` (faintest overlay), `--fill-strong` (strong overlay), `--fill-selection` (text selection)
 - **Text:** `--text-primary`, `--text-secondary`, `--text-tertiary` (default icon colour), `--text-accent` (accent words, also on accent/muted), `--text-positive`, `--text-good`, `--text-warning`, `--text-poor`, `--text-negative`, `--text-on-fill` (labels and icons on solid fills)
 - **Accent:** `--accent-default`, `--accent-hover`, `--accent-press`, `--accent-muted` (tinted accent background), `--accent-fill` (fill under white labels), `--accent-fill-hover`
