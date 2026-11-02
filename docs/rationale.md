@@ -5,7 +5,7 @@ The reasons behind the token values. The values themselves live in Figma (and in
 ## Structure
 
 - **Every colour lives once, in the Palette.** Color tokens point at Palette shades, and each shade is named by hue and darkness: `hue/N` has OKLCH lightness of about 100 − N/10, so `blue/450` is 55 (higher is darker).
-- **Gray is one even ramp.** Grays sit on 5-steps of OKLCH lightness, and the number says which: `gray/N` has lightness 100 − N/10, so `gray/850` is 15. The one exception is inset, which takes the half step between base and surface (`gray/25`, `gray/825`). They share one hue and one chroma curve, so the ramp reads as one family. Only the steps a token uses are in the Palette. The hues keep their own shades, each tuned for its job.
+- **Gray is one even ramp.** Grays sit on 5-steps of OKLCH lightness, and the number says which: `gray/N` has lightness 100 − N/10, so `gray/850` is 15. The one exception is inset, which takes the half step between base and surface (`gray/25`, `gray/825`). They share one hue and one chroma curve, so the ramp reads as one family. The chroma stays under 0.007, so the grays read neutral with a hint of cool, not blue; dark shades show a tint most, so they carry the least. Only the steps a token uses are in the Palette. The hues keep their own shades, each tuned for its job.
 - **CSS names follow Figma names.** `bg/base` is `--bg-base`, `border/default` is `--border-default`; the build refuses a code syntax that doesn't match.
 - **Typography comes from the text styles, not variables.** Figma can't bind a percentage line height to a variable, so line heights and letter spacings live only in the styles; copying them into variables would give the type scale two sources that could drift apart.
 
@@ -15,7 +15,7 @@ The reasons behind the token values. The values themselves live in Figma (and in
 - **They're half a ramp step apart.** Dark mode: base 15, inset 17.5, surface 20, hover 25. Light mode: base 95, inset 97.5, white surface, hover 90.
 - **Hairlines and the top highlight** make panels read as real surfaces lit from above.
 - **Overlays flip with the theme:** white-on-dark in dark mode, near-black-on-light in light mode, so hovers, chips and tracks darken pale surfaces rather than disappearing on them.
-- **Both overlay families share one set of strengths** (3, 5, 7, 10, 16%), so a dark-mode token and its light-mode partner sit on the same steps. Light-mode shadows use the same near-black ink; dark-mode shadows use black, since ink would be lighter than the backdrop.
+- **Both overlay families share one set of strengths** (3, 5, 7, 10, 16%), so a dark-mode token and its light-mode partner sit on the same steps. The light-mode ink is `gray/850`, so its overlays tint like the ramp, not navy. Light-mode shadows use the same ink; dark-mode shadows use black, since ink would be lighter than the backdrop.
 - **Shadows give depth** instead of hard outlines; panels get a soft two-layer lift, menus and tooltips a deeper one.
 
 ## Text
