@@ -17,7 +17,7 @@
       },
       "letterSpacing": {
         "unit": "PERCENT",
-        "value": -2
+        "value": 0
       },
       "boundVariables": {
         "fontFamily": "font-family/sans",
@@ -37,7 +37,7 @@
       },
       "letterSpacing": {
         "unit": "PERCENT",
-        "value": -1
+        "value": 0
       },
       "boundVariables": {
         "fontFamily": "font-family/sans",
@@ -57,7 +57,7 @@
       },
       "letterSpacing": {
         "unit": "PERCENT",
-        "value": -1
+        "value": 0
       },
       "boundVariables": {
         "fontFamily": "font-family/sans",
@@ -137,7 +137,7 @@
       },
       "letterSpacing": {
         "unit": "PERCENT",
-        "value": 1
+        "value": 0
       },
       "boundVariables": {
         "fontFamily": "font-family/sans",
@@ -157,7 +157,7 @@
       },
       "letterSpacing": {
         "unit": "PERCENT",
-        "value": -1
+        "value": 0
       },
       "boundVariables": {
         "fontFamily": "font-family/numeric",
@@ -177,7 +177,7 @@
       },
       "letterSpacing": {
         "unit": "PERCENT",
-        "value": -1
+        "value": 0
       },
       "boundVariables": {
         "fontFamily": "font-family/numeric",
@@ -237,7 +237,7 @@
       },
       "letterSpacing": {
         "unit": "PERCENT",
-        "value": 1
+        "value": 0
       },
       "boundVariables": {
         "fontFamily": "font-family/sans",
