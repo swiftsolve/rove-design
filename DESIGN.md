@@ -26,18 +26,18 @@ Dark is the default, on `:root`. Add the `theme-light` class to the root element
 
 - `--text-primary` for content, `--text-secondary` for supporting lines, `--text-tertiary` for the quietest text and for icons by default.
 - On a solid fill (accent or negative), labels and icons use `--text-on-fill`.
-- On `--accent-muted` (a selected item, a tinted button), text uses `--text-accent`.
+- Words in the accent (a link, a highlighted value) use `--text-accent`, on a surface or on `--accent-muted` (a selected item, a tinted button).
 
 ### Accent and buttons
 
-- `--accent-default` is for accent text, icons and lines. It's too light under a white label.
+- `--accent-default` is for accent icons and lines. It's too light for words in Light mode, and under a white label.
 - Filled buttons use `--accent-fill`, hovering to `--accent-fill-hover`. Hovers deepen, never lighten, so the white label keeps its contrast.
 - A solid red control (the Danger button, the window close hover) uses `--status-negative-fill` and `--status-negative-fill-hover`.
 
 ### Status
 
 - `--status-*` (positive, good, warning, poor, negative) colour icons, bars and dots.
-- Words in a status colour use `--text-*` of the same name. The `--status-*` shades are too light for text in Light mode.
+- Words in a status colour use `--text-*` of the same name, which also clear a tint of their hue (a badge). The `--status-*` shades are too light for text in Light mode.
 - Download and upload in charts are `--series-down` and `--series-up`.
 
 ### Tints and opacity
@@ -89,7 +89,7 @@ Names and uses, from Figma. The values are in `tokens.css`; Dark and Light diffe
 - **Backgrounds:** `--bg-base` (backdrop, title bar and rail), `--bg-surface` (content on the backdrop), `--bg-hover` (hovered rows and buttons), `--bg-scrim` (behind dialogs), `--bg-inset` (sunken areas inside a surface)
 - **Lines:** `--border-default` (hairlines), `--border-strong`, `--border-highlight` (top edge highlight)
 - **Fills and overlays:** `--fill-default` (overlay), `--fill-subtle` (light overlay), `--fill-faint` (faintest overlay), `--fill-strong` (strong overlay), `--fill-selection` (text selection)
-- **Text:** `--text-primary`, `--text-secondary`, `--text-tertiary` (default icon colour), `--text-accent` (text on accent/muted), `--text-positive`, `--text-good`, `--text-warning`, `--text-poor`, `--text-negative`, `--text-on-fill` (labels and icons on solid fills)
+- **Text:** `--text-primary`, `--text-secondary`, `--text-tertiary` (default icon colour), `--text-accent` (accent words, also on accent/muted), `--text-positive`, `--text-good`, `--text-warning`, `--text-poor`, `--text-negative`, `--text-on-fill` (labels and icons on solid fills)
 - **Accent:** `--accent-default`, `--accent-hover`, `--accent-press`, `--accent-muted` (tinted accent background), `--accent-fill` (fill under white labels), `--accent-fill-hover`
 - **Status:** `--status-positive`, `--status-good` (between positive and warning), `--status-warning`, `--status-poor` (between warning and negative), `--status-negative`, `--status-negative-fill` (solid negative under white labels), `--status-negative-fill-hover` (negative fill hover)
 - **Chart series:** `--series-down` (download), `--series-up` (upload)
