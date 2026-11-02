@@ -6,7 +6,7 @@
   "styles": [
     {
       "name": "Heading/Large",
-      "description": "Page titles, the wordmark. Code: .text-heading-large",
+      "description": "Page titles, the wordmark. Code: .type-heading-large",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,
@@ -26,7 +26,7 @@
     },
     {
       "name": "Heading/Medium",
-      "description": "Dialog titles. Code: .text-heading-medium",
+      "description": "Dialog titles. Code: .type-heading-medium",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,
@@ -46,7 +46,7 @@
     },
     {
       "name": "Heading/Small",
-      "description": "Card headings. Code: .text-heading-small",
+      "description": "Card headings. Code: .type-heading-small",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,
@@ -66,7 +66,7 @@
     },
     {
       "name": "Body/Default",
-      "description": "Body text. Code: .text-body",
+      "description": "Body text. Code: .type-body-default",
       "fontFamily": "Inter",
       "fontStyle": "Regular",
       "fontWeight": 400,
@@ -86,7 +86,7 @@
     },
     {
       "name": "Overline",
-      "description": "Uppercase labels above values. Code: .text-overline",
+      "description": "Uppercase labels above values. Code: .type-overline",
       "fontFamily": "Inter",
       "fontStyle": "Medium",
       "fontWeight": 500,
@@ -107,7 +107,7 @@
     },
     {
       "name": "Caption",
-      "description": "Badges, captions, footer hints. Code: .text-caption",
+      "description": "Badges, captions, footer hints. Code: .type-caption",
       "fontFamily": "Inter",
       "fontStyle": "Regular",
       "fontWeight": 400,
@@ -127,7 +127,7 @@
     },
     {
       "name": "Label/Large",
-      "description": "Filled button labels. Code: Button variant=filled",
+      "description": "Solid button labels. Code: Button variant=solid",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,
@@ -147,7 +147,7 @@
     },
     {
       "name": "Number/Display",
-      "description": "Live speeds. Add a 0.43px outside stroke. Code: .metric-value, at weight 600: Questrial has one weight, so the browser emboldens it.",
+      "description": "Live speeds. Add a 0.43px outside stroke. Code: .type-number-display .metric-value, at weight 600: Questrial has one weight, so the browser emboldens it.",
       "fontFamily": "Questrial",
       "fontStyle": "Regular",
       "fontWeight": 400,
@@ -167,7 +167,7 @@
     },
     {
       "name": "Number/Large",
-      "description": "Stat totals. Add a 0.26px outside stroke. Code: .metric-compact",
+      "description": "Stat totals. Add a 0.26px outside stroke. Code: Readout size=compact",
       "fontFamily": "Questrial",
       "fontStyle": "Regular",
       "fontWeight": 400,
@@ -187,7 +187,7 @@
     },
     {
       "name": "Number/Default",
-      "description": "Data row values. Code: .text-number",
+      "description": "Data row values. Code: .type-number-default",
       "fontFamily": "Questrial",
       "fontStyle": "Regular",
       "fontWeight": 400,
@@ -207,7 +207,7 @@
     },
     {
       "name": "Number/Small",
-      "description": "Chart axes and scale. Code: .text-number-small",
+      "description": "Chart axes and scale. Code: .type-number-small",
       "fontFamily": "Questrial",
       "fontStyle": "Regular",
       "fontWeight": 400,
@@ -227,7 +227,7 @@
     },
     {
       "name": "Label/Default",
-      "description": "Bold small labels on tinted chips. Code: tracking-label-default",
+      "description": "Bold small labels on tinted chips. Code: .type-label-default",
       "fontFamily": "Inter",
       "fontStyle": "Semi Bold",
       "fontWeight": 600,
@@ -247,7 +247,7 @@
     },
     {
       "name": "Label/Small",
-      "description": "Secondary buttons, title bar status. Code: .text-label-small",
+      "description": "Soft buttons, title bar status. Code: .type-label-small",
       "fontFamily": "Inter",
       "fontStyle": "Medium",
       "fontWeight": 500,
@@ -267,7 +267,7 @@
     },
     {
       "name": "Body/Small",
-      "description": "Helper text, hints and units. Code: .text-body-small",
+      "description": "Helper text, hints and units. Code: .type-body-small",
       "fontFamily": "Inter",
       "fontStyle": "Regular",
       "fontWeight": 400,

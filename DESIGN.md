@@ -110,20 +110,20 @@ Apply a style with its class from `text-styles.css`. Each class reads four varia
 
 | Style | Class | Size, weight | Use |
 | --- | --- | --- | --- |
-| Heading/Large | `.type-heading-large` | 17px 600 | Page titles, the wordmark. Code: .text-heading-large |
-| Heading/Medium | `.type-heading-medium` | 15px 600 | Dialog titles. Code: .text-heading-medium |
-| Heading/Small | `.type-heading-small` | 14px 600 | Card headings. Code: .text-heading-small |
-| Body/Default | `.type-body-default` | 13px 400 | Body text. Code: .text-body |
-| Overline | `.type-overline` | 11px 500 | Uppercase labels above values. Code: .text-overline |
-| Caption | `.type-caption` | 11px 400 | Badges, captions, footer hints. Code: .text-caption |
-| Label/Large | `.type-label-large` | 12px 600 | Filled button labels. Code: Button variant=filled |
-| Number/Display | `.type-number-display` | 28px 400, Questrial | Live speeds. Add a 0.43px outside stroke. Code: .metric-value, at weight 600: Questrial has one weight, so the browser emboldens it. |
-| Number/Large | `.type-number-large` | 17px 400, Questrial | Stat totals. Add a 0.26px outside stroke. Code: .metric-compact |
-| Number/Default | `.type-number-default` | 13px 400, Questrial | Data row values. Code: .text-number |
-| Number/Small | `.type-number-small` | 10px 400, Questrial | Chart axes and scale. Code: .text-number-small |
-| Label/Default | `.type-label-default` | 11px 600 | Bold small labels on tinted chips. Code: tracking-label-default |
-| Label/Small | `.type-label-small` | 11px 500 | Secondary buttons, title bar status. Code: .text-label-small |
-| Body/Small | `.type-body-small` | 12px 400 | Helper text, hints and units. Code: .text-body-small |
+| Heading/Large | `.type-heading-large` | 17px 600 | Page titles, the wordmark. Code: .type-heading-large |
+| Heading/Medium | `.type-heading-medium` | 15px 600 | Dialog titles. Code: .type-heading-medium |
+| Heading/Small | `.type-heading-small` | 14px 600 | Card headings. Code: .type-heading-small |
+| Body/Default | `.type-body-default` | 13px 400 | Body text. Code: .type-body-default |
+| Overline | `.type-overline` | 11px 500 | Uppercase labels above values. Code: .type-overline |
+| Caption | `.type-caption` | 11px 400 | Badges, captions, footer hints. Code: .type-caption |
+| Label/Large | `.type-label-large` | 12px 600 | Solid button labels. Code: Button variant=solid |
+| Number/Display | `.type-number-display` | 28px 400, Questrial | Live speeds. Add a 0.43px outside stroke. Code: .type-number-display .metric-value, at weight 600: Questrial has one weight, so the browser emboldens it. |
+| Number/Large | `.type-number-large` | 17px 400, Questrial | Stat totals. Add a 0.26px outside stroke. Code: Readout size=compact |
+| Number/Default | `.type-number-default` | 13px 400, Questrial | Data row values. Code: .type-number-default |
+| Number/Small | `.type-number-small` | 10px 400, Questrial | Chart axes and scale. Code: .type-number-small |
+| Label/Default | `.type-label-default` | 11px 600 | Bold small labels on tinted chips. Code: .type-label-default |
+| Label/Small | `.type-label-small` | 11px 500 | Soft buttons, title bar status. Code: .type-label-small |
+| Body/Small | `.type-body-small` | 12px 400 | Helper text, hints and units. Code: .type-body-small |
 
 ### Code-only tokens
 
