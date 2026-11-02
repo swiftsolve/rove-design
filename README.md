@@ -68,6 +68,11 @@ A theme is every file plus one of the two color files. Paths follow the Figma na
 
 **Rove Tokens** is a Storybook of every token in both themes: colour, palette, type, spacing, radius, effects, motion and layout.
 
+- **Rove Tokens:** <https://rove.swiftsolve.net/storybook/tokens/>
+- **Rove Components**, the UI library built on these tokens: <https://rove.swiftsolve.net/storybook/>
+
+Both are snapshots (Rove Tokens of the latest release, Rove Components of Rove's master), refreshed with `npm run sync-storybook` in rove.swiftsolve.net.
+
 ```bash
 npm run storybook
 ```
